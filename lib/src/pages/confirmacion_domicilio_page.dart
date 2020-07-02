@@ -38,6 +38,18 @@ class _ConfirmacionDomicilioState extends State<ConfirmacionDomicilio> {
 
     double valor = ( 
       (dataProduc.especial              * 9.000)  + 
+        // Adicion Carne
+      (dataProduc.especial >= 1 ? (listaHamburgesas.especialAdicionCarne[0]) * 4.000 : 0 ) +
+      (dataProduc.especial >= 2 ? (listaHamburgesas.especialAdicionCarne[1]) * 4.000 : 0 ) +
+      (dataProduc.especial >= 3 ? (listaHamburgesas.especialAdicionCarne[2]) * 4.000 : 0 ) +
+      (dataProduc.especial >= 4 ? (listaHamburgesas.especialAdicionCarne[3]) * 4.000 : 0 ) +
+      (dataProduc.especial >= 5 ? (listaHamburgesas.especialAdicionCarne[4]) * 4.000 : 0 ) +
+      (dataProduc.especial >= 6 ? (listaHamburgesas.especialAdicionCarne[5]) * 4.000 : 0 ) +
+      (dataProduc.especial >= 7 ? (listaHamburgesas.especialAdicionCarne[6]) * 4.000 : 0 ) +
+      (dataProduc.especial >= 8 ? (listaHamburgesas.especialAdicionCarne[7]) * 4.000 : 0 ) +
+      (dataProduc.especial >= 9 ? (listaHamburgesas.especialAdicionCarne[8]) * 4.000 : 0 ) +
+      (dataProduc.especial >= 10 ? (listaHamburgesas.especialAdicionCarne[9]) * 4.000 : 0 ) +
+
       (dataProduc.superEspecial         * 12.500) +
       (dataProduc.trisuper              * 14.500) +
       (dataProduc.perroGrandeTocineta   * 9.000)  +
@@ -184,6 +196,14 @@ class _ConfirmacionDomicilioState extends State<ConfirmacionDomicilio> {
             producto: 'Especial # 3'
           ) : Container(),
 
+          data.especial >= 3 ? _mostrarAdicion(
+            carne:    listaHamburgesas.especialAdicionCarne   [2],
+            tocineta: listaHamburgesas.especialAdicionTocineta[2],
+            queso:    listaHamburgesas.especialAdicionQueso   [2],
+            ensalada: listaHamburgesas.especialAdicionEnsalada[2],
+            numeroDeHamburguesa: 3
+          ) : Container(),
+
           data.especial >= 4 ? _infoIngredientes(
             tomate  : listaHamburgesas.especialIngredienteTomate    [3],
             ensalada: listaHamburgesas.especialIngredienteEnsalada  [3],
@@ -193,6 +213,14 @@ class _ConfirmacionDomicilioState extends State<ConfirmacionDomicilio> {
             producto: 'Especial # 4'
           ): Container(),
 
+          data.especial >= 4 ? _mostrarAdicion(
+            carne:    listaHamburgesas.especialAdicionCarne   [3],
+            tocineta: listaHamburgesas.especialAdicionTocineta[3],
+            queso:    listaHamburgesas.especialAdicionQueso   [3],
+            ensalada: listaHamburgesas.especialAdicionEnsalada[3],
+            numeroDeHamburguesa: 4
+          ) : Container(),
+
           data.especial >= 5 ? _infoIngredientes(
             tomate  : listaHamburgesas.especialIngredienteTomate    [4],
             ensalada: listaHamburgesas.especialIngredienteEnsalada  [4],
@@ -200,6 +228,14 @@ class _ConfirmacionDomicilioState extends State<ConfirmacionDomicilio> {
             tocineta: listaHamburgesas.especialIngredienteTocineta  [4],
             queso   : listaHamburgesas.especialIngredienteQueso     [4],      
             producto: 'Especial # 5'
+          ) : Container(),
+
+          data.especial >= 5 ? _mostrarAdicion(
+            carne:    listaHamburgesas.especialAdicionCarne   [4],
+            tocineta: listaHamburgesas.especialAdicionTocineta[4],
+            queso:    listaHamburgesas.especialAdicionQueso   [4],
+            ensalada: listaHamburgesas.especialAdicionEnsalada[4],
+            numeroDeHamburguesa: 5
           ) : Container(),
 
           data.especial >= 6 ? _infoIngredientes(
@@ -211,6 +247,14 @@ class _ConfirmacionDomicilioState extends State<ConfirmacionDomicilio> {
             producto: 'Especial # 6'
           ) : Container(),
 
+          data.especial >= 6 ? _mostrarAdicion(
+            carne:    listaHamburgesas.especialAdicionCarne   [5],
+            tocineta: listaHamburgesas.especialAdicionTocineta[5],
+            queso:    listaHamburgesas.especialAdicionQueso   [5],
+            ensalada: listaHamburgesas.especialAdicionEnsalada[5],
+            numeroDeHamburguesa: 6
+          ) : Container(),
+
           data.especial >= 7 ? _infoIngredientes(
             tomate  : listaHamburgesas.especialIngredienteTomate    [6],
             ensalada: listaHamburgesas.especialIngredienteEnsalada  [6],
@@ -218,6 +262,14 @@ class _ConfirmacionDomicilioState extends State<ConfirmacionDomicilio> {
             tocineta: listaHamburgesas.especialIngredienteTocineta  [6],
             queso   : listaHamburgesas.especialIngredienteQueso     [6],      
             producto: 'Especial # 7'
+          ) : Container(),
+
+          data.especial >= 7 ? _mostrarAdicion(
+            carne:    listaHamburgesas.especialAdicionCarne   [6],
+            tocineta: listaHamburgesas.especialAdicionTocineta[6],
+            queso:    listaHamburgesas.especialAdicionQueso   [6],
+            ensalada: listaHamburgesas.especialAdicionEnsalada[6],
+            numeroDeHamburguesa: 7
           ) : Container(),
 
           data.especial >= 8 ? _infoIngredientes(
@@ -229,6 +281,22 @@ class _ConfirmacionDomicilioState extends State<ConfirmacionDomicilio> {
             producto: 'Especial # 8'
           ) : Container(),
 
+          data.especial >= 8 ? _mostrarAdicion(
+            carne:    listaHamburgesas.especialAdicionCarne   [7],
+            tocineta: listaHamburgesas.especialAdicionTocineta[7],
+            queso:    listaHamburgesas.especialAdicionQueso   [7],
+            ensalada: listaHamburgesas.especialAdicionEnsalada[7],
+            numeroDeHamburguesa: 8
+          ) : Container(),
+
+          data.especial >= 8 ? _mostrarAdicion(
+            carne:    listaHamburgesas.especialAdicionCarne   [7],
+            tocineta: listaHamburgesas.especialAdicionTocineta[7],
+            queso:    listaHamburgesas.especialAdicionQueso   [7],
+            ensalada: listaHamburgesas.especialAdicionEnsalada[7],
+            numeroDeHamburguesa: 8
+          ) : Container(),
+
           data.especial >= 9 ? _infoIngredientes(
             tomate  : listaHamburgesas.especialIngredienteTomate    [8],
             ensalada: listaHamburgesas.especialIngredienteEnsalada  [8],
@@ -238,6 +306,14 @@ class _ConfirmacionDomicilioState extends State<ConfirmacionDomicilio> {
             producto: 'Especial # 9'
           ) : Container(),
 
+          data.especial >= 9 ? _mostrarAdicion(
+            carne:    listaHamburgesas.especialAdicionCarne   [8],
+            tocineta: listaHamburgesas.especialAdicionTocineta[8],
+            queso:    listaHamburgesas.especialAdicionQueso   [8],
+            ensalada: listaHamburgesas.especialAdicionEnsalada[8],
+            numeroDeHamburguesa: 9
+          ) : Container(),
+
           data.especial >= 10 ? _infoIngredientes(
             tomate  : listaHamburgesas.especialIngredienteTomate    [9],
             ensalada: listaHamburgesas.especialIngredienteEnsalada  [9],
@@ -245,6 +321,14 @@ class _ConfirmacionDomicilioState extends State<ConfirmacionDomicilio> {
             tocineta: listaHamburgesas.especialIngredienteTocineta  [9],
             queso   : listaHamburgesas.especialIngredienteQueso     [9],      
             producto: 'Especial # 10'
+          ) : Container(),
+
+          data.especial >= 10 ? _mostrarAdicion(
+            carne:    listaHamburgesas.especialAdicionCarne   [9],
+            tocineta: listaHamburgesas.especialAdicionTocineta[9],
+            queso:    listaHamburgesas.especialAdicionQueso   [9],
+            ensalada: listaHamburgesas.especialAdicionEnsalada[9],
+            numeroDeHamburguesa: 10
           ) : Container(),
 
         // Super
@@ -650,6 +734,7 @@ class _ConfirmacionDomicilioState extends State<ConfirmacionDomicilio> {
 
   _contador(){
     this.i++;
+    print(data.especial);
     return Container();
   }
 
