@@ -32,17 +32,6 @@ class _PedidoPageState extends State<PedidoPage> {
         onPressed: () {
           Navigator.pushNamed(context, 'datosDomisilio');
 
-            // Ingredientes
-            dataProduc.cantidadEspecialIngredientesTomate([2]);
-            dataProduc.cantidadEspecialIngredientesEnsalada([2]);
-            dataProduc.cantidadEspecialIngredientesRipio([2]);
-            dataProduc.cantidadEspecialIngredientesTocineta([2]);
-            dataProduc.cantidadEspecialIngredientesQueso([2]);
-            // Adiciones
-            dataProduc.cantidadEspecialAdicionCarne([2]);
-            dataProduc.cantidadEspecialAdicionTocineta([2]);
-            dataProduc.cantidadEspecialIngredientesQueso([2]);
-            dataProduc.cantidadEspecialAdicionEnsalada([2]);
         },
         backgroundColor: Colors.red,
         child: Icon(

@@ -10,11 +10,18 @@ import 'package:q2/src/widgets/loading.dart';
 
 class LoginPage extends StatefulWidget {
 
+  final state;
+
+  LoginPage({ this.state });
+
   @override
-  _LoginPageState createState() => _LoginPageState();
+  _LoginPageState createState() => _LoginPageState( state );
 }
 
 class _LoginPageState extends State<LoginPage> {
+
+  final state;
+  _LoginPageState( this.state );
   
   ClienteModel cliente = new ClienteModel();
 

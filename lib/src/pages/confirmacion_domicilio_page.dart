@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:q2/src/bloc/producto_bloc.dart';
 // import 'package:q2/src/bloc/producto_bloc.dart';
 import 'package:q2/src/bloc/provider.dart';
 import 'package:q2/src/service/database.dart';
+import 'package:q2/src/service/lista_hamburgesas_provider.dart';
 
 class ConfirmacionDomicilio extends StatefulWidget {
   final bool infoExeso2;
@@ -14,13 +17,24 @@ class ConfirmacionDomicilio extends StatefulWidget {
 class _ConfirmacionDomicilioState extends State<ConfirmacionDomicilio> {
   final TextStyle styleAppBar = TextStyle( fontSize: 20, fontWeight: FontWeight.bold, fontStyle: FontStyle.italic, );
 
+  ListaHamburguesas listaHamburgesas = ListaHamburguesas();
+
+  ProductoBloc data = ProductoBloc();
+
+  int i = 0;
+  
   @override
   Widget build(BuildContext context) {
 
-    // color:  Color.fromRGBO(161, 35, 18, 1)
+    this.listaHamburgesas = Provider.of<ListaHamburguesas>(context);
 
+    this.data = Providers.ofProducto(context);
+
+    // color:  Color.fromRGBO(161, 35, 18, 1)
+    ProductoBloc dataProduc = ProductoBloc();
+    
     final dataForm = Providers.of(context);
-    final dataProduc = Providers.ofProducto(context);
+    dataProduc = Providers.ofProducto(context);
 
     double valor = ( 
       (dataProduc.especial              * 9.000)  + 
@@ -45,6 +59,8 @@ class _ConfirmacionDomicilioState extends State<ConfirmacionDomicilio> {
       (dataProduc.grandePerra           ?? 0) > 0 &&
       (dataProduc.pequegnaPerra         ?? 0) > 0 
     );
+
+    bool exsesoInfo2 = i > 7;
 
     _mostrarFactura() {
 
@@ -101,7 +117,7 @@ class _ConfirmacionDomicilioState extends State<ConfirmacionDomicilio> {
           _infoProducto(dataProduc.perroGrande, 'Perro grande'),
 
 
-          _infoProducto(dataProduc.perroPequegnoTocineta, 'Perro pequeño con tocineta'),
+          _infoProducto(dataProduc.perroPequegnoTocineta, 'Perro pequeño con tocineta'),  
 
 
           _infoProducto(dataProduc.perroPequegno, 'Perro pequeño'),
@@ -121,19 +137,126 @@ class _ConfirmacionDomicilioState extends State<ConfirmacionDomicilio> {
             ],
           ),
 
-          _infoIngredienteTomate(dataProduc.especialIngredientesTomate[0] ?? 2, 'Especial #-1'),
-          _infoIngredienteEnsalada(dataProduc.especialIngredientesEnsalada[0] ?? 2, 'Especial #-1'),
-          _infoIngredienteRipio(dataProduc.especialIngredientesRipio[0], 'Especial #-1'),
-          _infoIngredienteTocineta(dataProduc.especialIngredientesTocineta[0], 'Especial #-1'),
-          _infoIngredienteQueso(dataProduc.especialIngredientesQueso[0], 'Especial #-1'),
-          
-
           SizedBox(height: 15,),
 
-          exesoInfo ? Container() : Expanded(
-            // flex: ,
-            child: Container()
-          ),
+        // Especiales 
+          data.especial >= 1 ?  _infoIngredientes(
+            tomate  : listaHamburgesas.especialIngredienteTomate    [0],
+            ensalada: listaHamburgesas.especialIngredienteEnsalada  [0],
+            ripio   : listaHamburgesas.especialIngredienteRipio     [0],
+            tocineta: listaHamburgesas.especialIngredienteTocineta  [0],
+            queso   : listaHamburgesas.especialIngredienteQueso     [0],      
+            producto: 'Especial # 1'
+          ) : Container(),
+
+          data.especial >= 1 ? _mostrarAdicion(
+            carne:    listaHamburgesas.especialAdicionCarne   [0],
+            tocineta: listaHamburgesas.especialAdicionTocineta[0],
+            queso:    listaHamburgesas.especialAdicionQueso   [0],
+            ensalada: listaHamburgesas.especialAdicionEnsalada[0],
+            numeroDeHamburguesa: 1
+          ) : Container(),
+
+
+          data.especial >= 2 ? _infoIngredientes(
+            tomate  : listaHamburgesas.especialIngredienteTomate    [1],
+            ensalada: listaHamburgesas.especialIngredienteEnsalada  [1],
+            ripio   : listaHamburgesas.especialIngredienteRipio     [1],
+            tocineta: listaHamburgesas.especialIngredienteTocineta  [1],
+            queso   : listaHamburgesas.especialIngredienteQueso     [1],      
+            producto: 'Especial # 2'
+          ) : Container(),
+
+          data.especial >= 2 ? _mostrarAdicion(
+            carne:    listaHamburgesas.especialAdicionCarne   [1],
+            tocineta: listaHamburgesas.especialAdicionTocineta[1],
+            queso:    listaHamburgesas.especialAdicionQueso   [1],
+            ensalada: listaHamburgesas.especialAdicionEnsalada[1],
+            numeroDeHamburguesa: 2
+          ) : Container(),
+
+          data.especial >= 3 ? _infoIngredientes(
+            tomate  : listaHamburgesas.especialIngredienteTomate    [2],
+            ensalada: listaHamburgesas.especialIngredienteEnsalada  [2],
+            ripio   : listaHamburgesas.especialIngredienteRipio     [2],
+            tocineta: listaHamburgesas.especialIngredienteTocineta  [2],
+            queso   : listaHamburgesas.especialIngredienteQueso     [2],      
+            producto: 'Especial # 3'
+          ) : Container(),
+
+          data.especial >= 4 ? _infoIngredientes(
+            tomate  : listaHamburgesas.especialIngredienteTomate    [3],
+            ensalada: listaHamburgesas.especialIngredienteEnsalada  [3],
+            ripio   : listaHamburgesas.especialIngredienteRipio     [3],
+            tocineta: listaHamburgesas.especialIngredienteTocineta  [3],
+            queso   : listaHamburgesas.especialIngredienteQueso     [3],      
+            producto: 'Especial # 4'
+          ): Container(),
+
+          data.especial >= 5 ? _infoIngredientes(
+            tomate  : listaHamburgesas.especialIngredienteTomate    [4],
+            ensalada: listaHamburgesas.especialIngredienteEnsalada  [4],
+            ripio   : listaHamburgesas.especialIngredienteRipio     [4],
+            tocineta: listaHamburgesas.especialIngredienteTocineta  [4],
+            queso   : listaHamburgesas.especialIngredienteQueso     [4],      
+            producto: 'Especial # 5'
+          ) : Container(),
+
+          data.especial >= 6 ? _infoIngredientes(
+            tomate  : listaHamburgesas.especialIngredienteTomate    [5],
+            ensalada: listaHamburgesas.especialIngredienteEnsalada  [5],
+            ripio   : listaHamburgesas.especialIngredienteRipio     [5],
+            tocineta: listaHamburgesas.especialIngredienteTocineta  [5],
+            queso   : listaHamburgesas.especialIngredienteQueso     [5],      
+            producto: 'Especial # 6'
+          ) : Container(),
+
+          data.especial >= 7 ? _infoIngredientes(
+            tomate  : listaHamburgesas.especialIngredienteTomate    [6],
+            ensalada: listaHamburgesas.especialIngredienteEnsalada  [6],
+            ripio   : listaHamburgesas.especialIngredienteRipio     [6],
+            tocineta: listaHamburgesas.especialIngredienteTocineta  [6],
+            queso   : listaHamburgesas.especialIngredienteQueso     [6],      
+            producto: 'Especial # 7'
+          ) : Container(),
+
+          data.especial >= 8 ? _infoIngredientes(
+            tomate  : listaHamburgesas.especialIngredienteTomate    [7],
+            ensalada: listaHamburgesas.especialIngredienteEnsalada  [7],
+            ripio   : listaHamburgesas.especialIngredienteRipio     [7],
+            tocineta: listaHamburgesas.especialIngredienteTocineta  [7],
+            queso   : listaHamburgesas.especialIngredienteQueso     [7],      
+            producto: 'Especial # 8'
+          ) : Container(),
+
+          data.especial >= 9 ? _infoIngredientes(
+            tomate  : listaHamburgesas.especialIngredienteTomate    [8],
+            ensalada: listaHamburgesas.especialIngredienteEnsalada  [8],
+            ripio   : listaHamburgesas.especialIngredienteRipio     [8],
+            tocineta: listaHamburgesas.especialIngredienteTocineta  [8],
+            queso   : listaHamburgesas.especialIngredienteQueso     [8],      
+            producto: 'Especial # 9'
+          ) : Container(),
+
+          data.especial >= 10 ? _infoIngredientes(
+            tomate  : listaHamburgesas.especialIngredienteTomate    [9],
+            ensalada: listaHamburgesas.especialIngredienteEnsalada  [9],
+            ripio   : listaHamburgesas.especialIngredienteRipio     [9],
+            tocineta: listaHamburgesas.especialIngredienteTocineta  [9],
+            queso   : listaHamburgesas.especialIngredienteQueso     [9],      
+            producto: 'Especial # 10'
+          ) : Container(),
+
+        // Super
+
+
+
+          SizedBox(height: 30,),
+
+          // exesoInfo || exsesoInfo2 ? Container() : Expanded(
+          //   // flex: ,
+          //   child: Container()
+          // ),
 
           Container(
             height: 35,
@@ -207,11 +330,14 @@ class _ConfirmacionDomicilioState extends State<ConfirmacionDomicilio> {
                 borderRadius: BorderRadius.circular(10),
                 color: Colors.white,
               ),
-              height: double.infinity,
+              // height: double.infinity,
               width: double.infinity,
-              child: exesoInfo ? SingleChildScrollView(
-                child: _mostrarFactura()
-              ) : _mostrarFactura()
+              // child: exesoInfo || exsesoInfo2 ? SingleChildScrollView(
+              //   child: _mostrarFactura()
+              // ) : _mostrarFactura()
+              child: SingleChildScrollView(
+                child: _mostrarFactura(),
+              ),
             ),
           ),
         ),
@@ -270,6 +396,8 @@ class _ConfirmacionDomicilioState extends State<ConfirmacionDomicilio> {
       padding: const EdgeInsets.symmetric(horizontal: 15),
       child: Column(
         children: <Widget>[
+
+          dataProduc != 2 ? _contador() : null,
           
           dataProduc == 0 ? Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -288,13 +416,13 @@ class _ConfirmacionDomicilioState extends State<ConfirmacionDomicilio> {
             ],
           ) : Container(), 
 
-          // dataProduc == 2 ? Row(
-            // mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            // children: <Widget>[
-              // Text(  producto, style: styleAppBar) ,
-              // Text('Normal de tomate', style: styleAppBar),
-            // ],
-          // ) : Container(), 
+          dataProduc == 2 ? Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: <Widget>[
+              Text(  producto, style: styleAppBar) ,
+              Text('Normal de tomate', style: styleAppBar),
+            ],
+          ) : Container(), 
 
           dataProduc == 3 ? Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -303,6 +431,8 @@ class _ConfirmacionDomicilioState extends State<ConfirmacionDomicilio> {
               Text('Extra de tomate', style: styleAppBar),
             ],
           ) : Container(), 
+
+          
 
         ],
       ),
@@ -315,6 +445,8 @@ class _ConfirmacionDomicilioState extends State<ConfirmacionDomicilio> {
       padding: const EdgeInsets.symmetric(horizontal: 15),
       child: Column(
         children: <Widget>[
+
+          dataProduc != 2 ? _contador() : null,
           
           dataProduc == 0 ? Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -333,13 +465,13 @@ class _ConfirmacionDomicilioState extends State<ConfirmacionDomicilio> {
             ],
           ) : Container(), 
 
-          // dataProduc == 2 ? Row(
-            // mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            // children: <Widget>[
-              // Text(  producto, style: styleAppBar) ,
-              // Text('Normal', style: styleAppBar),
-            // ],
-          // ) : Container(), 
+          dataProduc == 2 ? Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: <Widget>[
+              Text(  producto, style: styleAppBar) ,
+              Text('Normal', style: styleAppBar),
+            ],
+          ) : Container(), 
 
           dataProduc == 3 ? Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -360,6 +492,8 @@ class _ConfirmacionDomicilioState extends State<ConfirmacionDomicilio> {
       padding: const EdgeInsets.symmetric(horizontal: 15),
       child: Column(
         children: <Widget>[
+
+          dataProduc != 2 ? _contador() : null,
           
           dataProduc == 0 ? Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -378,13 +512,13 @@ class _ConfirmacionDomicilioState extends State<ConfirmacionDomicilio> {
             ],
           ) : Container(), 
 
-          // dataProduc == 2 ? Row(
-            // mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            // children: <Widget>[
-              // Text(  producto, style: styleAppBar) ,
-              // Text('Normal', style: styleAppBar),
-            // ],
-          // ) : Container(), 
+          dataProduc == 2 ? Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: <Widget>[
+              Text(  producto, style: styleAppBar) ,
+              Text('Normal', style: styleAppBar),
+            ],
+          ) : Container(), 
 
           dataProduc == 3 ? Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -405,6 +539,8 @@ class _ConfirmacionDomicilioState extends State<ConfirmacionDomicilio> {
       padding: const EdgeInsets.symmetric(horizontal: 15),
       child: Column(
         children: <Widget>[
+
+          dataProduc != 2 ? _contador() : null,
           
           dataProduc == 0 ? Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -423,13 +559,13 @@ class _ConfirmacionDomicilioState extends State<ConfirmacionDomicilio> {
             ],
           ) : Container(), 
 
-          // dataProduc == 2 ? Row(
-            // mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            // children: <Widget>[
-              // Text(  producto, style: styleAppBar) ,
-              // Text('Normal', style: styleAppBar),
-            // ],
-          // ) : Container(), 
+          dataProduc == 2 ? Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: <Widget>[
+              Text(  producto, style: styleAppBar) ,
+              Text('Normal', style: styleAppBar),
+            ],
+          ) : Container(), 
 
           dataProduc == 3 ? Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -450,6 +586,8 @@ class _ConfirmacionDomicilioState extends State<ConfirmacionDomicilio> {
       padding: const EdgeInsets.symmetric(horizontal: 15),
       child: Column(
         children: <Widget>[
+
+          dataProduc != 2 ? _contador() : null,
           
           dataProduc == 0 ? Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -468,13 +606,13 @@ class _ConfirmacionDomicilioState extends State<ConfirmacionDomicilio> {
             ],
           ) : Container(), 
 
-          // dataProduc == 2 ? Row(
-            // mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            // children: <Widget>[
-              // Text(  producto, style: styleAppBar) ,
-              // Text('Normal', style: styleAppBar),
-            // ],
-          // ) : Container(), 
+          dataProduc == 2 ? Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: <Widget>[
+              Text(  producto, style: styleAppBar) ,
+              Text('Normal', style: styleAppBar),
+            ],
+          ) : Container(), 
 
           dataProduc == 3 ? Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -489,27 +627,74 @@ class _ConfirmacionDomicilioState extends State<ConfirmacionDomicilio> {
     );
   }
 
+
+
   _infoIngredientes({ int tomate, int ensalada, int ripio, int tocineta, int queso, String producto}){
 
-    // return Column(
-    //   children: <Widget>[
+    return Column(
+      children: <Widget>[
 
-    //     // tomate    == 2 ? Container() : _infoIngredienteTomate(tomate, producto),
-    //     // ensalada  == 2 ? Container() : _infoIngredienteEnsalada(ensalada, producto),
-    //     // ripio     == 2 ? Container() : _infoIngredienteRipio(ripio, producto),
-    //     // tocineta  == 2 ? Container() : _infoIngredienteTocineta(tocineta, producto),
-    //     // queso     == 2 ? Container() : _infoIngredienteQueso(queso, producto),
+        tomate    == 2 ? Container() : _infoIngredienteTomate(   tomate,   producto),
+        ensalada  == 2 ? Container() : _infoIngredienteEnsalada( ensalada, producto),
+        ripio     == 2 ? Container() : _infoIngredienteRipio(    ripio,    producto),
+        tocineta  == 2 ? Container() : _infoIngredienteTocineta( tocineta, producto),
+        queso     == 2 ? Container() : _infoIngredienteQueso(    queso,    producto),
 
-    //     // _infoIngredienteTomate(tomate, producto),
-    //     // _infoIngredienteEnsalada(ensalada, producto),
-    //     // _infoIngredienteRipio(ripio, producto),
-    //     // _infoIngredienteTocineta(tocineta, producto),
-    //     // _infoIngredienteQueso(queso, producto),
-  
+        tomate != 2 || ensalada != 2 || ripio != 2 || tocineta != 2 || queso != 2 ? Divider() : Container(),
+
         
-    //   ],
-    // );
 
+      ]
+    );
+  }
+
+  _contador(){
+    this.i++;
     return Container();
+  }
+
+
+  _mostrarAdicion({ int carne, int tocineta, int queso, int ensalada, int numeroDeHamburguesa }) {
+
+    return Column(
+      children: <Widget>[
+
+        _infoAdicion( adicion: carne,     producto: '--Ad Carne # $numeroDeHamburguesa'),
+        _infoAdicion( adicion: tocineta,  producto: '--Ad Tocineta # $numeroDeHamburguesa'),
+        _infoAdicion( adicion: queso,     producto: '--Ad Queso # $numeroDeHamburguesa'),
+        _infoAdicion( adicion: ensalada,  producto: '--Ad Ensalada # $numeroDeHamburguesa'),
+
+        carne > 0 || tocineta > 0 || queso > 0 || ensalada > 0 ? Divider() : Container()
+      ],
+    );
+  }
+
+
+  _infoAdicion( {int adicion, String producto,}  ) {
+    
+    return adicion == 0 ? Container() : 
+    Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 15),
+      child: Column(
+        children: <Widget>[
+
+          adicion > 0 ? _contador() : null,
+          
+          adicion > 0 ? Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: <Widget>[
+
+              Text(  producto, style: styleAppBar) ,
+              // Text('Adición Queso', style: styleAppBar),
+              Text('$adicion', style: styleAppBar),
+            ],
+          ) 
+          : Container(), 
+
+          
+          
+        ],
+      ),
+    );
   }
 }

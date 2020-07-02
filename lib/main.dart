@@ -1,11 +1,14 @@
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:q2/src/pages/confirmacion_domicilio_page.dart';
 import 'package:q2/src/pages/datos_domicilio.dart';
 import 'package:q2/src/pages/esperando_confirmacion_page.dart';
+import 'package:q2/src/pages/introducir_codigo.dart';
 import 'package:q2/src/pages/zona_de_producto.dart';
 import 'package:q2/src/service/authservice.dart';
+import 'package:q2/src/service/lista_hamburgesas_provider.dart';
 
 
 import 'src/bloc/provider.dart';
@@ -27,35 +30,42 @@ void main() => runApp(MyApp());
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return StreamProvider.value(
-      value: FirebaseAuth.instance.onAuthStateChanged,
-      child: Providers(
-        child: MaterialApp(
-          debugShowCheckedModeBanner: false,
-          title: 'Material App',
-          home: AuthService().handleAuth(),
-          routes: {
-            'login'                : (BuildContext context ) => LoginPage(),
-            'header'               : (BuildContext context ) => HeaderProductos(),
-            'home'                 : (BuildContext context ) => HomePage(),
-            'sing in'              : (BuildContext context ) => SingInPage(),
-            'domis'                : (BuildContext context ) => DomisRecibidosPage(),
-            'productos'            : (BuildContext context ) => ProductosPage(),
-            'info domi'            : (BuildContext context ) => InfoDomiPage(),
-            'domi delet'           : (BuildContext context ) => DomisEliminadosPage(),
-            'pedido'               : (BuildContext context ) => PedidoPage(),
-            'ingredientes hambur'  : (BuildContext context ) => HamburgesasIngredientesPage(),
-            'ingredientes perro'   : (BuildContext context ) => PerrosIngredientesPage(),
-            'adiciones'            : (BuildContext context ) => HamburguesaAdicionesPage(),
-            'datosDomisilio'       : (BuildContext context ) => DatosDomicilio(),
-            'confirmacionDomicilio': (BuildContext context ) => ConfirmacionDomicilio(),
-            'esperandoConfirmacion': (BuildContext context ) => EsperandoConfimacionPage()
-          },
-          theme: ThemeData(
-            // primaryColor:  Color.fromRGBO(239 , 184, 16, 1),
-            primaryColor: Colors.yellow
-          ),
-        )
+
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(builder: (context) => ListaHamburguesas(), create: (BuildContext context) => ListaHamburguesas(),)
+      ],
+      child: StreamProvider.value(
+        value: FirebaseAuth.instance.onAuthStateChanged,
+        child: Providers(
+          child: MaterialApp(
+            debugShowCheckedModeBanner: false,
+            title: 'Material App',
+            home: AuthService().handleAuth(),
+            routes: {
+              'login'                : (BuildContext context ) => LoginPage(),
+              'header'               : (BuildContext context ) => HeaderProductos(),
+              'home'                 : (BuildContext context ) => HomePage(),
+              'sing in'              : (BuildContext context ) => SingInPage(),
+              'domis'                : (BuildContext context ) => DomisRecibidosPage(),
+              'productos'            : (BuildContext context ) => ProductosPage(),
+              'info domi'            : (BuildContext context ) => InfoDomiPage(),
+              'domi delet'           : (BuildContext context ) => DomisEliminadosPage(),
+              'pedido'               : (BuildContext context ) => PedidoPage(),
+              'ingredientes hambur'  : (BuildContext context ) => HamburgesasIngredientesPage(),
+              'ingredientes perro'   : (BuildContext context ) => PerrosIngredientesPage(),
+              'adiciones'            : (BuildContext context ) => HamburguesaAdicionesPage(),
+              'datosDomisilio'       : (BuildContext context ) => DatosDomicilio(),
+              'confirmacionDomicilio': (BuildContext context ) => ConfirmacionDomicilio(),
+              'esperandoConfirmacion': (BuildContext context ) => EsperandoConfimacionPage(),
+              'introducirCodigo'     : (BuildContext context ) => IntroducirCodigoMsj()
+            },
+            theme: ThemeData(
+              // primaryColor:  Color.fromRGBO(239 , 184, 16, 1),
+              primaryColor: Colors.yellow
+            ),
+          )
+        ),
       ),
     ); 
   }

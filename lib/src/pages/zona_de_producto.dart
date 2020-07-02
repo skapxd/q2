@@ -212,17 +212,19 @@ class _HeaderProductosState extends State<HeaderProductos> {
                 height: 40,
                 child: IconButton(
                   icon: Icon(Icons.add, color:  Color.fromRGBO(161, 35, 18, 1),), 
-                  onPressed: (){
-                  setState(() {
+                //   onPressed: producto[1] < 10 ? (){
+                //   setState(() {
                     
 
-                    producto[1] +=1;
+                //     producto[1] +=1;
                     
-                  });
-                }),
+                //   });
+                onPressed: producto[1] < 10 ? () => cambiarValorDeProdcuto(producto, 1) : null
+                // }) : null;,
+                )
               ),
               SizedBox( width: 15,)
-
+              
             ],
           ),
         )
