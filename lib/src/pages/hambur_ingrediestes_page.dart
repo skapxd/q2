@@ -143,8 +143,6 @@ class _IngredientesPageState extends State<HamburgesasIngredientesPage> {
 
   cambiarValorDeLista({ int i, int index, String str, String productoPaginaAnterior}) {
 
-    // print(productoPaginaAnterior);
-
     setState(() {
 
       str == 'Tomate'   ? _ingredienteTomate[index]   += i : _ingredienteTomate   = _ingredienteTomate;
@@ -156,22 +154,7 @@ class _IngredientesPageState extends State<HamburgesasIngredientesPage> {
       // productoPaginaAnterior == 'especial' ? print(listaHamburgesas.especialIngredienteTomate) : print('object');
 
       if (productoPaginaAnterior == 'especial' || productoPaginaAnterior == 'especiales') {
-        // // Ingredientes
-        // data.cantidadEspecialIngredientesTomate(_ingredienteTomate);
-        // data.cantidadEspecialIngredientesEnsalada(_ingredienteEnsalada);
-        // data.cantidadEspecialIngredientesRipio(_ingredienteRipio);
-        // data.cantidadEspecialIngredientesTocineta(_ingredienteTocineta);
-        // data.cantidadEspecialIngredientesQueso(_ingredienteQueso);
-        // // Adiciones
-        // data.cantidadEspecialAdicionCarne(_adicionCarne);
-        // data.cantidadEspecialAdicionTocineta(_adicionTocineta);
-        // data.cantidadEspecialAdicionQueso(_adicionQueso);
-        // data.cantidadEspecialAdicionEnsalada(_adicionEnsalada);
 
-        // print(_ingredienteQueso);
-        // print(data.especialIngredientesQueso);
-
-        print('especial');
         listaHamburgesas.especialIngredienteTomate    = _ingredienteTomate;
         listaHamburgesas.especialIngredienteEnsalada  = _ingredienteEnsalada;
         listaHamburgesas.especialIngredienteRipio     = _ingredienteRipio;
@@ -183,48 +166,32 @@ class _IngredientesPageState extends State<HamburgesasIngredientesPage> {
         listaHamburgesas.especialAdicioEnsalada       = _adicionEnsalada;
         listaHamburgesas.especialAdicionQueso         = _adicionQueso;
 
-        // print(listaHamburgesas.especialIngredienteTomate);
-
-        
-
-
-
-
-
       } else if( productoPaginaAnterior == 'super'){
-        // // Ingredientes
-        // data.cantidadSuperIngredientesTomate(_ingredienteTomate);
-        // data.cantidadSuperIngredientesEnsalada(_ingredienteEnsalada);
-        // data.cantidadSuperIngredientesRipio(_ingredienteRipio);
-        // data.cantidadSuperIngredientesTocineta(_ingredienteTocineta);
-        // data.cantidadSuperIngredientesQueso(_ingredienteQueso);
-        // // Adiciones
-        // data.cantidadSuperAdicionCarne(_adicionCarne);
-        // data.cantidadSuperAdicionTocineta(_adicionTocineta);
-        // data.cantidadSuperAdicionQueso(_adicionQueso);
-        // data.cantidadSuperAdicionEnsalada(_adicionEnsalada);
 
-        // print('super');
-        // print(_ingredienteQueso);
-        // print(data.superIngredientesQueso);
+        listaHamburgesas.superIngredienteTomate    = _ingredienteTomate;
+        listaHamburgesas.superIngredienteEnsalada  = _ingredienteEnsalada;
+        listaHamburgesas.superIngredienteRipio     = _ingredienteRipio;
+        listaHamburgesas.superIngredienteTocineta  = _ingredienteTocineta;
+        listaHamburgesas.superIngredienteQueso     = _ingredienteQueso;
 
+        listaHamburgesas.superAdicionCarne         = _adicionCarne;
+        listaHamburgesas.superAdicionTocineta      = _adicionTocineta;
+        listaHamburgesas.superAdicioEnsalada       = _adicionEnsalada;
+        listaHamburgesas.superAdicionQueso         = _adicionQueso;
 
       } else if( productoPaginaAnterior == 'trisuper') {
-        // Ingredientes
-        // data.cantidadTrisuperIngredientesTomate(_ingredienteTomate);
-        // data.cantidadTrisuperIngredientesEnsalada(_ingredienteEnsalada);
-        // data.cantidadTrisuperIngredientesRipio(_ingredienteRipio);
-        // data.cantidadTrisuperIngredientesTocineta(_ingredienteTocineta);
-        // data.cantidadTrisuperIngredientesQueso(_ingredienteQueso);
-        // // Adiciones
-        // data.cantidadTrisuperAdicionCarne(_adicionCarne);
-        // data.cantidadTrisuperAdicionTocineta(_adicionTocineta);
-        // data.cantidadTrisuperAdicionQueso(_adicionQueso);
-        // data.cantidadTrisuperAdicionEnsalada(_adicionEnsalada);
 
-        // print('trisuper');
-        // print(_ingredienteQueso);
-        // print(data.triSuperIngredientesQueso);
+        listaHamburgesas.trisuperIngredienteTomate    = _ingredienteTomate;
+        listaHamburgesas.trisuperIngredienteEnsalada  = _ingredienteEnsalada;
+        listaHamburgesas.trisuperIngredienteRipio     = _ingredienteRipio;
+        listaHamburgesas.trisuperIngredienteTocineta  = _ingredienteTocineta;
+        listaHamburgesas.trisuperIngredienteQueso     = _ingredienteQueso;
+
+        listaHamburgesas.trisuperAdicionCarne         = _adicionCarne;
+        listaHamburgesas.trisuperAdicionTocineta      = _adicionTocineta;
+        listaHamburgesas.trisuperAdicioEnsalada       = _adicionEnsalada;
+        listaHamburgesas.trisuperAdicionQueso         = _adicionQueso;
+        print('hola');
 
       } else if (productoPaginaAnterior == 'perro grande con tocineta'){
         print(productoPaginaAnterior);
@@ -413,6 +380,8 @@ Widget _adicones( BuildContext context, { String adicion, String precio,  List<i
                   icon: Icon(Icons.remove, color: Color.fromRGBO(161, 35, 18, 1),), 
                   onPressed: () {
 
+                    cambiarValorDeLista(productoPaginaAnterior: productoPaginaAnterior);
+
                     setState(() {
                       
                       _adicionCarne[index]    = adicion == 'Carne'    && _adicionCarne[index]     > 0 ? _adicionCarne[index]    -= 1 : _adicionCarne[index]     =  _adicionCarne[index];
@@ -446,6 +415,8 @@ Widget _adicones( BuildContext context, { String adicion, String precio,  List<i
                 child: IconButton(
                   icon: Icon(Icons.add, color:  Color.fromRGBO(161, 35, 18, 1),), 
                   onPressed: (){
+
+                    cambiarValorDeLista(productoPaginaAnterior: productoPaginaAnterior);
 
                     setState(() {
 
