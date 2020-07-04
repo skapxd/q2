@@ -4,7 +4,7 @@ import 'package:q2/src/bloc/producto_bloc.dart';
 // import 'package:q2/src/bloc/producto_bloc.dart';
 import 'package:q2/src/bloc/provider.dart';
 import 'package:q2/src/service/database.dart';
-import 'package:q2/src/service/lista_hamburgesas_provider.dart';
+import 'package:q2/src/providers/lista_hamburgesas_provider.dart';
 import 'package:q2/src/widgets/mostrar_factura.dart';
 
 class ConfirmacionDomicilio extends StatefulWidget {
@@ -77,23 +77,7 @@ class _ConfirmacionDomicilioState extends State<ConfirmacionDomicilio> {
         ),
       ),
       
-      body: SafeArea(
-        child: Center(
-          child: Padding(
-            padding: EdgeInsets.only(top: 20, right: 20, left: 20, bottom: 80),
-            child: Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10),
-                color: Colors.white,
-              ),
-              width: double.infinity,
-              child: SingleChildScrollView(
-                child: ImportarFactura(),
-              ),
-            ),
-          ),
-        ),
-      )
+      body: ImportarFactura(),
     );
   }
 

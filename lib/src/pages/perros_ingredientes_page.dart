@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:q2/src/bloc/producto_bloc.dart';
 import 'package:q2/src/bloc/provider.dart';
+import 'package:q2/src/providers/lista_hamburgesas_provider.dart';
 
 
 
@@ -11,61 +14,68 @@ class PerrosIngredientesPage extends StatefulWidget {
 
 class _IngredientesPageState extends State<PerrosIngredientesPage> {
 
-  final TextStyle styleAppBar              = TextStyle( fontSize: 30, fontWeight: FontWeight.bold, fontStyle: FontStyle.italic, color: Color.fromRGBO(239 , 184, 16, 1));
+  final TextStyle styleAppBar              = TextStyle( fontSize: 30, fontWeight: FontWeight.bold, fontStyle: FontStyle.italic, color: Color.fromRGBO(161, 35, 18, 1),);
   final TextStyle styleProducto            = TextStyle( fontSize: 25, fontWeight: FontWeight.bold, fontStyle: FontStyle.italic );
+  final TextStyle styleSubProducto         = TextStyle( fontSize: 22, fontWeight: FontWeight.bold, fontStyle: FontStyle.italic );
+  final TextStyle styleCantidad            = TextStyle( fontSize: 15, fontWeight: FontWeight.bold, fontStyle: FontStyle.italic );
+  final TextStyle stylePrecioSubProducto   = TextStyle( fontSize: 20, fontWeight: FontWeight.bold, fontStyle: FontStyle.italic );
   final TextStyle styleSubTitleProducto    = TextStyle( fontSize: 15, fontWeight: FontWeight.bold, fontStyle: FontStyle.italic, color: Colors.red );
   final TextStyle styleCantidadSubProducto = TextStyle( fontSize: 20, fontWeight: FontWeight.bold, fontStyle: FontStyle.italic, color: Color.fromRGBO(161, 35, 18, 1) );
   
-  List _ensalada      = new List.filled( 30, true);
-  List _ripio         = new List.filled( 30, true);
-  List _salsas        = new List.filled( 30, true);
-  List _queso         = new List.filled( 30, true); 
+  final List<String> nadaPocoNormalExtraLista = ['Nada', 'Poco', 'Normal', 'Extra'];
 
-  List _roja          = new List.filled( 30, true);
-  List _rosada        = new List.filled( 30, true);
-  List _mostaza       = new List.filled( 30, true);
-  List _pina          = new List.filled( 30, true);
-  List _bBQ           = new List.filled( 30, false);
-  List _mayonesa      = new List.filled( 30, false);
-  List _guacamole     = new List.filled( 30, false);
-  List _picante       = new List.filled( 30, false);
-  List _ajo           = new List.filled( 30, false);
-  List _maiz          = new List.filled( 30, false);
-  List _cebollaSofita = new List.filled( 30, false);
-  List _cebollaCruda  = new List.filled( 30, false);
+  List<int> _ingredienteEnsalada = List.filled(10, 2);
+  List<int> _ingredienteRipio    = List.filled(10, 2);
+  List<int> _ingredienteTocineta = List.filled(10, 2);
+  List<int> _ingredienteQueso    = List.filled(10, 2);
 
+  List<int> _adicionTocineta = new List.filled(10, 0);
+  List<int> _adicionQueso    = new List.filled(10, 0);
+  List<int> _adicionEnsalada = new List.filled(10, 0);
+
+  int  lista   = 0;
   int cantidad = 1;
+
+  ProductoBloc data = ProductoBloc();
+
+  ListaHamburguesas listaHamburgesas = ListaHamburguesas();
 
   @override
   Widget build(BuildContext context) {
 
+    this.listaHamburgesas = Provider.of<ListaHamburguesas>(context);
+
+    this.data = Providers.ofProducto(context);
     
     final List producto = ModalRoute.of(context).settings.arguments;
 
     // final bloc = Provider.ofProducto(context);
   
     final height = MediaQuery.of(context).size.height;
-
+    final width = MediaQuery.of(context).size.width;
 
     return Scaffold(
+      
+      backgroundColor: Color.fromRGBO(238, 241, 249, 1),
 
       floatingActionButton: FloatingActionButton(
-        onPressed: () => Navigator.pushNamed(context, 'pedido'),
-        backgroundColor: Colors.red,
+        onPressed: () {
+          Navigator.pushNamed(context, 'datosDomisilio');
+        },
+        // backgroundColor: Colors.red,
+        backgroundColor: Color.fromRGBO(239 , 184, 16, 1),
         child: Icon(
           Icons.navigate_next,
           size: 50,
         ),
       ),
-      
-      backgroundColor: Color.fromRGBO(161, 35, 18, 1),
+
       body: StreamBuilder<Object>(
         stream: producto[0],
         initialData: 0,
         builder: (context, snapshot) {
-          
 
-          return SingleChildScrollView(
+          return SingleChildScrollView( 
             child: Column(
               children: <Widget>[
 
@@ -73,61 +83,49 @@ class _IngredientesPageState extends State<PerrosIngredientesPage> {
 
                 SizedBox( height:  height * 0.015, ),
 
-                Center(
-                  child: Text('Ingredientes', style: styleAppBar,)
+                // Center(
+                //   child: Text('Ingredientes', style: styleAppBar,)
+                // ),
+                ListTile(
+                title:  Row(
+                  children: <Widget>[
+                    SizedBox(width: 30,),
+                    Text('Ingredientes', style: styleAppBar,),
+                  ],
                 ),
+                leading: IconButton(
+                  icon: Icon(Icons.arrow_back_ios), 
+                  onPressed: () {
+                    Navigator.pop(context);
+                  }
+                ),
+              ),
                   
                 SizedBox( height:  height * 0.035, ),
 
-                Center(
-                  child: Text('Tienes ${ snapshot.data } ${producto[1]}' , style: styleAppBar,)
-                ),
-
                 SizedBox( height:  height * 0.015, ),
 
-                Center(
-                  child: Text('Cuantas deseas modificar?' , style: styleAppBar,)
-                ),
+                _cardproductoCompleto(width: width, index: 0, valor: 1 , stream: producto[0],productoPaginaAnterior: producto[1],  ), 
 
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
+                _cardproductoCompleto(width: width, index: 1, valor: 2 , stream: producto[0],productoPaginaAnterior: producto[1] ), 
 
-                    IconButton(
-                      icon: Icon(Icons.remove, color: Color.fromRGBO(239 , 184, 16, 1),), 
-                      onPressed: cantidad > 1  ? () => cambiarValorDeProdcuto( -1) : null
-                    ),
+                _cardproductoCompleto(width: width, index: 2, valor: 3 , stream: producto[0],productoPaginaAnterior: producto[1] ), 
 
-                    Container(
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(20),
-                        child: Container(
-                          width:  30,
-                          height: 30,
-                          child: Center(
-                            child: Text('$cantidad', style: styleCantidadSubProducto,)
-                          ),
-                          
-                          color: Colors.white,
-                        ),
-                      ),
-                    ),
+                _cardproductoCompleto(width: width, index: 3, valor: 4 , stream: producto[0],productoPaginaAnterior: producto[1] ), 
 
-                    IconButton(
-                      icon: Icon(Icons.add, color: Color.fromRGBO(239 , 184, 16, 1),), 
-                      onPressed:  cantidad < snapshot.data ? () => cambiarValorDeProdcuto( 1) : null
-                    )
-                  ],
-                ),
+                _cardproductoCompleto(width: width, index: 4, valor: 5 , stream: producto[0],productoPaginaAnterior: producto[1] ), 
 
-                SizedBox(height: 20,),
+                _cardproductoCompleto(width: width, index: 5, valor: 6 , stream: producto[0],productoPaginaAnterior: producto[1] ), 
 
-                _cardIngredientes( producto[0], producto[1] ),
+                _cardproductoCompleto(width: width, index: 6, valor: 7 , stream: producto[0],productoPaginaAnterior: producto[1] ), 
 
-                _cardSalsasCasa( producto[0], producto[1] ),
+                _cardproductoCompleto(width: width, index: 8, valor: 9 , stream: producto[0],productoPaginaAnterior: producto[1] ),
 
-                SizedBox( height: 40,)
-              ],
+                _cardproductoCompleto(width: width, index: 9, valor: 10, stream: producto[0],productoPaginaAnterior: producto[1] ),
+
+
+                SizedBox( height: 20,),
+              ]
             ),
           );
         }
@@ -137,205 +135,279 @@ class _IngredientesPageState extends State<PerrosIngredientesPage> {
 
 
 
-  cambiarValorDeProdcuto(  int i  ) {
+  cambiarValorDeLista({ int i, int index, String str, String productoPaginaAnterior}) {
 
-    setState( () =>  cantidad +=i );
-  }
+    setState(() {
+
+      str == 'Ensalada' ? _ingredienteEnsalada[index] += i : _ingredienteEnsalada = _ingredienteEnsalada;
+      str == 'Ripio'    ? _ingredienteRipio[index]    += i : _ingredienteRipio    = _ingredienteRipio;
+      str == 'Tocineta' ? _ingredienteTocineta[index] += i : _ingredienteTocineta = _ingredienteTocineta;
+      str == 'Queso'    ? _ingredienteQueso[index]    += i : _ingredienteQueso    = _ingredienteQueso;
 
 
 
+      if (productoPaginaAnterior == 'perro grande con tocineta'){
+        print(productoPaginaAnterior);
 
-   _cardIngredientes( Stream bloc, String nombre) {
+      } else if( productoPaginaAnterior == 'perro grande') {
+        print(productoPaginaAnterior);
 
-    
-    List<Widget> cards = [];
+      } else if ( productoPaginaAnterior == 'perro pequeño con tocineta'){
+        print(productoPaginaAnterior);
 
-    List<Widget> numCards = new List( cantidad );
-  
-    numCards.forEach((i){
-      
-      StreamBuilder streamBuilder = StreamBuilder(
+      } else if ( productoPaginaAnterior == 'perro pequeño') {
+        print(productoPaginaAnterior);
 
-        stream: bloc ,
-        initialData: 0,
-        builder: (BuildContext context, AsyncSnapshot snapshot){
-          
-          return Container(
-            padding: EdgeInsets.symmetric( horizontal: 10, vertical: 20),
-            width: double.infinity,
-            // height: 200,
-            child: Card(
-              color: Color.fromRGBO(239 , 184, 16, 1),
-              elevation: 10.0,
-              shape: RoundedRectangleBorder( borderRadius: BorderRadius.circular(20.0) ),
-              child: Column(
-                children: <Widget>[
+      } else if( productoPaginaAnterior == 'perra grande') {
+        print(productoPaginaAnterior);
 
-                  Container(
-                    padding: EdgeInsets.symmetric( vertical: 10),
-                    child: Center(child: Text('Ingredientes del producto # $cantidad ', style: styleCantidadSubProducto,),)
-                  ),
-                    
-                  _checkBoxIngredientes( producto: _ensalada, texto: 'Ensalada',index: cantidad-1),
-                  _checkBoxIngredientes( producto: _ripio,    texto: 'Ripio',   index: cantidad-1),
-                  _checkBoxIngredientes( producto: _salsas,   texto: 'Todas las salsas',  index: cantidad-1),
-                  _checkBoxIngredientes( producto: _queso,    texto: 'Queso',   index: cantidad-1),
+      } else if ( productoPaginaAnterior == 'perra pequeña') {
+        print(productoPaginaAnterior);
 
-                  Column(
-                    children: <Widget>[
-                      RaisedButton(
-                      child: Text('Listo', style: styleCantidadSubProducto,),
-                      elevation: 0,
-                      shape: StadiumBorder() ,
-                      onPressed: () {
-                        Navigator.pop(context);
-                      }
-                    ),
-                    ],
-                  )
-                  
-                ],
-              ),
-            ),
-          );
-
-          
-        },
-        
-      );
-
+      }
       
       
-      cards.add(streamBuilder);
-
     });
 
-    return cards[cantidad-1];
   }
 
 
 
-  Widget _checkBoxIngredientes ({ List producto, String texto, int index }) {
+  _cardproductoCompleto({ double width, int index, int valor, Stream stream, String productoPaginaAnterior }) {
     
-    final bloc = Providers.ofPerrosIngredientes(context);
 
-    return CheckboxListTile(
-      activeColor: Colors.white,
-      checkColor: Color.fromRGBO(161, 35, 18, 1),
-      value: producto[ index ], 
-      title: Text( texto, style: styleCantidadSubProducto, ),
-      onChanged: (valor) {
+    List<int> hamburguesa = new List.filled(10, 1);
 
-        setState(() {
-          
-          _ensalada[index] = texto == 'Ensalada' ? valor : _ensalada[index];
-          _ripio[index]    = texto == 'Ripio'    ? valor : _ripio[index];
-          _salsas[index]   = texto == 'Todas las salsas'   ? valor : _salsas[index];
-          _queso[index]    = texto == 'Queso'    ? valor : _queso[index];
+    hamburguesa[index] = valor;
 
-          
-          bloc.ensaladaControllerCantidad( _ensalada );
-          bloc.ripioControllerCantidad(    _ripio    );
-          bloc.salsasControllerCantidad(   _salsas   );
-          bloc.quesoControllerCantidad(    _queso    );
+    return StreamBuilder<Object>(
+      initialData: 1,
+      stream: stream,
+      builder: (context, snapshot) {
 
-        });
-      }
-    );
-  }
+        final _info = Container(
+          child: Column(
+            children: <Widget>[
 
-
-
-  _cardSalsasCasa(Stream bloc, String nombre) {
-
-    StreamBuilder streamBuilder = StreamBuilder(
-      stream: bloc ,
-      builder: (BuildContext context, AsyncSnapshot snapshot){
-
-        return Container(
-            padding: EdgeInsets.symmetric( horizontal: 10, vertical: 20),
-            width: double.infinity,
-            // height: 200,
-            child: Card(
-              color: Color.fromRGBO(239 , 184, 16, 1),
-              elevation: 10.0,
-              shape: RoundedRectangleBorder( borderRadius: BorderRadius.circular(20.0) ),
-              child: Column(
+              Wrap(
                 children: <Widget>[
-
-                  Container(
-                    padding: EdgeInsets.symmetric( vertical: 10),
-                    child: Center(child: Text('Salsas del producto # $cantidad ', style: styleCantidadSubProducto,),)
+                  SizedBox(width: 30,),
+                  Text(
+                    '$productoPaginaAnterior # ${hamburguesa[index]}', 
+                    style: TextStyle( fontSize: 25, fontWeight: FontWeight.bold ),
+                    textAlign: TextAlign.justify
                   ),
-                    
-                  _checkBoxSalsas( producto: _roja,          texto: 'Roja',            index: cantidad-1),
-                  _checkBoxSalsas( producto: _rosada,        texto: 'Rosada',          index: cantidad-1),
-                  _checkBoxSalsas( producto: _mostaza,       texto: 'Mostaza',         index: cantidad-1),
-                  _checkBoxSalsas( producto: _bBQ,           texto: 'BBQ',             index: cantidad-1),
-                  _checkBoxSalsas( producto: _pina,          texto: 'Pina',            index: cantidad-1),
-                  _checkBoxSalsas( producto: _mayonesa,      texto: 'Mayonesa',        index: cantidad-1),
-                  _checkBoxSalsas( producto: _guacamole,     texto: 'Guacamole',       index: cantidad-1),
-                  _checkBoxSalsas( producto: _picante,       texto: 'Picante',         index: cantidad-1),
-                  _checkBoxSalsas( producto: _ajo,           texto: 'Ajo',             index: cantidad-1),
-                  _checkBoxSalsas( producto: _maiz,          texto: 'Maíz',            index: cantidad-1),
-                  _checkBoxSalsas( producto: _cebollaSofita, texto: 'Cebolla Sofrita', index: cantidad-1),
-                  _checkBoxSalsas( producto: _cebollaCruda,  texto: 'Cebolla Cruda',   index: cantidad-1),
-
-                  
                 ],
               ),
-            ),
-          );
-      },
-    );
 
-    return _salsas[cantidad-1] == false ? streamBuilder : Container();
+              SizedBox(height: 30,),
+
+              Image(image: AssetImage('images/perros.png')),
+
+              Divider( thickness: 1, color: Colors.black45, indent: 15, endIndent: 15,),
+
+              // Text(i),
+
+              _cardIngredientes( producto: 'Ensalada', width: width, i: _ingredienteEnsalada,  index: index, productoPaginaAnterior: productoPaginaAnterior),
+              _cardIngredientes( producto: 'Ripio',    width: width, i: _ingredienteRipio,     index: index, productoPaginaAnterior: productoPaginaAnterior),
+              _cardIngredientes( producto: 'Tocineta', width: width, i: _ingredienteTocineta,  index: index, productoPaginaAnterior: productoPaginaAnterior),
+              _cardIngredientes( producto: 'Queso',    width: width, i: _ingredienteQueso,     index: index, productoPaginaAnterior: productoPaginaAnterior),
+
+              _adicones(context, adicion: 'Tocineta', precio: '2.500', producto: _adicionTocineta, index: index, productoPaginaAnterior: productoPaginaAnterior),
+              _adicones(context, adicion: 'Queso',    precio: '3.000', producto: _adicionQueso,    index: index, productoPaginaAnterior: productoPaginaAnterior),
+              _adicones(context, adicion: 'Ensalada', precio: '2.500', producto: _adicionEnsalada, index: index, productoPaginaAnterior: productoPaginaAnterior),
+
+              SizedBox(height: 60,),
+              
+            ],
+          ),
+        );
+
+        final container = index < snapshot.data  ? _info : Container();
+
+        return container;
+      }
+    );
   }
 
 
-  Widget _checkBoxSalsas ({ List producto, String texto, int index }) {
-    
-    final bloc = Providers.ofPerrosIngredientes(context);
 
-    return CheckboxListTile(
-      activeColor: Colors.white,
-      checkColor: Color.fromRGBO(161, 35, 18, 1),
-      value: producto[ index ], 
-      title: Text( texto, style: styleCantidadSubProducto, ),
-      onChanged: (valor) {
+  _cardIngredientes({  String producto, double width, int index, List<int> i, String productoPaginaAnterior}) {
 
-        setState(() {
-          
-          _roja[index]          = texto == 'Roja'            ? valor : _roja[index];
-          _rosada[index]        = texto == 'Rosada'          ? valor : _rosada[index];
-          _mostaza[index]       = texto == 'Mostaza'         ? valor : _mostaza[index];
-          _bBQ[index]           = texto == 'BBQ'             ? valor : _bBQ[index];
-          _pina[index]          = texto == 'Piña'            ? valor : _pina[index];
-          _mayonesa[index]      = texto == 'Mayonesa'        ? valor : _mayonesa[index];
-          _guacamole[index]     = texto == 'Guacamole'       ? valor : _guacamole[index];
-          _picante[index]       = texto == 'Picante'         ? valor : _picante[index];
-          _ajo[index]           = texto == 'Ajo'             ? valor : _ajo[index];
-          _maiz[index]          = texto == 'Maíz'            ? valor : _maiz[index];
-          _cebollaSofita[index] = texto == 'Cebolla Sofrita' ? valor : _cebollaSofita[index];
-          _cebollaCruda[index]  = texto == 'Cebolla Cruda'   ? valor : _cebollaCruda[index];
+    return Container(
+      padding: EdgeInsets.symmetric( horizontal: 5, vertical: 5),
+      width: double.infinity,
+      height: 80,
+      child: Card(
+        
+        color: Colors.white,
+        shape: RoundedRectangleBorder( borderRadius: BorderRadius.circular(10.0) ),
+        child: Row(
 
-          
-          bloc.rojaControllerCantidad(      _roja     );
-          bloc.rosadaControllerCantidad(    _rosada   );
-          bloc.mostazaControllerCantidad(   _mostaza  );
-          bloc.bBQControllerCantidad(       _bBQ      );
-          bloc.pinaControllerCantidad(      _pina     );
-          bloc.mayonesaControllerCantidad(  _mayonesa );
-          bloc.guacamoleControllerCantidad( _guacamole);
-          bloc.picanteControllerCantidad(   _picante  );
-          bloc.ajoControllerCantidad(       _ajo      );
-          bloc.maizControllerCantidad(      _maiz     );
+          mainAxisAlignment: MainAxisAlignment.end,
+          children: <Widget>[
 
-          bloc.cebollaSofritaControllerCantidad( _cebollaSofita );
-          bloc.cebollaCrudaControllerCantidad(   _cebollaCruda  );
+            SizedBox(width: 20,),
 
-        });
-      }
+            Expanded(
+              
+              child: Text(producto, style: TextStyle( fontWeight: FontWeight.bold ))
+            ),
+
+            IconButton(
+              icon: Icon(Icons.remove, color: Color.fromRGBO(161, 35, 18, 1),), 
+              onPressed: i[index] > 0  ? () => cambiarValorDeLista( i: -1, index: index, str: producto, productoPaginaAnterior: productoPaginaAnterior) : null,
+              splashColor: Color.fromRGBO(255, 255, 255, 0),
+              highlightColor: Color.fromRGBO(255, 255, 255, 0),
+            ),
+
+            Container(
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(20),
+                child: Container(
+                  width: 80,
+                  height: 30,
+                  child: Center(
+                    child: Text('${ nadaPocoNormalExtraLista[i[index]] }', style: styleCantidadSubProducto,)
+                  ),
+                  
+                  color: Colors.white,
+                ),
+              ),
+            ),
+
+            IconButton(
+              icon: Icon(Icons.add, color: Color.fromRGBO(161, 35, 18, 1),), 
+              onPressed:  i[index] < 3 ? () => cambiarValorDeLista( i: 1, index: index, str: producto, productoPaginaAnterior: productoPaginaAnterior) : null ,
+              splashColor: Color.fromRGBO(255, 255, 255, 0),
+              highlightColor: Color.fromRGBO(255, 255, 255, 0),
+            )
+          ],
+        )
+      ),
     );
+        
+  }
+
+
+
+
+Widget _adicones( BuildContext context, { String adicion, String precio,  List<int> producto, int index, String productoPaginaAnterior } ){
+
+    return Column(
+      children: <Widget>[
+
+        ListTile( 
+          contentPadding: EdgeInsets.symmetric( horizontal: 30 ) ,
+          title: Text( adicion, style: styleSubProducto,),
+          
+          trailing: ClipRRect(
+            borderRadius: BorderRadius.circular(20),
+            child: Container(
+              width:  70,
+              height: 30,
+              child: Center(child: Text( precio, style: stylePrecioSubProducto,)),
+              color: Colors.white,
+            ),
+          ),
+        ),
+
+        SizedBox(
+          height: 35,
+          child: Row(
+            // crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: <Widget>[
+
+              SizedBox(
+                
+                child: Container(
+                  child: Text('Cantidad', style: styleCantidad,),
+                ),
+              ),
+
+              SizedBox( width: 10,),
+
+              SizedBox(
+                height: 40,
+                child: IconButton(
+                  // highlightColor: Colors.white,
+                  icon: Icon(Icons.remove, color: Color.fromRGBO(161, 35, 18, 1),), 
+                  onPressed: () {
+
+                    cambiarValorDeLista(productoPaginaAnterior: productoPaginaAnterior);
+
+                    setState(() {
+                      
+                      _adicionTocineta[index] = adicion == 'Tocineta' && _adicionTocineta[index]  > 0 ? _adicionTocineta[index] -= 1 : _adicionTocineta[index]  = _adicionTocineta[index];   
+                      _adicionQueso[index]    = adicion == 'Queso'    && _adicionQueso[index]     > 0 ? _adicionQueso[index]    -= 1 : _adicionQueso[index]     = _adicionQueso[index];     
+                      _adicionEnsalada[index] = adicion == 'Ensalada' && _adicionEnsalada[index]  > 0 ? _adicionEnsalada[index] -= 1 : _adicionEnsalada[index]  = _adicionEnsalada[index];            
+                    });
+
+                  }
+              
+                ),
+              ),
+
+              Container(
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(20),
+                  child: Container(
+                    width:  30,
+                    height: 30,
+                    child: Center(
+                      child: validarTexto( adicion: adicion, index: index)
+                    ),
+                    
+                    color: Colors.white,
+                  ),
+                ),
+              ),
+              
+              SizedBox(
+                height: 40,
+                child: IconButton(
+                  icon: Icon(Icons.add, color:  Color.fromRGBO(161, 35, 18, 1),), 
+                  onPressed: (){
+
+                    cambiarValorDeLista(productoPaginaAnterior: productoPaginaAnterior);
+
+                    setState(() {
+
+                      _adicionTocineta[index] = adicion == 'Tocineta' && _adicionTocineta[index]  < 3 ? _adicionTocineta[index] += 1 : _adicionTocineta[index]  = _adicionTocineta[index];
+                      _adicionQueso[index]    = adicion == 'Queso'    && _adicionQueso[index]     < 3 ? _adicionQueso[index]    += 1 : _adicionQueso[index]     = _adicionQueso[index];
+                      _adicionEnsalada[index] = adicion == 'Ensalada' && _adicionEnsalada[index]  < 3 ? _adicionEnsalada[index] += 1 : _adicionEnsalada[index]  = _adicionEnsalada[index];
+                    }); 
+                  }
+                ),
+              ),
+              SizedBox( width: 15,)
+
+            ],
+          ),
+        )
+      ],
+    );
+  
+  }
+
+
+
+   validarTexto({ String adicion, int index }) {
+
+
+    if ( adicion == 'Tocineta' ) {
+      
+      return Text( '${_adicionTocineta[index]}', style: styleCantidadSubProducto,);
+
+    } else if ( adicion == 'Queso' ){
+      
+      return Text( '${_adicionQueso[index]}', style: styleCantidadSubProducto,);
+
+    } else if( adicion == 'Ensalada' ) {
+      
+      return Text( '${_adicionEnsalada[index]}', style: styleCantidadSubProducto,);
+
+    }
   }
 }

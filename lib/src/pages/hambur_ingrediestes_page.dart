@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:q2/src/bloc/producto_bloc.dart';
 import 'package:q2/src/bloc/provider.dart';
-import 'package:q2/src/service/lista_hamburgesas_provider.dart';
+import 'package:q2/src/providers/lista_hamburgesas_provider.dart';
 
 
 
@@ -58,10 +58,6 @@ class _IngredientesPageState extends State<HamburgesasIngredientesPage> {
 
     return Scaffold(
       
-      // backgroundColor: Color.fromRGBO(161, 35, 18, 1),
-
-      // backgroundColor: Color.fromRGBO(245, 245, 240, 1),
-
       backgroundColor: Color.fromRGBO(238, 241, 249, 1),
 
       floatingActionButton: FloatingActionButton(
@@ -151,8 +147,6 @@ class _IngredientesPageState extends State<HamburgesasIngredientesPage> {
       str == 'Tocineta' ? _ingredienteTocineta[index] += i : _ingredienteTocineta = _ingredienteTocineta;
       str == 'Queso'    ? _ingredienteQueso[index]    += i : _ingredienteQueso    = _ingredienteQueso;
 
-      // productoPaginaAnterior == 'especial' ? print(listaHamburgesas.especialIngredienteTomate) : print('object');
-
       if (productoPaginaAnterior == 'especial' || productoPaginaAnterior == 'especiales') {
 
         listaHamburgesas.especialIngredienteTomate    = _ingredienteTomate;
@@ -223,7 +217,7 @@ class _IngredientesPageState extends State<HamburgesasIngredientesPage> {
   _cardproductoCompleto({ double width, int index, int valor, Stream stream, String productoPaginaAnterior }) {
     
 
-    List<int> hamburguesa = new List.filled(30, 1);
+    List<int> hamburguesa = new List.filled(10, 1);
 
     hamburguesa[index] = valor;
 
@@ -433,7 +427,6 @@ Widget _adicones( BuildContext context, { String adicion, String precio,  List<i
             ],
           ),
         )
-
       ],
     );
   
@@ -450,8 +443,6 @@ Widget _adicones( BuildContext context, { String adicion, String precio,  List<i
     } else if ( adicion == 'Tocineta' ) {
       
       return Text( '${_adicionTocineta[index]}', style: styleCantidadSubProducto,);
-      // print(listaHamburgesas.especialIngredienteTomate[0]);
-      // return Text( '${listaHamburgesas.especialIngredienteTomate[0] ?? 0}', style: styleCantidadSubProducto,);
 
     } else if ( adicion == 'Queso' ){
       

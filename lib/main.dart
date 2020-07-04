@@ -8,13 +8,12 @@ import 'package:q2/src/pages/esperando_confirmacion_page.dart';
 import 'package:q2/src/pages/introducir_codigo.dart';
 import 'package:q2/src/pages/zona_de_producto.dart';
 import 'package:q2/src/service/authservice.dart';
-import 'package:q2/src/service/lista_hamburgesas_provider.dart';
+import 'package:q2/src/providers/lista_hamburgesas_provider.dart';
 
 
 import 'src/bloc/provider.dart';
 import 'src/pages/domis_eliminados_page.dart';
 import 'src/pages/domis_recibidos_page.dart';
-import 'src/pages/hambur_adiciones_page.dart';
 import 'src/pages/hambur_ingrediestes_page.dart';
 import 'src/pages/home_page.dart';
 import 'src/pages/info_del_domi_recibido_page.dart';
@@ -54,7 +53,6 @@ class MyApp extends StatelessWidget {
               'pedido'               : (BuildContext context ) => PedidoPage(),
               'ingredientes hambur'  : (BuildContext context ) => HamburgesasIngredientesPage(),
               'ingredientes perro'   : (BuildContext context ) => PerrosIngredientesPage(),
-              'adiciones'            : (BuildContext context ) => HamburguesaAdicionesPage(),
               'datosDomisilio'       : (BuildContext context ) => DatosDomicilio(),
               'confirmacionDomicilio': (BuildContext context ) => ConfirmacionDomicilio(),
               'esperandoConfirmacion': (BuildContext context ) => EsperandoConfimacionPage(),
