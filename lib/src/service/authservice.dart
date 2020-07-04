@@ -36,14 +36,7 @@ class AuthService {
     
   }
 
-  
 
-  // user(AuthCredential authCredential) async {
-
-  //   AuthResult result = await FirebaseAuth.instance.signInWithCredential(authCredential);
-  //   this.userCredential = result.user;
-    
-  // }
 
   //Sign out
   signOut() {

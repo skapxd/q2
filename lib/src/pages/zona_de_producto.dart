@@ -152,7 +152,7 @@ class _HeaderProductosState extends State<HeaderProductos> {
       children: <Widget>[
 
         ListTile( 
-          contentPadding: EdgeInsets.symmetric( horizontal: 30 ) ,
+          contentPadding: EdgeInsets.symmetric( horizontal: 30  ) ,
           title: Text( subProducto, style: styleSubProducto,),
           
           trailing: ClipRRect(

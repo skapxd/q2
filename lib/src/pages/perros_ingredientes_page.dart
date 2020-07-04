@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:q2/src/bloc/producto_bloc.dart';
 import 'package:q2/src/bloc/provider.dart';
 import 'package:q2/src/providers/lista_hamburgesas_provider.dart';
+import 'package:q2/src/providers/lista_perros_provider.dart';
 
 
 
@@ -29,21 +30,23 @@ class _IngredientesPageState extends State<PerrosIngredientesPage> {
   List<int> _ingredienteTocineta = List.filled(10, 2);
   List<int> _ingredienteQueso    = List.filled(10, 2);
 
-  List<int> _adicionTocineta = new List.filled(10, 0);
-  List<int> _adicionQueso    = new List.filled(10, 0);
-  List<int> _adicionEnsalada = new List.filled(10, 0);
+  List<int> _adicionSalchichaGrande   = List.filled(10, 0);
+  List<int> _adicionSalchichaPequegna = List.filled(10, 0);
+  List<int> _adicionTocineta          = List.filled(10, 0);
+  List<int> _adicionQueso             = List.filled(10, 0);
+  List<int> _adicionEnsalada          = List.filled(10, 0);
 
   int  lista   = 0;
   int cantidad = 1;
 
   ProductoBloc data = ProductoBloc();
 
-  ListaHamburguesas listaHamburgesas = ListaHamburguesas();
+  ListaPerro listaPerro = ListaPerro();
 
   @override
   Widget build(BuildContext context) {
 
-    this.listaHamburgesas = Provider.of<ListaHamburguesas>(context);
+    this.listaPerro = Provider.of<ListaPerro>(context);
 
     this.data = Providers.ofProducto(context);
     
@@ -190,8 +193,9 @@ class _IngredientesPageState extends State<PerrosIngredientesPage> {
             children: <Widget>[
 
               Wrap(
+                crossAxisAlignment: WrapCrossAlignment.end ,
                 children: <Widget>[
-                  SizedBox(width: 30,),
+                  // SizedBox(width: 30,),
                   Text(
                     '$productoPaginaAnterior # ${hamburguesa[index]}', 
                     style: TextStyle( fontSize: 25, fontWeight: FontWeight.bold ),
@@ -206,16 +210,17 @@ class _IngredientesPageState extends State<PerrosIngredientesPage> {
 
               Divider( thickness: 1, color: Colors.black45, indent: 15, endIndent: 15,),
 
-              // Text(i),
-
               _cardIngredientes( producto: 'Ensalada', width: width, i: _ingredienteEnsalada,  index: index, productoPaginaAnterior: productoPaginaAnterior),
               _cardIngredientes( producto: 'Ripio',    width: width, i: _ingredienteRipio,     index: index, productoPaginaAnterior: productoPaginaAnterior),
-              _cardIngredientes( producto: 'Tocineta', width: width, i: _ingredienteTocineta,  index: index, productoPaginaAnterior: productoPaginaAnterior),
               _cardIngredientes( producto: 'Queso',    width: width, i: _ingredienteQueso,     index: index, productoPaginaAnterior: productoPaginaAnterior),
+              productoPaginaAnterior == 'perro grande' || productoPaginaAnterior == 'perro pequeño' ? Container() 
+                : _cardIngredientes( producto: 'Tocineta', width: width, i: _ingredienteTocineta,  index: index, productoPaginaAnterior: productoPaginaAnterior),
 
-              _adicones(context, adicion: 'Tocineta', precio: '2.500', producto: _adicionTocineta, index: index, productoPaginaAnterior: productoPaginaAnterior),
-              _adicones(context, adicion: 'Queso',    precio: '3.000', producto: _adicionQueso,    index: index, productoPaginaAnterior: productoPaginaAnterior),
-              _adicones(context, adicion: 'Ensalada', precio: '2.500', producto: _adicionEnsalada, index: index, productoPaginaAnterior: productoPaginaAnterior),
+              _adicones(context, adicion: 'Tocineta',           precio: '2.500', producto: _adicionTocineta,          index: index, productoPaginaAnterior: productoPaginaAnterior),
+              _adicones(context, adicion: 'Queso',              precio: '3.000', producto: _adicionQueso,             index: index, productoPaginaAnterior: productoPaginaAnterior),
+              _adicones(context, adicion: 'Ensalada',           precio: '2.500', producto: _adicionEnsalada,          index: index, productoPaginaAnterior: productoPaginaAnterior),
+              _adicones(context, adicion: 'Salchicha Grande',   precio: '2.500', producto: _adicionSalchichaGrande,   index: index, productoPaginaAnterior: productoPaginaAnterior),
+              _adicones(context, adicion: 'Salchicha Pequeña',  precio: '2.000', producto: _adicionSalchichaPequegna, index: index, productoPaginaAnterior: productoPaginaAnterior),
 
               SizedBox(height: 60,),
               
@@ -292,7 +297,7 @@ class _IngredientesPageState extends State<PerrosIngredientesPage> {
 
 
 
-Widget _adicones( BuildContext context, { String adicion, String precio,  List<int> producto, int index, String productoPaginaAnterior } ){
+  Widget _adicones( BuildContext context, { String adicion, String precio,  List<int> producto, int index, String productoPaginaAnterior } ){
 
     return Column(
       children: <Widget>[
@@ -341,7 +346,10 @@ Widget _adicones( BuildContext context, { String adicion, String precio,  List<i
                       
                       _adicionTocineta[index] = adicion == 'Tocineta' && _adicionTocineta[index]  > 0 ? _adicionTocineta[index] -= 1 : _adicionTocineta[index]  = _adicionTocineta[index];   
                       _adicionQueso[index]    = adicion == 'Queso'    && _adicionQueso[index]     > 0 ? _adicionQueso[index]    -= 1 : _adicionQueso[index]     = _adicionQueso[index];     
-                      _adicionEnsalada[index] = adicion == 'Ensalada' && _adicionEnsalada[index]  > 0 ? _adicionEnsalada[index] -= 1 : _adicionEnsalada[index]  = _adicionEnsalada[index];            
+                      _adicionEnsalada[index] = adicion == 'Ensalada' && _adicionEnsalada[index]  > 0 ? _adicionEnsalada[index] -= 1 : _adicionEnsalada[index]  = _adicionEnsalada[index];   
+
+                      _adicionSalchichaGrande[index]    = adicion == 'Salchicha Grande'   && _adicionSalchichaGrande[index]    > 0 ? _adicionSalchichaGrande[index]   -= 1 : _adicionSalchichaGrande[index]   = _adicionSalchichaGrande[index];
+                      _adicionSalchichaPequegna[index]  = adicion == 'Salchicha Pequeña'  && _adicionSalchichaPequegna[index]  > 0 ? _adicionSalchichaPequegna[index] -= 1 : _adicionSalchichaPequegna[index] = _adicionSalchichaPequegna[index];        
                     });
 
                   }
@@ -377,6 +385,10 @@ Widget _adicones( BuildContext context, { String adicion, String precio,  List<i
                       _adicionTocineta[index] = adicion == 'Tocineta' && _adicionTocineta[index]  < 3 ? _adicionTocineta[index] += 1 : _adicionTocineta[index]  = _adicionTocineta[index];
                       _adicionQueso[index]    = adicion == 'Queso'    && _adicionQueso[index]     < 3 ? _adicionQueso[index]    += 1 : _adicionQueso[index]     = _adicionQueso[index];
                       _adicionEnsalada[index] = adicion == 'Ensalada' && _adicionEnsalada[index]  < 3 ? _adicionEnsalada[index] += 1 : _adicionEnsalada[index]  = _adicionEnsalada[index];
+
+                      _adicionSalchichaGrande[index] = adicion == 'Salchicha Grande' && _adicionSalchichaGrande[index] < 3 ? _adicionSalchichaGrande[index] += 1 : _adicionSalchichaGrande[index] = _adicionSalchichaGrande[index];
+                      _adicionSalchichaPequegna[index] = adicion == 'Salchicha Pequeña' && _adicionSalchichaPequegna[index] < 3 ? _adicionSalchichaPequegna[index] += 1 : _adicionSalchichaPequegna[index] = _adicionSalchichaPequegna[index];
+                      print(_adicionSalchichaPequegna[0]);
                     }); 
                   }
                 ),
@@ -408,6 +420,13 @@ Widget _adicones( BuildContext context, { String adicion, String precio,  List<i
       
       return Text( '${_adicionEnsalada[index]}', style: styleCantidadSubProducto,);
 
+    } else if ( adicion == 'Salchicha Grande') {
+
+      return Text('${_adicionSalchichaGrande[index]}', style: styleCantidadSubProducto,); 
+
+    } else if ( adicion == 'Salchicha Pequeña') {
+
+      return Text('${_adicionSalchichaPequegna[index]}', style: styleCantidadSubProducto,); 
     }
   }
 }

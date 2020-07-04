@@ -7,7 +7,7 @@
   
 //   Widget _recibirNombre( LoginBloc bloc,  ) {
 
-//     return StreamBuilder(
+    // return StreamBuilder(
 //       stream: bloc.nombreUsuario ,
 //       builder: (BuildContext context, AsyncSnapshot snapshot){
         

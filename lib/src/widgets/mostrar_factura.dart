@@ -277,7 +277,7 @@ class _ImportarFacturaState extends State<ImportarFactura> {
                     producto: 'Especial # 1'
                   ) : Container(),
 
-                  data.especial >= 1 ? _mostrarAdicion(
+                  data.especial >= 1 ? _mostrarAdicionHamburguesa(
                     carne:    listaHamburgesas.especialAdicionCarne   [0],
                     tocineta: listaHamburgesas.especialAdicionTocineta[0],
                     queso:    listaHamburgesas.especialAdicionQueso   [0],
@@ -295,7 +295,7 @@ class _ImportarFacturaState extends State<ImportarFactura> {
                     producto: 'Especial # 2'
                   ) : Container(),
 
-                  data.especial >= 2 ? _mostrarAdicion(
+                  data.especial >= 2 ? _mostrarAdicionHamburguesa(
 
                     carne:    listaHamburgesas.especialAdicionCarne   [1],
                     tocineta: listaHamburgesas.especialAdicionTocineta[1],
@@ -314,7 +314,7 @@ class _ImportarFacturaState extends State<ImportarFactura> {
                     producto: 'Especial # 3'
                   ) : Container(),
 
-                  data.especial >= 3 ? _mostrarAdicion(
+                  data.especial >= 3 ? _mostrarAdicionHamburguesa(
 
                     carne:    listaHamburgesas.especialAdicionCarne   [2],
                     tocineta: listaHamburgesas.especialAdicionTocineta[2],
@@ -333,7 +333,7 @@ class _ImportarFacturaState extends State<ImportarFactura> {
                     producto: 'Especial # 4'
                   ): Container(),
 
-                  data.especial >= 4 ? _mostrarAdicion(
+                  data.especial >= 4 ? _mostrarAdicionHamburguesa(
 
                     carne:    listaHamburgesas.especialAdicionCarne   [3],
                     tocineta: listaHamburgesas.especialAdicionTocineta[3],
@@ -352,7 +352,7 @@ class _ImportarFacturaState extends State<ImportarFactura> {
                     producto: 'Especial # 5'
                   ) : Container(),
 
-                  data.especial >= 5 ? _mostrarAdicion(
+                  data.especial >= 5 ? _mostrarAdicionHamburguesa(
 
                     carne:    listaHamburgesas.especialAdicionCarne   [4],
                     tocineta: listaHamburgesas.especialAdicionTocineta[4],
@@ -371,7 +371,7 @@ class _ImportarFacturaState extends State<ImportarFactura> {
                     producto: 'Especial # 6'
                   ) : Container(),
 
-                  data.especial >= 6 ? _mostrarAdicion(
+                  data.especial >= 6 ? _mostrarAdicionHamburguesa(
 
                     carne:    listaHamburgesas.especialAdicionCarne   [5],
                     tocineta: listaHamburgesas.especialAdicionTocineta[5],
@@ -390,7 +390,7 @@ class _ImportarFacturaState extends State<ImportarFactura> {
                     producto: 'Especial # 7'
                   ) : Container(),
 
-                  data.especial >= 7 ? _mostrarAdicion(
+                  data.especial >= 7 ? _mostrarAdicionHamburguesa(
 
                     carne:    listaHamburgesas.especialAdicionCarne   [6],
                     tocineta: listaHamburgesas.especialAdicionTocineta[6],
@@ -409,7 +409,7 @@ class _ImportarFacturaState extends State<ImportarFactura> {
                     producto: 'Especial # 8'
                   ) : Container(),
 
-                  data.especial >= 8 ? _mostrarAdicion(
+                  data.especial >= 8 ? _mostrarAdicionHamburguesa(
 
                     carne:    listaHamburgesas.especialAdicionCarne   [7],
                     tocineta: listaHamburgesas.especialAdicionTocineta[7],
@@ -428,7 +428,7 @@ class _ImportarFacturaState extends State<ImportarFactura> {
                     producto: 'Especial # 9'
                   ) : Container(),
 
-                  data.especial >= 9 ? _mostrarAdicion(
+                  data.especial >= 9 ? _mostrarAdicionHamburguesa(
 
                     carne:    listaHamburgesas.especialAdicionCarne   [8],
                     tocineta: listaHamburgesas.especialAdicionTocineta[8],
@@ -447,7 +447,7 @@ class _ImportarFacturaState extends State<ImportarFactura> {
                     producto: 'Especial # 10'
                   ) : Container(),
 
-                  data.especial >= 10 ? _mostrarAdicion(
+                  data.especial >= 10 ? _mostrarAdicionHamburguesa(
 
                     carne:    listaHamburgesas.especialAdicionCarne   [9],
                     tocineta: listaHamburgesas.especialAdicionTocineta[9],
@@ -467,7 +467,7 @@ class _ImportarFacturaState extends State<ImportarFactura> {
                     producto: 'Super # 1'
                   ) : Container(),
 
-                  data.superEspecial >= 1 ? _mostrarAdicion(
+                  data.superEspecial >= 1 ? _mostrarAdicionHamburguesa(
 
                     carne:    listaHamburgesas.superAdicionCarne   [0],
                     tocineta: listaHamburgesas.superAdicionTocineta[0],
@@ -486,7 +486,7 @@ class _ImportarFacturaState extends State<ImportarFactura> {
                     producto: 'Super # 2'
                   ) : Container(),
 
-                  data.superEspecial >= 2 ? _mostrarAdicion(
+                  data.superEspecial >= 2 ? _mostrarAdicionHamburguesa(
 
                     carne:    listaHamburgesas.superAdicionCarne   [1],
                     tocineta: listaHamburgesas.superAdicionTocineta[1],
@@ -505,7 +505,7 @@ class _ImportarFacturaState extends State<ImportarFactura> {
                     producto: 'Super # 3'
                   ) : Container(),
 
-                  data.superEspecial >= 3 ? _mostrarAdicion(
+                  data.superEspecial >= 3 ? _mostrarAdicionHamburguesa(
 
                     carne:    listaHamburgesas.superAdicionCarne   [2],
                     tocineta: listaHamburgesas.superAdicionTocineta[2],
@@ -524,7 +524,7 @@ class _ImportarFacturaState extends State<ImportarFactura> {
                     producto: 'Super # 4'
                   ): Container(),
 
-                  data.superEspecial >= 4 ? _mostrarAdicion(
+                  data.superEspecial >= 4 ? _mostrarAdicionHamburguesa(
 
                     carne:    listaHamburgesas.superAdicionCarne   [3],
                     tocineta: listaHamburgesas.superAdicionTocineta[3],
@@ -543,7 +543,7 @@ class _ImportarFacturaState extends State<ImportarFactura> {
                     producto: 'Super # 5'
                   ) : Container(),
 
-                  data.superEspecial >= 5 ? _mostrarAdicion(
+                  data.superEspecial >= 5 ? _mostrarAdicionHamburguesa(
 
                     carne:    listaHamburgesas.superAdicionCarne   [4],
                     tocineta: listaHamburgesas.superAdicionTocineta[4],
@@ -562,7 +562,7 @@ class _ImportarFacturaState extends State<ImportarFactura> {
                     producto: 'Super # 6'
                   ) : Container(),
 
-                  data.superEspecial >= 6 ? _mostrarAdicion(
+                  data.superEspecial >= 6 ? _mostrarAdicionHamburguesa(
 
                     carne:    listaHamburgesas.superAdicionCarne   [5],
                     tocineta: listaHamburgesas.superAdicionTocineta[5],
@@ -581,7 +581,7 @@ class _ImportarFacturaState extends State<ImportarFactura> {
                     producto: 'Super # 7'
                   ) : Container(),
 
-                  data.superEspecial >= 7 ? _mostrarAdicion(
+                  data.superEspecial >= 7 ? _mostrarAdicionHamburguesa(
 
                     carne:    listaHamburgesas.superAdicionCarne   [6],
                     tocineta: listaHamburgesas.superAdicionTocineta[6],
@@ -600,7 +600,7 @@ class _ImportarFacturaState extends State<ImportarFactura> {
                     producto: 'Super # 8'
                   ) : Container(),
 
-                  data.superEspecial >= 8 ? _mostrarAdicion(
+                  data.superEspecial >= 8 ? _mostrarAdicionHamburguesa(
 
                     carne:    listaHamburgesas.superAdicionCarne   [7],
                     tocineta: listaHamburgesas.superAdicionTocineta[7],
@@ -619,7 +619,7 @@ class _ImportarFacturaState extends State<ImportarFactura> {
                     producto: 'Super # 9'
                   ) : Container(),
 
-                  data.superEspecial >= 9 ? _mostrarAdicion(
+                  data.superEspecial >= 9 ? _mostrarAdicionHamburguesa(
 
                     carne:    listaHamburgesas.superAdicionCarne   [8],
                     tocineta: listaHamburgesas.superAdicionTocineta[8],
@@ -638,7 +638,7 @@ class _ImportarFacturaState extends State<ImportarFactura> {
                     producto: 'Super # 10'
                   ) : Container(),
 
-                  data.superEspecial >= 10 ? _mostrarAdicion(
+                  data.superEspecial >= 10 ? _mostrarAdicionHamburguesa(
 
                     carne:    listaHamburgesas.superAdicionCarne   [9],
                     tocineta: listaHamburgesas.superAdicionTocineta[9],
@@ -658,7 +658,7 @@ class _ImportarFacturaState extends State<ImportarFactura> {
                     producto: 'Trisuper # 1'
                   ) : Container(),
 
-                  data.trisuper >= 1 ? _mostrarAdicion(
+                  data.trisuper >= 1 ? _mostrarAdicionHamburguesa(
                     
                     carne:    listaHamburgesas.trisuperAdicionCarne   [0],
                     tocineta: listaHamburgesas.trisuperAdicionTocineta[0],
@@ -677,7 +677,7 @@ class _ImportarFacturaState extends State<ImportarFactura> {
                     producto: 'Trisuper # 2'
                   ) : Container(),
 
-                  data.trisuper >= 2 ? _mostrarAdicion(
+                  data.trisuper >= 2 ? _mostrarAdicionHamburguesa(
                     
                     carne:    listaHamburgesas.trisuperAdicionCarne   [1],
                     tocineta: listaHamburgesas.trisuperAdicionTocineta[1],
@@ -696,7 +696,7 @@ class _ImportarFacturaState extends State<ImportarFactura> {
                     producto: 'Trisuper # 3'
                   ) : Container(),
 
-                  data.trisuper >= 3 ? _mostrarAdicion(
+                  data.trisuper >= 3 ? _mostrarAdicionHamburguesa(
                     
                     carne:    listaHamburgesas.trisuperAdicionCarne   [2],
                     tocineta: listaHamburgesas.trisuperAdicionTocineta[2],
@@ -715,7 +715,7 @@ class _ImportarFacturaState extends State<ImportarFactura> {
                     producto: 'Trisuper # 4'
                   ): Container(),
 
-                  data.trisuper >= 4 ? _mostrarAdicion(
+                  data.trisuper >= 4 ? _mostrarAdicionHamburguesa(
                     
                     carne:    listaHamburgesas.trisuperAdicionCarne   [3],
                     tocineta: listaHamburgesas.trisuperAdicionTocineta[3],
@@ -734,7 +734,7 @@ class _ImportarFacturaState extends State<ImportarFactura> {
                     producto: 'Trisuper # 5'
                   ) : Container(),
 
-                  data.trisuper >= 5 ? _mostrarAdicion(
+                  data.trisuper >= 5 ? _mostrarAdicionHamburguesa(
                     
                     carne:    listaHamburgesas.trisuperAdicionCarne   [4],
                     tocineta: listaHamburgesas.trisuperAdicionTocineta[4],
@@ -753,7 +753,7 @@ class _ImportarFacturaState extends State<ImportarFactura> {
                     producto: 'Trisuper # 6'
                   ) : Container(),
 
-                  data.trisuper >= 6 ? _mostrarAdicion(
+                  data.trisuper >= 6 ? _mostrarAdicionHamburguesa(
                     
                     carne:    listaHamburgesas.trisuperAdicionCarne   [5],
                     tocineta: listaHamburgesas.trisuperAdicionTocineta[5],
@@ -772,7 +772,7 @@ class _ImportarFacturaState extends State<ImportarFactura> {
                     producto: 'Trisuper # 7'
                   ) : Container(),
 
-                  data.trisuper >= 7 ? _mostrarAdicion(
+                  data.trisuper >= 7 ? _mostrarAdicionHamburguesa(
                     
                     carne:    listaHamburgesas.trisuperAdicionCarne   [6],
                     tocineta: listaHamburgesas.trisuperAdicionTocineta[6],
@@ -791,7 +791,7 @@ class _ImportarFacturaState extends State<ImportarFactura> {
                     producto: 'Trisuper # 8'
                   ) : Container(),
 
-                  data.trisuper >= 8 ? _mostrarAdicion(
+                  data.trisuper >= 8 ? _mostrarAdicionHamburguesa(
                     
                     carne:    listaHamburgesas.trisuperAdicionCarne   [7],
                     tocineta: listaHamburgesas.trisuperAdicionTocineta[7],
@@ -810,7 +810,7 @@ class _ImportarFacturaState extends State<ImportarFactura> {
                     producto: 'Trisuper # 9'
                   ) : Container(),
 
-                  data.trisuper >= 9 ? _mostrarAdicion(
+                  data.trisuper >= 9 ? _mostrarAdicionHamburguesa(
                     
                     carne:    listaHamburgesas.trisuperAdicionCarne   [8],
                     tocineta: listaHamburgesas.trisuperAdicionTocineta[8],
@@ -829,7 +829,7 @@ class _ImportarFacturaState extends State<ImportarFactura> {
                     producto: 'Trisuper # 10'
                   ) : Container(),
 
-                  data.trisuper >= 10 ? _mostrarAdicion(
+                  data.trisuper >= 10 ? _mostrarAdicionHamburguesa(
                     
                     carne:    listaHamburgesas.trisuperAdicionCarne   [9],
                     tocineta: listaHamburgesas.trisuperAdicionTocineta[9],
@@ -1182,7 +1182,7 @@ class _ImportarFacturaState extends State<ImportarFactura> {
     return Container();
   }
 
-  _mostrarAdicion({ int carne, int tocineta, int queso, int ensalada, int numeroDeHamburguesa, String producto, int numeroDeProducto }) {
+  _mostrarAdicionHamburguesa({ int carne, int tocineta, int queso, int ensalada, int numeroDeHamburguesa, String producto, int numeroDeProducto }) {
 
     return Column(
       children: <Widget>[
@@ -1222,6 +1222,20 @@ class _ImportarFacturaState extends State<ImportarFactura> {
           
         ],
       ),
+    );
+  }
+
+  _mostrarAdicionPerro({ int carne, int tocineta, int queso, int ensalada, int numeroDeHamburguesa, String producto, int numeroDeProducto }) {
+
+    return Column(
+      children: <Widget>[
+
+        _infoAdicion( adicion: tocineta,  producto: '--$producto $numeroDeHamburguesa Ad Tocineta '),
+        _infoAdicion( adicion: queso,     producto: '--$producto $numeroDeHamburguesa Ad Queso '),
+        _infoAdicion( adicion: ensalada,  producto: '--$producto $numeroDeHamburguesa Ad Ensalada '),
+
+        carne > 0 || tocineta > 0 || queso > 0 || ensalada > 0 ? Divider() : Container()
+      ],
     );
   }
 }
