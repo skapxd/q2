@@ -25,16 +25,16 @@ class _IngredientesPageState extends State<PerrosIngredientesPage> {
   
   final List<String> nadaPocoNormalExtraLista = ['Nada', 'Poco', 'Normal', 'Extra'];
 
-  List<int> _ingredienteEnsalada = List.filled(10, 2);
-  List<int> _ingredienteRipio    = List.filled(10, 2);
-  List<int> _ingredienteTocineta = List.filled(10, 2);
-  List<int> _ingredienteQueso    = List.filled(10, 2);
+  List<int> _ingredienteEnsalada ;
+  List<int> _ingredienteRipio    ;
+  List<int> _ingredienteTocineta ;
+  List<int> _ingredienteQueso    ;
 
-  List<int> _adicionSalchichaGrande   = List.filled(10, 0);
-  List<int> _adicionSalchichaPequegna = List.filled(10, 0);
-  List<int> _adicionTocineta          = List.filled(10, 0);
-  List<int> _adicionQueso             = List.filled(10, 0);
-  List<int> _adicionEnsalada          = List.filled(10, 0);
+  List<int> _adicionSalchichaGrande   ;
+  List<int> _adicionSalchichaPequegna ;
+  List<int> _adicionTocineta          ;
+  List<int> _adicionQueso             ;
+  List<int> _adicionEnsalada          ;
 
   int  lista   = 0;
   int cantidad = 1;
@@ -51,6 +51,60 @@ class _IngredientesPageState extends State<PerrosIngredientesPage> {
     this.data = Providers.ofProducto(context);
     
     final List producto = ModalRoute.of(context).settings.arguments;
+
+    if (producto[1] == 'perro grande con tocineta') {
+
+      _ingredienteEnsalada      = listaPerro.perroGrandeTocinetaIngredienteEnsalada;
+      _ingredienteRipio         = listaPerro.perroGrandeTocinetaIngredienteRipio;
+      _ingredienteTocineta      = listaPerro.perroGrandeTocinetaIngredienteTocineta;
+      _ingredienteQueso         = listaPerro.perroGrandeTocinetaIngredienteQueso;
+
+      _adicionSalchichaGrande   = listaPerro.perroGrandeTocinetaAdicionSalchichaGrande;
+      _adicionSalchichaPequegna = listaPerro.perroGrandeTocinetaAdicionSalchichaPequegna;
+      _adicionTocineta          = listaPerro.perroGrandeTocinetaAdicionTocineta;
+      _adicionQueso             = listaPerro.perroGrandeTocinetaAdicionQueso;
+      _adicionEnsalada          = listaPerro.perroGrandeTocinetaAdicionEnsalada;
+      
+    } else if ( producto[1] == 'perro grande') {
+
+      _ingredienteEnsalada      = listaPerro.perroGrandeIngredienteEnsalada;  
+      _ingredienteRipio         = listaPerro.perroGrandeIngredienteEnsalada;
+      _ingredienteTocineta      = listaPerro.perroGrandeIngredienteTocineta;
+      _ingredienteQueso         = listaPerro.perroGrandeIngredienteQueso;
+
+      _adicionSalchichaGrande   = listaPerro.perroGrandeAdicionSalchichaGrande;
+      _adicionSalchichaPequegna = listaPerro.perroGrandeAdicionSalchichaPequegna;
+      _adicionTocineta          = listaPerro.perroGrandeAdicionTocineta;
+      _adicionQueso             = listaPerro.perroGrandeAdicionQueso;
+      _adicionEnsalada          = listaPerro.perroGrandeAdicionEnsalada;
+
+    } else if ( producto[1] == 'perro pequeño con tocineta') {
+
+      _ingredienteEnsalada      = listaPerro.perroPequegnoTocinetaIngredienteEnsalada;
+      _ingredienteRipio         = listaPerro.perroPequegnoTocinetaIngredienteRipio;
+      _ingredienteTocineta      = listaPerro.perroPequegnoTocinetaIngredienteTocineta;
+      _ingredienteQueso         = listaPerro.perroPequegnoTocinetaIngredienteQueso;
+
+      _adicionSalchichaGrande   = listaPerro.perroPequegnoTocinetaAdicionSalchichaGrande;
+      _adicionSalchichaPequegna = listaPerro.perroPequegnoTocinetaAdicionSalchichaPequegna;
+      _adicionTocineta          = listaPerro.perroPequegnoTocinetaAdicionTocineta;
+      _adicionQueso             = listaPerro.perroPequegnoTocinetaAdicionQueso;
+      _adicionEnsalada          = listaPerro.perroPequegnoTocinetaAdicionEnsalada;
+
+    } else if ( producto[1] == 'perro pequeño' ) {
+      
+      _ingredienteEnsalada      = listaPerro.perroPequegnoIngredienteEnsalada;
+      _ingredienteRipio         = listaPerro.perroPequegnoIngredienteRipio;     
+      _ingredienteTocineta      = listaPerro.perroPequegnoIngredienteTocineta;         
+      _ingredienteQueso         = listaPerro.perroPequegnoIngredienteQueso;
+
+      _adicionSalchichaGrande   = listaPerro.perroPequegnoAdicionSalchichaGrande;           
+      _adicionSalchichaPequegna = listaPerro.perroPequegnoAdicionSalchichaPequegna;             
+      _adicionTocineta          = listaPerro.perroPequegnoAdicionTocineta;     
+      _adicionQueso             = listaPerro.perroPequegnoAdicionQueso; 
+      _adicionEnsalada          = listaPerro.perroPequegnoAdicionEnsalada;     
+    }
+
 
     // final bloc = Provider.ofProducto(context);
   
@@ -150,7 +204,24 @@ class _IngredientesPageState extends State<PerrosIngredientesPage> {
 
 
       if (productoPaginaAnterior == 'perro grande con tocineta'){
-        print(productoPaginaAnterior);
+        listaPerro.perroGrandeTocinetaIngredienteEnsalada   = _ingredienteEnsalada;
+        listaPerro.perroGrandeTocinetaIngredienteQueso      = _ingredienteQueso;
+        listaPerro.perroGrandeTocinetaIngredienteRipio      = _ingredienteRipio;
+        listaPerro.perroGrandeTocinetaIngredienteTocineta   = _ingredienteTocineta;
+
+        listaPerro.perroGrandeTocinetaAdicionQueso              = _adicionQueso;
+        listaPerro.perroGrandeTocinetaAdicionEnsalada           = _adicionEnsalada;
+        listaPerro.perroGrandeTocinetaAdicionTocineta           = _adicionTocineta;
+
+        listaPerro.perroGrandeTocinetaAdicionSalchichaGrande    = _adicionSalchichaGrande;
+        listaPerro.perroGrandeTocinetaAdicionSalchichaPequegna  = _adicionSalchichaPequegna;
+
+        // print(listaPerro.perroGrandeTocinetaIngredienteEnsalada);
+
+        // print(' Salchicha Grande ${listaPerro.perroGrandeTocinetaAdicionSalchichaGrande}');
+        // print(listaPerro.perroGrandeTocinetaAdicionSalchichaGrande);
+        print(_adicionSalchichaGrande);
+        // print(' Salchicha Pequeña ${listaPerro.perroGrandeTocinetaAdicionSalchichaPequegna}');
 
       } else if( productoPaginaAnterior == 'perro grande') {
         print(productoPaginaAnterior);
@@ -344,9 +415,9 @@ class _IngredientesPageState extends State<PerrosIngredientesPage> {
 
                     setState(() {
                       
-                      _adicionTocineta[index] = adicion == 'Tocineta' && _adicionTocineta[index]  > 0 ? _adicionTocineta[index] -= 1 : _adicionTocineta[index]  = _adicionTocineta[index];   
-                      _adicionQueso[index]    = adicion == 'Queso'    && _adicionQueso[index]     > 0 ? _adicionQueso[index]    -= 1 : _adicionQueso[index]     = _adicionQueso[index];     
-                      _adicionEnsalada[index] = adicion == 'Ensalada' && _adicionEnsalada[index]  > 0 ? _adicionEnsalada[index] -= 1 : _adicionEnsalada[index]  = _adicionEnsalada[index];   
+                      _adicionTocineta[index]           = adicion == 'Tocineta'           && _adicionTocineta[index]           > 0 ? _adicionTocineta[index]          -= 1 : _adicionTocineta[index]          = _adicionTocineta[index];   
+                      _adicionQueso[index]              = adicion == 'Queso'              && _adicionQueso[index]              > 0 ? _adicionQueso[index]             -= 1 : _adicionQueso[index]             = _adicionQueso[index];     
+                      _adicionEnsalada[index]           = adicion == 'Ensalada'           && _adicionEnsalada[index]           > 0 ? _adicionEnsalada[index]          -= 1 : _adicionEnsalada[index]          = _adicionEnsalada[index];   
 
                       _adicionSalchichaGrande[index]    = adicion == 'Salchicha Grande'   && _adicionSalchichaGrande[index]    > 0 ? _adicionSalchichaGrande[index]   -= 1 : _adicionSalchichaGrande[index]   = _adicionSalchichaGrande[index];
                       _adicionSalchichaPequegna[index]  = adicion == 'Salchicha Pequeña'  && _adicionSalchichaPequegna[index]  > 0 ? _adicionSalchichaPequegna[index] -= 1 : _adicionSalchichaPequegna[index] = _adicionSalchichaPequegna[index];        
@@ -364,7 +435,7 @@ class _IngredientesPageState extends State<PerrosIngredientesPage> {
                     width:  30,
                     height: 30,
                     child: Center(
-                      child: validarTexto( adicion: adicion, index: index)
+                      child: validarTexto( adicion: adicion, index: index, )
                     ),
                     
                     color: Colors.white,
@@ -382,13 +453,13 @@ class _IngredientesPageState extends State<PerrosIngredientesPage> {
 
                     setState(() {
 
-                      _adicionTocineta[index] = adicion == 'Tocineta' && _adicionTocineta[index]  < 3 ? _adicionTocineta[index] += 1 : _adicionTocineta[index]  = _adicionTocineta[index];
-                      _adicionQueso[index]    = adicion == 'Queso'    && _adicionQueso[index]     < 3 ? _adicionQueso[index]    += 1 : _adicionQueso[index]     = _adicionQueso[index];
-                      _adicionEnsalada[index] = adicion == 'Ensalada' && _adicionEnsalada[index]  < 3 ? _adicionEnsalada[index] += 1 : _adicionEnsalada[index]  = _adicionEnsalada[index];
+                      _adicionTocineta[index]           = adicion == 'Tocineta'           && _adicionTocineta[index]          < 3  ? _adicionTocineta[index]          += 1 : _adicionTocineta[index]          = _adicionTocineta[index];
+                      _adicionQueso[index]              = adicion == 'Queso'              && _adicionQueso[index]             < 3  ? _adicionQueso[index]             += 1 : _adicionQueso[index]             = _adicionQueso[index];
+                      _adicionEnsalada[index]           = adicion == 'Ensalada'           && _adicionEnsalada[index]          < 3  ? _adicionEnsalada[index]          += 1 : _adicionEnsalada[index]          = _adicionEnsalada[index];
 
-                      _adicionSalchichaGrande[index] = adicion == 'Salchicha Grande' && _adicionSalchichaGrande[index] < 3 ? _adicionSalchichaGrande[index] += 1 : _adicionSalchichaGrande[index] = _adicionSalchichaGrande[index];
-                      _adicionSalchichaPequegna[index] = adicion == 'Salchicha Pequeña' && _adicionSalchichaPequegna[index] < 3 ? _adicionSalchichaPequegna[index] += 1 : _adicionSalchichaPequegna[index] = _adicionSalchichaPequegna[index];
-                      print(_adicionSalchichaPequegna[0]);
+                      _adicionSalchichaGrande[index]    = adicion == 'Salchicha Grande'   && _adicionSalchichaGrande[index]   < 3  ? _adicionSalchichaGrande[index]   += 1 : _adicionSalchichaGrande[index]  = _adicionSalchichaGrande[index];
+                      _adicionSalchichaPequegna[index]  = adicion == 'Salchicha Pequeña'  && _adicionSalchichaPequegna[index] < 3  ? _adicionSalchichaPequegna[index] += 1 : _adicionSalchichaPequegna[index] = _adicionSalchichaPequegna[index];
+                      
                     }); 
                   }
                 ),
@@ -405,10 +476,9 @@ class _IngredientesPageState extends State<PerrosIngredientesPage> {
 
 
 
-   validarTexto({ String adicion, int index }) {
+   validarTexto({ String adicion, int index}) {
 
-
-    if ( adicion == 'Tocineta' ) {
+    if ( adicion == 'Tocineta') {
       
       return Text( '${_adicionTocineta[index]}', style: styleCantidadSubProducto,);
 

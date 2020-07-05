@@ -4,6 +4,7 @@ import 'package:q2/src/bloc/login_bloc.dart';
 import 'package:q2/src/bloc/producto_bloc.dart';
 import 'package:q2/src/bloc/provider.dart';
 import 'package:q2/src/providers/lista_hamburgesas_provider.dart';
+import 'package:q2/src/providers/lista_perros_provider.dart';
 
 class ImportarFactura extends StatefulWidget {
 
@@ -13,9 +14,11 @@ class ImportarFactura extends StatefulWidget {
 
 class _ImportarFacturaState extends State<ImportarFactura> {
 
-  final TextStyle styleAppBar = TextStyle( fontSize: 20, fontWeight: FontWeight.bold, fontStyle: FontStyle.italic, );
+  final TextStyle styleAppBar   = TextStyle( fontSize: 20, fontWeight: FontWeight.bold, fontStyle: FontStyle.italic, );
+  final TextStyle styleProducto = TextStyle( fontSize: 20, fontWeight: FontWeight.bold, fontStyle: FontStyle.italic, decoration: TextDecoration.underline,);
 
   ListaHamburguesas listaHamburgesas  = ListaHamburguesas();
+  ListaPerro        listaPerro        = ListaPerro();
   ProductoBloc      dataProduc        = ProductoBloc();
   ProductoBloc      data              = ProductoBloc();
   LoginBloc         dataForm          = LoginBloc();
@@ -26,6 +29,7 @@ class _ImportarFacturaState extends State<ImportarFactura> {
   Widget build(BuildContext context) {
 
     this.listaHamburgesas = Provider.of<ListaHamburguesas>(context);
+    this.listaPerro       = Provider.of<ListaPerro>(context);
     this.data             = Providers.ofProducto(context);
     this.dataForm         = Providers.of(context);
     this.dataProduc       = Providers.ofProducto(context);
@@ -268,197 +272,187 @@ class _ImportarFacturaState extends State<ImportarFactura> {
                   SizedBox(height: 15,),
 
                 // Especiales 
-                  data.especial >= 1 ?  _infoIngredientes(
+                  data.especial >= 1 ?  _ingredientesHamburguesa(
                     tomate  : listaHamburgesas.especialIngredienteTomate    [0],
                     ensalada: listaHamburgesas.especialIngredienteEnsalada  [0],
                     ripio   : listaHamburgesas.especialIngredienteRipio     [0],
                     tocineta: listaHamburgesas.especialIngredienteTocineta  [0],
                     queso   : listaHamburgesas.especialIngredienteQueso     [0],      
-                    producto: 'Especial # 1'
                   ) : Container(),
 
-                  data.especial >= 1 ? _mostrarAdicionHamburguesa(
+                  data.especial >= 1 ? _adicionHamburguesa(
                     carne:    listaHamburgesas.especialAdicionCarne   [0],
                     tocineta: listaHamburgesas.especialAdicionTocineta[0],
                     queso:    listaHamburgesas.especialAdicionQueso   [0],
                     ensalada: listaHamburgesas.especialAdicionEnsalada[0],
                     numeroDeHamburguesa: 1,
-                    producto: 'Especial'
+                    
                   ) : Container(),
 
-                  data.especial >= 2 ? _infoIngredientes(
+                  data.especial >= 2 ? _ingredientesHamburguesa(
                     tomate  : listaHamburgesas.especialIngredienteTomate    [1],
                     ensalada: listaHamburgesas.especialIngredienteEnsalada  [1],
                     ripio   : listaHamburgesas.especialIngredienteRipio     [1],
                     tocineta: listaHamburgesas.especialIngredienteTocineta  [1],
                     queso   : listaHamburgesas.especialIngredienteQueso     [1],      
-                    producto: 'Especial # 2'
                   ) : Container(),
 
-                  data.especial >= 2 ? _mostrarAdicionHamburguesa(
+                  data.especial >= 2 ? _adicionHamburguesa(
 
                     carne:    listaHamburgesas.especialAdicionCarne   [1],
                     tocineta: listaHamburgesas.especialAdicionTocineta[1],
                     queso:    listaHamburgesas.especialAdicionQueso   [1],
                     ensalada: listaHamburgesas.especialAdicionEnsalada[1],
                     numeroDeHamburguesa: 2,
-                    producto: 'Especial'
+                    
                   ) : Container(),
 
-                  data.especial >= 3 ? _infoIngredientes(
+                  data.especial >= 3 ? _ingredientesHamburguesa(
                     tomate  : listaHamburgesas.especialIngredienteTomate    [2],
                     ensalada: listaHamburgesas.especialIngredienteEnsalada  [2],
                     ripio   : listaHamburgesas.especialIngredienteRipio     [2],
                     tocineta: listaHamburgesas.especialIngredienteTocineta  [2],
                     queso   : listaHamburgesas.especialIngredienteQueso     [2],      
-                    producto: 'Especial # 3'
                   ) : Container(),
 
-                  data.especial >= 3 ? _mostrarAdicionHamburguesa(
+                  data.especial >= 3 ? _adicionHamburguesa(
 
                     carne:    listaHamburgesas.especialAdicionCarne   [2],
                     tocineta: listaHamburgesas.especialAdicionTocineta[2],
                     queso:    listaHamburgesas.especialAdicionQueso   [2],
                     ensalada: listaHamburgesas.especialAdicionEnsalada[2],
                     numeroDeHamburguesa: 3,
-                    producto: 'Especial'
+                    
                   ) : Container(),
 
-                  data.especial >= 4 ? _infoIngredientes(
+                  data.especial >= 4 ? _ingredientesHamburguesa(
                     tomate  : listaHamburgesas.especialIngredienteTomate    [3],
                     ensalada: listaHamburgesas.especialIngredienteEnsalada  [3],
                     ripio   : listaHamburgesas.especialIngredienteRipio     [3],
                     tocineta: listaHamburgesas.especialIngredienteTocineta  [3],
                     queso   : listaHamburgesas.especialIngredienteQueso     [3],      
-                    producto: 'Especial # 4'
                   ): Container(),
 
-                  data.especial >= 4 ? _mostrarAdicionHamburguesa(
+                  data.especial >= 4 ? _adicionHamburguesa(
 
                     carne:    listaHamburgesas.especialAdicionCarne   [3],
                     tocineta: listaHamburgesas.especialAdicionTocineta[3],
                     queso:    listaHamburgesas.especialAdicionQueso   [3],
                     ensalada: listaHamburgesas.especialAdicionEnsalada[3],
                     numeroDeHamburguesa: 4,
-                    producto: 'Especial'
+                    
                   ) : Container(),
 
-                  data.especial >= 5 ? _infoIngredientes(
+                  data.especial >= 5 ? _ingredientesHamburguesa(
                     tomate  : listaHamburgesas.especialIngredienteTomate    [4],
                     ensalada: listaHamburgesas.especialIngredienteEnsalada  [4],
                     ripio   : listaHamburgesas.especialIngredienteRipio     [4],
                     tocineta: listaHamburgesas.especialIngredienteTocineta  [4],
                     queso   : listaHamburgesas.especialIngredienteQueso     [4],      
-                    producto: 'Especial # 5'
                   ) : Container(),
 
-                  data.especial >= 5 ? _mostrarAdicionHamburguesa(
+                  data.especial >= 5 ? _adicionHamburguesa(
 
                     carne:    listaHamburgesas.especialAdicionCarne   [4],
                     tocineta: listaHamburgesas.especialAdicionTocineta[4],
                     queso:    listaHamburgesas.especialAdicionQueso   [4],
                     ensalada: listaHamburgesas.especialAdicionEnsalada[4],
                     numeroDeHamburguesa: 5,
-                    producto: 'Especial'
+                    
                   ) : Container(),
 
-                  data.especial >= 6 ? _infoIngredientes(
+                  data.especial >= 6 ? _ingredientesHamburguesa(
                     tomate  : listaHamburgesas.especialIngredienteTomate    [5],
                     ensalada: listaHamburgesas.especialIngredienteEnsalada  [5],
                     ripio   : listaHamburgesas.especialIngredienteRipio     [5],
                     tocineta: listaHamburgesas.especialIngredienteTocineta  [5],
                     queso   : listaHamburgesas.especialIngredienteQueso     [5],      
-                    producto: 'Especial # 6'
                   ) : Container(),
 
-                  data.especial >= 6 ? _mostrarAdicionHamburguesa(
+                  data.especial >= 6 ? _adicionHamburguesa(
 
                     carne:    listaHamburgesas.especialAdicionCarne   [5],
                     tocineta: listaHamburgesas.especialAdicionTocineta[5],
                     queso:    listaHamburgesas.especialAdicionQueso   [5],
                     ensalada: listaHamburgesas.especialAdicionEnsalada[5],
                     numeroDeHamburguesa: 6,
-                    producto: 'Especial'
+                    
                   ) : Container(),
 
-                  data.especial >= 7 ? _infoIngredientes(
+                  data.especial >= 7 ? _ingredientesHamburguesa(
                     tomate  : listaHamburgesas.especialIngredienteTomate    [6],
                     ensalada: listaHamburgesas.especialIngredienteEnsalada  [6],
                     ripio   : listaHamburgesas.especialIngredienteRipio     [6],
                     tocineta: listaHamburgesas.especialIngredienteTocineta  [6],
                     queso   : listaHamburgesas.especialIngredienteQueso     [6],      
-                    producto: 'Especial # 7'
                   ) : Container(),
 
-                  data.especial >= 7 ? _mostrarAdicionHamburguesa(
+                  data.especial >= 7 ? _adicionHamburguesa(
 
                     carne:    listaHamburgesas.especialAdicionCarne   [6],
                     tocineta: listaHamburgesas.especialAdicionTocineta[6],
                     queso:    listaHamburgesas.especialAdicionQueso   [6],
                     ensalada: listaHamburgesas.especialAdicionEnsalada[6],
                     numeroDeHamburguesa: 7,
-                    producto: 'Especial'
+                    
                   ) : Container(),
 
-                  data.especial >= 8 ? _infoIngredientes(
+                  data.especial >= 8 ? _ingredientesHamburguesa(
                     tomate  : listaHamburgesas.especialIngredienteTomate    [7],
                     ensalada: listaHamburgesas.especialIngredienteEnsalada  [7],
                     ripio   : listaHamburgesas.especialIngredienteRipio     [7],
                     tocineta: listaHamburgesas.especialIngredienteTocineta  [7],
                     queso   : listaHamburgesas.especialIngredienteQueso     [7],      
-                    producto: 'Especial # 8'
                   ) : Container(),
 
-                  data.especial >= 8 ? _mostrarAdicionHamburguesa(
+                  data.especial >= 8 ? _adicionHamburguesa(
 
                     carne:    listaHamburgesas.especialAdicionCarne   [7],
                     tocineta: listaHamburgesas.especialAdicionTocineta[7],
                     queso:    listaHamburgesas.especialAdicionQueso   [7],
                     ensalada: listaHamburgesas.especialAdicionEnsalada[7],
                     numeroDeHamburguesa: 8,
-                    producto: 'Especial'
+                    
                   ) : Container(),
 
-                  data.especial >= 9 ? _infoIngredientes(
+                  data.especial >= 9 ? _ingredientesHamburguesa(
                     tomate  : listaHamburgesas.especialIngredienteTomate    [8],
                     ensalada: listaHamburgesas.especialIngredienteEnsalada  [8],
                     ripio   : listaHamburgesas.especialIngredienteRipio     [8],
                     tocineta: listaHamburgesas.especialIngredienteTocineta  [8],
                     queso   : listaHamburgesas.especialIngredienteQueso     [8],      
-                    producto: 'Especial # 9'
                   ) : Container(),
 
-                  data.especial >= 9 ? _mostrarAdicionHamburguesa(
+                  data.especial >= 9 ? _adicionHamburguesa(
 
                     carne:    listaHamburgesas.especialAdicionCarne   [8],
                     tocineta: listaHamburgesas.especialAdicionTocineta[8],
                     queso:    listaHamburgesas.especialAdicionQueso   [8],
                     ensalada: listaHamburgesas.especialAdicionEnsalada[8],
                     numeroDeHamburguesa: 9,
-                    producto: 'Especial'
+                    
                   ) : Container(),
 
-                  data.especial >= 10 ? _infoIngredientes(
+                  data.especial >= 10 ? _ingredientesHamburguesa(
                     tomate  : listaHamburgesas.especialIngredienteTomate    [9],
                     ensalada: listaHamburgesas.especialIngredienteEnsalada  [9],
                     ripio   : listaHamburgesas.especialIngredienteRipio     [9],
                     tocineta: listaHamburgesas.especialIngredienteTocineta  [9],
                     queso   : listaHamburgesas.especialIngredienteQueso     [9],      
-                    producto: 'Especial # 10'
-                  ) : Container(),
+                     ) : Container(),
 
-                  data.especial >= 10 ? _mostrarAdicionHamburguesa(
+                  data.especial >= 10 ? _adicionHamburguesa(
 
                     carne:    listaHamburgesas.especialAdicionCarne   [9],
                     tocineta: listaHamburgesas.especialAdicionTocineta[9],
                     queso:    listaHamburgesas.especialAdicionQueso   [9],
                     ensalada: listaHamburgesas.especialAdicionEnsalada[9],
                     numeroDeHamburguesa: 1,
-                    producto: 'Especial'
+                    
                   ) : Container(),
 
                 // Super
-                  data.superEspecial >= 1 ?  _infoIngredientes(
+                  data.superEspecial >= 1 ?  _ingredientesHamburguesa(
                     tomate  : listaHamburgesas.superIngredienteTomate    [0],
                     ensalada: listaHamburgesas.superIngredienteEnsalada  [0],
                     ripio   : listaHamburgesas.superIngredienteRipio     [0],
@@ -467,7 +461,7 @@ class _ImportarFacturaState extends State<ImportarFactura> {
                     producto: 'Super # 1'
                   ) : Container(),
 
-                  data.superEspecial >= 1 ? _mostrarAdicionHamburguesa(
+                  data.superEspecial >= 1 ? _adicionHamburguesa(
 
                     carne:    listaHamburgesas.superAdicionCarne   [0],
                     tocineta: listaHamburgesas.superAdicionTocineta[0],
@@ -477,7 +471,7 @@ class _ImportarFacturaState extends State<ImportarFactura> {
                     producto: 'Super'
                   ) : Container(),
 
-                  data.superEspecial >= 2 ? _infoIngredientes(
+                  data.superEspecial >= 2 ? _ingredientesHamburguesa(
                     tomate  : listaHamburgesas.superIngredienteTomate    [1],
                     ensalada: listaHamburgesas.superIngredienteEnsalada  [1],
                     ripio   : listaHamburgesas.superIngredienteRipio     [1],
@@ -486,7 +480,7 @@ class _ImportarFacturaState extends State<ImportarFactura> {
                     producto: 'Super # 2'
                   ) : Container(),
 
-                  data.superEspecial >= 2 ? _mostrarAdicionHamburguesa(
+                  data.superEspecial >= 2 ? _adicionHamburguesa(
 
                     carne:    listaHamburgesas.superAdicionCarne   [1],
                     tocineta: listaHamburgesas.superAdicionTocineta[1],
@@ -496,7 +490,7 @@ class _ImportarFacturaState extends State<ImportarFactura> {
                     producto: 'Super'
                   ) : Container(),
 
-                  data.superEspecial >= 3 ? _infoIngredientes(
+                  data.superEspecial >= 3 ? _ingredientesHamburguesa(
                     tomate  : listaHamburgesas.superIngredienteTomate    [2],
                     ensalada: listaHamburgesas.superIngredienteEnsalada  [2],
                     ripio   : listaHamburgesas.superIngredienteRipio     [2],
@@ -505,7 +499,7 @@ class _ImportarFacturaState extends State<ImportarFactura> {
                     producto: 'Super # 3'
                   ) : Container(),
 
-                  data.superEspecial >= 3 ? _mostrarAdicionHamburguesa(
+                  data.superEspecial >= 3 ? _adicionHamburguesa(
 
                     carne:    listaHamburgesas.superAdicionCarne   [2],
                     tocineta: listaHamburgesas.superAdicionTocineta[2],
@@ -515,7 +509,7 @@ class _ImportarFacturaState extends State<ImportarFactura> {
                     producto: 'Super'
                   ) : Container(),
 
-                  data.superEspecial >= 4 ? _infoIngredientes(
+                  data.superEspecial >= 4 ? _ingredientesHamburguesa(
                     tomate  : listaHamburgesas.superIngredienteTomate    [3],
                     ensalada: listaHamburgesas.superIngredienteEnsalada  [3],
                     ripio   : listaHamburgesas.superIngredienteRipio     [3],
@@ -524,7 +518,7 @@ class _ImportarFacturaState extends State<ImportarFactura> {
                     producto: 'Super # 4'
                   ): Container(),
 
-                  data.superEspecial >= 4 ? _mostrarAdicionHamburguesa(
+                  data.superEspecial >= 4 ? _adicionHamburguesa(
 
                     carne:    listaHamburgesas.superAdicionCarne   [3],
                     tocineta: listaHamburgesas.superAdicionTocineta[3],
@@ -534,7 +528,7 @@ class _ImportarFacturaState extends State<ImportarFactura> {
                     producto: 'Super'
                   ) : Container(),
 
-                  data.superEspecial >= 5 ? _infoIngredientes(
+                  data.superEspecial >= 5 ? _ingredientesHamburguesa(
                     tomate  : listaHamburgesas.superIngredienteTomate    [4],
                     ensalada: listaHamburgesas.superIngredienteEnsalada  [4],
                     ripio   : listaHamburgesas.superIngredienteRipio     [4],
@@ -543,7 +537,7 @@ class _ImportarFacturaState extends State<ImportarFactura> {
                     producto: 'Super # 5'
                   ) : Container(),
 
-                  data.superEspecial >= 5 ? _mostrarAdicionHamburguesa(
+                  data.superEspecial >= 5 ? _adicionHamburguesa(
 
                     carne:    listaHamburgesas.superAdicionCarne   [4],
                     tocineta: listaHamburgesas.superAdicionTocineta[4],
@@ -553,7 +547,7 @@ class _ImportarFacturaState extends State<ImportarFactura> {
                     producto: 'Super'
                   ) : Container(),
 
-                  data.superEspecial >= 6 ? _infoIngredientes(
+                  data.superEspecial >= 6 ? _ingredientesHamburguesa(
                     tomate  : listaHamburgesas.superIngredienteTomate    [5],
                     ensalada: listaHamburgesas.superIngredienteEnsalada  [5],
                     ripio   : listaHamburgesas.superIngredienteRipio     [5],
@@ -562,7 +556,7 @@ class _ImportarFacturaState extends State<ImportarFactura> {
                     producto: 'Super # 6'
                   ) : Container(),
 
-                  data.superEspecial >= 6 ? _mostrarAdicionHamburguesa(
+                  data.superEspecial >= 6 ? _adicionHamburguesa(
 
                     carne:    listaHamburgesas.superAdicionCarne   [5],
                     tocineta: listaHamburgesas.superAdicionTocineta[5],
@@ -572,7 +566,7 @@ class _ImportarFacturaState extends State<ImportarFactura> {
                     producto: 'Super'
                   ) : Container(),
 
-                  data.superEspecial >= 7 ? _infoIngredientes(
+                  data.superEspecial >= 7 ? _ingredientesHamburguesa(
                     tomate  : listaHamburgesas.superIngredienteTomate    [6],
                     ensalada: listaHamburgesas.superIngredienteEnsalada  [6],
                     ripio   : listaHamburgesas.superIngredienteRipio     [6],
@@ -581,7 +575,7 @@ class _ImportarFacturaState extends State<ImportarFactura> {
                     producto: 'Super # 7'
                   ) : Container(),
 
-                  data.superEspecial >= 7 ? _mostrarAdicionHamburguesa(
+                  data.superEspecial >= 7 ? _adicionHamburguesa(
 
                     carne:    listaHamburgesas.superAdicionCarne   [6],
                     tocineta: listaHamburgesas.superAdicionTocineta[6],
@@ -591,7 +585,7 @@ class _ImportarFacturaState extends State<ImportarFactura> {
                     producto: 'Super'
                   ) : Container(),
 
-                  data.superEspecial >= 8 ? _infoIngredientes(
+                  data.superEspecial >= 8 ? _ingredientesHamburguesa(
                     tomate  : listaHamburgesas.superIngredienteTomate    [7],
                     ensalada: listaHamburgesas.superIngredienteEnsalada  [7],
                     ripio   : listaHamburgesas.superIngredienteRipio     [7],
@@ -600,7 +594,7 @@ class _ImportarFacturaState extends State<ImportarFactura> {
                     producto: 'Super # 8'
                   ) : Container(),
 
-                  data.superEspecial >= 8 ? _mostrarAdicionHamburguesa(
+                  data.superEspecial >= 8 ? _adicionHamburguesa(
 
                     carne:    listaHamburgesas.superAdicionCarne   [7],
                     tocineta: listaHamburgesas.superAdicionTocineta[7],
@@ -610,7 +604,7 @@ class _ImportarFacturaState extends State<ImportarFactura> {
                     producto: 'Super'
                   ) : Container(),
 
-                  data.superEspecial >= 9 ? _infoIngredientes(
+                  data.superEspecial >= 9 ? _ingredientesHamburguesa(
                     tomate  : listaHamburgesas.superIngredienteTomate    [8],
                     ensalada: listaHamburgesas.superIngredienteEnsalada  [8],
                     ripio   : listaHamburgesas.superIngredienteRipio     [8],
@@ -619,7 +613,7 @@ class _ImportarFacturaState extends State<ImportarFactura> {
                     producto: 'Super # 9'
                   ) : Container(),
 
-                  data.superEspecial >= 9 ? _mostrarAdicionHamburguesa(
+                  data.superEspecial >= 9 ? _adicionHamburguesa(
 
                     carne:    listaHamburgesas.superAdicionCarne   [8],
                     tocineta: listaHamburgesas.superAdicionTocineta[8],
@@ -629,7 +623,7 @@ class _ImportarFacturaState extends State<ImportarFactura> {
                     producto: 'Super'
                   ) : Container(),
 
-                  data.superEspecial >= 10 ? _infoIngredientes(
+                  data.superEspecial >= 10 ? _ingredientesHamburguesa(
                     tomate  : listaHamburgesas.superIngredienteTomate    [9],
                     ensalada: listaHamburgesas.superIngredienteEnsalada  [9],
                     ripio   : listaHamburgesas.superIngredienteRipio     [9],
@@ -638,7 +632,7 @@ class _ImportarFacturaState extends State<ImportarFactura> {
                     producto: 'Super # 10'
                   ) : Container(),
 
-                  data.superEspecial >= 10 ? _mostrarAdicionHamburguesa(
+                  data.superEspecial >= 10 ? _adicionHamburguesa(
 
                     carne:    listaHamburgesas.superAdicionCarne   [9],
                     tocineta: listaHamburgesas.superAdicionTocineta[9],
@@ -649,7 +643,7 @@ class _ImportarFacturaState extends State<ImportarFactura> {
                   ) : Container(),
 
                 // Trisuper
-                  data.trisuper >= 1 ?  _infoIngredientes(
+                  data.trisuper >= 1 ?  _ingredientesHamburguesa(
                     tomate  : listaHamburgesas.trisuperIngredienteTomate    [0],
                     ensalada: listaHamburgesas.trisuperIngredienteEnsalada  [0],
                     ripio   : listaHamburgesas.trisuperIngredienteRipio     [0],
@@ -658,7 +652,7 @@ class _ImportarFacturaState extends State<ImportarFactura> {
                     producto: 'Trisuper # 1'
                   ) : Container(),
 
-                  data.trisuper >= 1 ? _mostrarAdicionHamburguesa(
+                  data.trisuper >= 1 ? _adicionHamburguesa(
                     
                     carne:    listaHamburgesas.trisuperAdicionCarne   [0],
                     tocineta: listaHamburgesas.trisuperAdicionTocineta[0],
@@ -668,7 +662,7 @@ class _ImportarFacturaState extends State<ImportarFactura> {
                     numeroDeHamburguesa: 1
                   ) : Container(),
 
-                  data.trisuper >= 2 ? _infoIngredientes(
+                  data.trisuper >= 2 ? _ingredientesHamburguesa(
                     tomate  : listaHamburgesas.trisuperIngredienteTomate    [1],
                     ensalada: listaHamburgesas.trisuperIngredienteEnsalada  [1],
                     ripio   : listaHamburgesas.trisuperIngredienteRipio     [1],
@@ -677,7 +671,7 @@ class _ImportarFacturaState extends State<ImportarFactura> {
                     producto: 'Trisuper # 2'
                   ) : Container(),
 
-                  data.trisuper >= 2 ? _mostrarAdicionHamburguesa(
+                  data.trisuper >= 2 ? _adicionHamburguesa(
                     
                     carne:    listaHamburgesas.trisuperAdicionCarne   [1],
                     tocineta: listaHamburgesas.trisuperAdicionTocineta[1],
@@ -687,7 +681,7 @@ class _ImportarFacturaState extends State<ImportarFactura> {
                     numeroDeHamburguesa: 2
                   ) : Container(),
 
-                  data.trisuper >= 3 ? _infoIngredientes(
+                  data.trisuper >= 3 ? _ingredientesHamburguesa(
                     tomate  : listaHamburgesas.trisuperIngredienteTomate    [2],
                     ensalada: listaHamburgesas.trisuperIngredienteEnsalada  [2],
                     ripio   : listaHamburgesas.trisuperIngredienteRipio     [2],
@@ -696,7 +690,7 @@ class _ImportarFacturaState extends State<ImportarFactura> {
                     producto: 'Trisuper # 3'
                   ) : Container(),
 
-                  data.trisuper >= 3 ? _mostrarAdicionHamburguesa(
+                  data.trisuper >= 3 ? _adicionHamburguesa(
                     
                     carne:    listaHamburgesas.trisuperAdicionCarne   [2],
                     tocineta: listaHamburgesas.trisuperAdicionTocineta[2],
@@ -706,7 +700,7 @@ class _ImportarFacturaState extends State<ImportarFactura> {
                     numeroDeHamburguesa: 3
                   ) : Container(),
 
-                  data.trisuper >= 4 ? _infoIngredientes(
+                  data.trisuper >= 4 ? _ingredientesHamburguesa(
                     tomate  : listaHamburgesas.trisuperIngredienteTomate    [3],
                     ensalada: listaHamburgesas.trisuperIngredienteEnsalada  [3],
                     ripio   : listaHamburgesas.trisuperIngredienteRipio     [3],
@@ -715,7 +709,7 @@ class _ImportarFacturaState extends State<ImportarFactura> {
                     producto: 'Trisuper # 4'
                   ): Container(),
 
-                  data.trisuper >= 4 ? _mostrarAdicionHamburguesa(
+                  data.trisuper >= 4 ? _adicionHamburguesa(
                     
                     carne:    listaHamburgesas.trisuperAdicionCarne   [3],
                     tocineta: listaHamburgesas.trisuperAdicionTocineta[3],
@@ -725,7 +719,7 @@ class _ImportarFacturaState extends State<ImportarFactura> {
                     numeroDeHamburguesa: 4
                   ) : Container(),
 
-                  data.trisuper >= 5 ? _infoIngredientes(
+                  data.trisuper >= 5 ? _ingredientesHamburguesa(
                     tomate  : listaHamburgesas.trisuperIngredienteTomate    [4],
                     ensalada: listaHamburgesas.trisuperIngredienteEnsalada  [4],
                     ripio   : listaHamburgesas.trisuperIngredienteRipio     [4],
@@ -734,7 +728,7 @@ class _ImportarFacturaState extends State<ImportarFactura> {
                     producto: 'Trisuper # 5'
                   ) : Container(),
 
-                  data.trisuper >= 5 ? _mostrarAdicionHamburguesa(
+                  data.trisuper >= 5 ? _adicionHamburguesa(
                     
                     carne:    listaHamburgesas.trisuperAdicionCarne   [4],
                     tocineta: listaHamburgesas.trisuperAdicionTocineta[4],
@@ -744,7 +738,7 @@ class _ImportarFacturaState extends State<ImportarFactura> {
                     numeroDeHamburguesa: 5
                   ) : Container(),
 
-                  data.trisuper >= 6 ? _infoIngredientes(
+                  data.trisuper >= 6 ? _ingredientesHamburguesa(
                     tomate  : listaHamburgesas.trisuperIngredienteTomate    [5],
                     ensalada: listaHamburgesas.trisuperIngredienteEnsalada  [5],
                     ripio   : listaHamburgesas.trisuperIngredienteRipio     [5],
@@ -753,7 +747,7 @@ class _ImportarFacturaState extends State<ImportarFactura> {
                     producto: 'Trisuper # 6'
                   ) : Container(),
 
-                  data.trisuper >= 6 ? _mostrarAdicionHamburguesa(
+                  data.trisuper >= 6 ? _adicionHamburguesa(
                     
                     carne:    listaHamburgesas.trisuperAdicionCarne   [5],
                     tocineta: listaHamburgesas.trisuperAdicionTocineta[5],
@@ -763,7 +757,7 @@ class _ImportarFacturaState extends State<ImportarFactura> {
                     numeroDeHamburguesa: 6
                   ) : Container(),
 
-                  data.trisuper >= 7 ? _infoIngredientes(
+                  data.trisuper >= 7 ? _ingredientesHamburguesa(
                     tomate  : listaHamburgesas.trisuperIngredienteTomate    [6],
                     ensalada: listaHamburgesas.trisuperIngredienteEnsalada  [6],
                     ripio   : listaHamburgesas.trisuperIngredienteRipio     [6],
@@ -772,7 +766,7 @@ class _ImportarFacturaState extends State<ImportarFactura> {
                     producto: 'Trisuper # 7'
                   ) : Container(),
 
-                  data.trisuper >= 7 ? _mostrarAdicionHamburguesa(
+                  data.trisuper >= 7 ? _adicionHamburguesa(
                     
                     carne:    listaHamburgesas.trisuperAdicionCarne   [6],
                     tocineta: listaHamburgesas.trisuperAdicionTocineta[6],
@@ -782,7 +776,7 @@ class _ImportarFacturaState extends State<ImportarFactura> {
                     numeroDeHamburguesa: 7
                   ) : Container(),
 
-                  data.trisuper >= 8 ? _infoIngredientes(
+                  data.trisuper >= 8 ? _ingredientesHamburguesa(
                     tomate  : listaHamburgesas.trisuperIngredienteTomate    [7],
                     ensalada: listaHamburgesas.trisuperIngredienteEnsalada  [7],
                     ripio   : listaHamburgesas.trisuperIngredienteRipio     [7],
@@ -791,7 +785,7 @@ class _ImportarFacturaState extends State<ImportarFactura> {
                     producto: 'Trisuper # 8'
                   ) : Container(),
 
-                  data.trisuper >= 8 ? _mostrarAdicionHamburguesa(
+                  data.trisuper >= 8 ? _adicionHamburguesa(
                     
                     carne:    listaHamburgesas.trisuperAdicionCarne   [7],
                     tocineta: listaHamburgesas.trisuperAdicionTocineta[7],
@@ -801,7 +795,7 @@ class _ImportarFacturaState extends State<ImportarFactura> {
                     numeroDeHamburguesa: 8
                   ) : Container(),
 
-                  data.trisuper >= 9 ? _infoIngredientes(
+                  data.trisuper >= 9 ? _ingredientesHamburguesa(
                     tomate  : listaHamburgesas.trisuperIngredienteTomate    [8],
                     ensalada: listaHamburgesas.trisuperIngredienteEnsalada  [8],
                     ripio   : listaHamburgesas.trisuperIngredienteRipio     [8],
@@ -810,7 +804,7 @@ class _ImportarFacturaState extends State<ImportarFactura> {
                     producto: 'Trisuper # 9'
                   ) : Container(),
 
-                  data.trisuper >= 9 ? _mostrarAdicionHamburguesa(
+                  data.trisuper >= 9 ? _adicionHamburguesa(
                     
                     carne:    listaHamburgesas.trisuperAdicionCarne   [8],
                     tocineta: listaHamburgesas.trisuperAdicionTocineta[8],
@@ -820,7 +814,7 @@ class _ImportarFacturaState extends State<ImportarFactura> {
                     numeroDeHamburguesa: 9
                   ) : Container(),
 
-                  data.trisuper >= 10 ? _infoIngredientes(
+                  data.trisuper >= 10 ? _ingredientesHamburguesa(
                     tomate  : listaHamburgesas.trisuperIngredienteTomate    [9],
                     ensalada: listaHamburgesas.trisuperIngredienteEnsalada  [9],
                     ripio   : listaHamburgesas.trisuperIngredienteRipio     [9],
@@ -829,7 +823,7 @@ class _ImportarFacturaState extends State<ImportarFactura> {
                     producto: 'Trisuper # 10'
                   ) : Container(),
 
-                  data.trisuper >= 10 ? _mostrarAdicionHamburguesa(
+                  data.trisuper >= 10 ? _adicionHamburguesa(
                     
                     carne:    listaHamburgesas.trisuperAdicionCarne   [9],
                     tocineta: listaHamburgesas.trisuperAdicionTocineta[9],
@@ -839,6 +833,24 @@ class _ImportarFacturaState extends State<ImportarFactura> {
                     numeroDeHamburguesa: 10
                   ) : Container(),
 
+                  data.perroGrandeTocineta >= 1 ? _ingredientesPerro(
+                    ensalada: listaPerro.perroGrandeTocinetaIngredienteEnsalada  [0],
+                    ripio   : listaPerro.perroGrandeTocinetaIngredienteRipio     [0],
+                    tocineta: listaPerro.perroGrandeTocinetaIngredienteTocineta  [0],
+                    queso   : listaPerro.perroGrandeTocinetaIngredienteQueso     [0],      
+                    producto: 'Perro Grande Con Tocineta # 1'
+                  ) : Container(),
+
+                  data.perroGrandeTocineta >= 1 ? _adicionPerro(
+                    
+                    tocineta:           listaPerro.perroGrandeTocinetaAdicionTocineta         [0],
+                    queso:              listaPerro.perroGrandeTocinetaAdicionQueso            [0],
+                    ensalada:           listaPerro.perroGrandeTocinetaAdicionEnsalada         [0],
+                    salchichaGrande:    listaPerro.perroGrandeTocinetaAdicionSalchichaGrande  [0],
+                    salchichaPequegna:  listaPerro.perroGrandeTocinetaAdicionSalchichaPequegna[0],
+                    producto: 'Perro Grande Con Tocineta #1',
+                    numeroDePerros: 1
+                  ) : Container(),
 
                   SizedBox(height: 30,),
 
@@ -874,6 +886,8 @@ class _ImportarFacturaState extends State<ImportarFactura> {
         ),
       );
   }
+
+
 
   _padding(){
 
@@ -920,45 +934,43 @@ class _ImportarFacturaState extends State<ImportarFactura> {
     );
   }
 
-  _infoIngredienteTomate(int dataProduc, String producto,  ) {
+  _infoIngredienteTomate(int dataProduc,   ) {
     
     return dataProduc == 2 ? Container() : Padding(
       padding: const EdgeInsets.symmetric(horizontal: 15),
       child: Column(
         children: <Widget>[
 
-          dataProduc != 2 ? _contador() : null,
-          
           dataProduc == 0 ? Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
 
-              Text(  producto, style: styleAppBar) ,
-              Text('Nada de tomate', style: styleAppBar),
+              // Text(  producto, style: styleAppBar) ,
+              Text('-- Nada de tomate', style: styleAppBar),
             ],
           ) : Container(), 
           
           dataProduc == 1 ? Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
-              Text(  producto, style: styleAppBar) ,
-              Text('Poco tomate', style: styleAppBar),
+              // Text(  producto, style: styleAppBar) ,
+              Text('-- Poco tomate', style: styleAppBar),
             ],
           ) : Container(), 
 
           dataProduc == 2 ? Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
-              Text(  producto, style: styleAppBar) ,
-              Text('Normal de tomate', style: styleAppBar),
+              // Text(  producto, style: styleAppBar) ,
+              Text('-- Normal de tomate', style: styleAppBar),
             ],
           ) : Container(), 
 
           dataProduc == 3 ? Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
-              Text(  producto, style: styleAppBar) ,
-              Text('Extra de tomate', style: styleAppBar),
+              // Text(  producto, style: styleAppBar) ,
+              Text('-- Extra de tomate', style: styleAppBar),
             ],
           ) : Container(), 
 
@@ -969,45 +981,43 @@ class _ImportarFacturaState extends State<ImportarFactura> {
     );
   }
 
-  _infoIngredienteEnsalada(int dataProduc, String producto,  ) {
+  _infoIngredienteEnsalada(int dataProduc,   ) {
     
     return dataProduc == 2 ? Container() : Padding(
       padding: const EdgeInsets.symmetric(horizontal: 15),
       child: Column(
         children: <Widget>[
 
-          dataProduc != 2 ? _contador() : null,
-          
           dataProduc == 0 ? Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
 
-              Text(  producto, style: styleAppBar) ,
-              Text('Nada de Ensalada', style: styleAppBar),
+              // Text(  producto, style: styleAppBar) ,
+              Text('-- Nada de Ensalada', style: styleAppBar),
             ],
           ) : Container(), 
           
           dataProduc == 1 ? Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
-              Text(  producto, style: styleAppBar) ,
-              Text('Poca Ensalada', style: styleAppBar),
+              // Text(  producto, style: styleAppBar) ,
+              Text('-- Poca Ensalada', style: styleAppBar),
             ],
           ) : Container(), 
 
           dataProduc == 2 ? Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
-              Text(  producto, style: styleAppBar) ,
-              Text('Normal', style: styleAppBar),
+              // Text(  producto, style: styleAppBar) ,
+              Text('-- Normal', style: styleAppBar),
             ],
           ) : Container(), 
 
           dataProduc == 3 ? Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
-              Text(  producto, style: styleAppBar) ,
-              Text('Extra de Ensalada', style: styleAppBar),
+              // Text(  producto, style: styleAppBar) ,
+              Text('-- Extra de Ensalada', style: styleAppBar),
             ],
           ) : Container(), 
 
@@ -1016,45 +1026,43 @@ class _ImportarFacturaState extends State<ImportarFactura> {
     );
   }
 
-  _infoIngredienteRipio(int dataProduc, String producto,  ) {
+  _infoIngredienteRipio(int dataProduc,   ) {
     
     return dataProduc == 2 ? Container() : Padding(
       padding: const EdgeInsets.symmetric(horizontal: 15),
       child: Column(
         children: <Widget>[
 
-          dataProduc != 2 ? _contador() : null,
-          
           dataProduc == 0 ? Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
 
-              Text(  producto, style: styleAppBar) ,
-              Text('Nada de ripio', style: styleAppBar),
+              // Text(  producto, style: styleAppBar) ,
+              Text('-- Nada de ripio', style: styleAppBar),
             ],
           ) : Container(), 
           
           dataProduc == 1 ? Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
-              Text(  producto, style: styleAppBar) ,
-              Text('Poco ripio', style: styleAppBar),
+              // Text(  producto, style: styleAppBar) ,
+              Text('-- Poco ripio', style: styleAppBar),
             ],
           ) : Container(), 
 
           dataProduc == 2 ? Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
-              Text(  producto, style: styleAppBar) ,
-              Text('Normal', style: styleAppBar),
+              // Text(  producto, style: styleAppBar) ,
+              Text('-- Normal', style: styleAppBar),
             ],
           ) : Container(), 
 
           dataProduc == 3 ? Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
-              Text(  producto, style: styleAppBar) ,
-              Text('Extra de ripio', style: styleAppBar),
+              // Text(  producto, style: styleAppBar) ,
+              Text('-- Extra de ripio', style: styleAppBar),
             ],
           ) : Container(), 
 
@@ -1063,45 +1071,43 @@ class _ImportarFacturaState extends State<ImportarFactura> {
     );
   }
 
-  _infoIngredienteTocineta(int dataProduc, String producto,  ) {
+  _infoIngredienteTocineta(int dataProduc,   ) {
     
     return dataProduc == 2 ? Container() : Padding(
       padding: const EdgeInsets.symmetric(horizontal: 15),
       child: Column(
         children: <Widget>[
-
-          dataProduc != 2 ? _contador() : null,
           
           dataProduc == 0 ? Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
 
-              Text(  producto, style: styleAppBar) ,
-              Text('Nada de tocineta', style: styleAppBar),
+              // Text(  producto, style: styleAppBar) ,
+              Text('-- Nada de tocineta', style: styleAppBar),
             ],
           ) : Container(), 
           
           dataProduc == 1 ? Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
-              Text(  producto, style: styleAppBar) ,
-              Text('Poca tocineta', style: styleAppBar),
+              // Text(  producto, style: styleAppBar) ,
+              Text('-- Poca tocineta', style: styleAppBar),
             ],
           ) : Container(), 
 
           dataProduc == 2 ? Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
-              Text(  producto, style: styleAppBar) ,
-              Text('Normal', style: styleAppBar),
+              // Text(  producto, style: styleAppBar) ,
+              Text('-- Normal', style: styleAppBar),
             ],
           ) : Container(), 
 
           dataProduc == 3 ? Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
-              Text(  producto, style: styleAppBar) ,
-              Text('Extra tocineta', style: styleAppBar),
+              // Text(  producto, style: styleAppBar) ,
+              Text('-- Extra tocineta', style: styleAppBar),
             ],
           ) : Container(), 
 
@@ -1110,45 +1116,43 @@ class _ImportarFacturaState extends State<ImportarFactura> {
     );
   }
 
-  _infoIngredienteQueso(int dataProduc, String producto,  ) {
+  _infoIngredienteQueso(int dataProduc,   ) {
     
     return dataProduc == 2 ? Container() : Padding(
       padding: const EdgeInsets.symmetric(horizontal: 15),
       child: Column(
         children: <Widget>[
-
-          dataProduc != 2 ? _contador() : null,
           
           dataProduc == 0 ? Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
 
-              Text(  producto, style: styleAppBar) ,
-              Text('Nada queso', style: styleAppBar),
+              // Text(  producto, style: styleAppBar) ,
+              Text('-- Nada queso', style: styleAppBar),
             ],
           ) : Container(), 
           
           dataProduc == 1 ? Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
-              Text(  producto, style: styleAppBar) ,
-              Text('Poco queso', style: styleAppBar),
+              // Text(  producto, style: styleAppBar) ,
+              Text('-- Poco queso', style: styleAppBar),
             ],
           ) : Container(), 
 
           dataProduc == 2 ? Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
-              Text(  producto, style: styleAppBar) ,
-              Text('Normal', style: styleAppBar),
+              // Text(  producto, style: styleAppBar) ,
+              Text('-- Normal', style: styleAppBar),
             ],
           ) : Container(), 
 
           dataProduc == 3 ? Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
-              Text(  producto, style: styleAppBar) ,
-              Text('Extra queso', style: styleAppBar),
+              // Text(  producto, style: styleAppBar) ,
+              Text('-- Extra queso', style: styleAppBar),
             ],
           ) : Container(), 
 
@@ -1157,42 +1161,89 @@ class _ImportarFacturaState extends State<ImportarFactura> {
     );
   }
 
-  _infoIngredientes({ int tomate, int ensalada, int ripio, int tocineta, int queso, String producto}){
 
-    return Column(
+  _ingredientesHamburguesa({ int tomate, int ensalada, int ripio, int tocineta, int queso, String producto}){
+    
+    return tomate != 2 || ensalada != 2 || ripio != 2 || tocineta != 2 || queso != 2 ? Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
-
-        tomate    == 2 ? Container() : _infoIngredienteTomate(   tomate,   producto),
-        ensalada  == 2 ? Container() : _infoIngredienteEnsalada( ensalada, producto),
-        ripio     == 2 ? Container() : _infoIngredienteRipio(    ripio,    producto),
-        tocineta  == 2 ? Container() : _infoIngredienteTocineta( tocineta, producto),
-        queso     == 2 ? Container() : _infoIngredienteQueso(    queso,    producto),
+        Padding(
+          padding: const EdgeInsets.only(left: 10),
+          child: Text(  '$producto ', style: styleProducto),
+        ) ,
+        tomate    == 2 ? Container() : _infoIngredienteTomate(   tomate   ),
+        ensalada  == 2 ? Container() : _infoIngredienteEnsalada( ensalada ),
+        ripio     == 2 ? Container() : _infoIngredienteRipio(    ripio    ),
+        tocineta  == 2 ? Container() : _infoIngredienteTocineta( tocineta ),
+        queso     == 2 ? Container() : _infoIngredienteQueso(    queso    ),
 
         tomate != 2 || ensalada != 2 || ripio != 2 || tocineta != 2 || queso != 2 ? Divider() : Container(),
-
-        
-
       ]
-    );
+    ) : Container();
   }
 
-  _contador(){
-    this.i++;
-    print('$i');
-    return Container();
+
+  _adicionHamburguesa({ int carne, int tocineta, int queso, int ensalada, int numeroDeHamburguesa, String producto, int numeroDeProducto }) {
+    
+    return carne > 0 || tocineta > 0 || queso > 0 || ensalada > 0 ? Column(
+      
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: <Widget>[
+        Padding(
+          padding: const EdgeInsets.only(left: 10),
+          child: Text(  '$producto # $numeroDeHamburguesa', style: styleProducto),
+        ) ,
+        _infoAdicion( adicion: carne,     producto: 'Carne '),
+        _infoAdicion( adicion: tocineta,  producto: 'Tocineta '),
+        _infoAdicion( adicion: queso,     producto: 'Queso '),
+        _infoAdicion( adicion: ensalada,  producto: 'Ensalada '),
+
+        carne > 0 || tocineta > 0 || queso > 0 || ensalada > 0 ? Divider() : Container()
+      ],
+    ) : Container();
   }
 
-  _mostrarAdicionHamburguesa({ int carne, int tocineta, int queso, int ensalada, int numeroDeHamburguesa, String producto, int numeroDeProducto }) {
+  _hamburguesa({ int ingredienteTomate, int ingredienteEnsalada, int ingredienteRipio, int ingredienteTocineta, int ingredienteQueso,
+    int adicionCarne, int adicionTocineta, int adicionQueso, int adicionEnsalada, int identificadorDeProducto, String producto  }) {
 
     return Column(
       children: <Widget>[
 
-        _infoAdicion( adicion: carne,     producto: '--$producto $numeroDeHamburguesa Ad Carne '),
-        _infoAdicion( adicion: tocineta,  producto: '--$producto $numeroDeHamburguesa Ad Tocineta '),
-        _infoAdicion( adicion: queso,     producto: '--$producto $numeroDeHamburguesa Ad Queso '),
-        _infoAdicion( adicion: ensalada,  producto: '--$producto $numeroDeHamburguesa Ad Ensalada '),
+        ingredienteTomate != 2 || ingredienteEnsalada != 2 || ingredienteRipio != 2 || ingredienteTocineta != 2 || ingredienteQueso != 2 || adicionCarne > 0 || adicionTocineta > 0 || adicionQueso > 0 || adicionEnsalada > 0 ?
+        Padding(
+          padding: const EdgeInsets.only(left: 10),
+          child: Text(  '$producto # ${identificadorDeProducto+1}', style: styleProducto),
+        ) : Container(),
 
-        carne > 0 || tocineta > 0 || queso > 0 || ensalada > 0 ? Divider() : Container()
+        // Ingredientes
+        ingredienteTomate != 2 || ingredienteEnsalada != 2 || ingredienteRipio != 2 || ingredienteTocineta != 2 || ingredienteQueso != 2 ? Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+
+            ingredienteTomate    == 2 ? Container() : _infoIngredienteTomate(   ingredienteTomate   ),
+            ingredienteEnsalada  == 2 ? Container() : _infoIngredienteEnsalada( ingredienteEnsalada ),
+            ingredienteRipio     == 2 ? Container() : _infoIngredienteRipio(    ingredienteRipio    ),
+            ingredienteTocineta  == 2 ? Container() : _infoIngredienteTocineta( ingredienteTocineta ),
+            ingredienteQueso     == 2 ? Container() : _infoIngredienteQueso(    ingredienteQueso    ),
+
+            ingredienteTomate != 2 || ingredienteEnsalada != 2 || ingredienteRipio != 2 || ingredienteTocineta != 2 || ingredienteQueso != 2 ? Divider() : Container(),
+          ]
+        ) : Container(),
+
+        // Adiciones
+        adicionCarne > 0 || adicionTocineta > 0 || adicionQueso > 0 || adicionEnsalada > 0 ? Column(
+          
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            
+            _infoAdicion( adicion: adicionCarne,     producto: 'Carne '),
+            _infoAdicion( adicion: adicionTocineta,  producto: 'Tocineta '),
+            _infoAdicion( adicion: adicionQueso,     producto: 'Queso '),
+            _infoAdicion( adicion: adicionEnsalada,  producto: 'Ensalada '),
+
+            adicionCarne > 0 || adicionTocineta > 0 || adicionQueso > 0 || adicionEnsalada > 0 ? Divider() : Container()
+          ],
+        ) : Container()
       ],
     );
   }
@@ -1205,14 +1256,13 @@ class _ImportarFacturaState extends State<ImportarFactura> {
       child: Column(
         children: <Widget>[
 
-          adicion > 0 ? _contador() : null,
           
           adicion > 0 ? Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
 
-              Text(  producto, style: styleAppBar) ,
-              // Text('Adición Queso', style: styleAppBar),
+              // Text(  producto, style: styleAppBar) ,
+              Text('-- Adición $producto', style: styleAppBar),
               Text('$adicion', style: styleAppBar),
             ],
           ) 
@@ -1225,17 +1275,53 @@ class _ImportarFacturaState extends State<ImportarFactura> {
     );
   }
 
-  _mostrarAdicionPerro({ int carne, int tocineta, int queso, int ensalada, int numeroDeHamburguesa, String producto, int numeroDeProducto }) {
 
-    return Column(
+  _ingredientesPerro({ int ensalada, int ripio, int tocineta, int queso, String producto}){
+
+    return ensalada != 2 || ripio != 2 || tocineta != 2 || queso != 2 ? Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
+        Padding(
+          padding: const EdgeInsets.only(left: 10),
+          child: Text( producto, style: styleProducto, ),
+        ) ,
+        SizedBox(height: 5,),
+        ensalada  == 2 ? Container() : _infoIngredienteEnsalada( ensalada, ),
+        ripio     == 2 ? Container() : _infoIngredienteRipio(    ripio,    ),
+        tocineta  == 2 ? Container() : _infoIngredienteTocineta( tocineta, ),
+        queso     == 2 ? Container() : _infoIngredienteQueso(    queso,    ),
 
-        _infoAdicion( adicion: tocineta,  producto: '--$producto $numeroDeHamburguesa Ad Tocineta '),
-        _infoAdicion( adicion: queso,     producto: '--$producto $numeroDeHamburguesa Ad Queso '),
-        _infoAdicion( adicion: ensalada,  producto: '--$producto $numeroDeHamburguesa Ad Ensalada '),
+        ensalada != 2 || ripio != 2 || tocineta != 2 || queso != 2 ? Divider() : Container(),
 
-        carne > 0 || tocineta > 0 || queso > 0 || ensalada > 0 ? Divider() : Container()
-      ],
-    );
+        
+
+      ]
+    ): Container();
   }
+
+  
+
+  _adicionPerro({ int tocineta, int queso, int ensalada, int salchichaGrande, int salchichaPequegna, int numeroDePerros, String producto, int numeroDeProducto }) {
+
+    int u = 1;
+    return tocineta > 0 || queso > 0 || ensalada > 0 || salchichaPequegna > 0 || salchichaGrande > 0 ? Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: <Widget>[
+        Padding(
+          padding: const EdgeInsets.only(left: 10),
+          child: Text(  producto, style: styleProducto),
+        ) ,
+        SizedBox(height: 5,),
+        _infoAdicion( adicion: tocineta,          producto: 'Tocineta'),
+        _infoAdicion( adicion: queso,             producto: 'Queso'),
+        _infoAdicion( adicion: ensalada,          producto: 'Ensalada'),
+        _infoAdicion( adicion: salchichaGrande,   producto: 'Salchicha Grande'),
+        _infoAdicion( adicion: salchichaPequegna, producto: 'Salchicha Pequeña'),
+
+        tocineta > 0 || queso > 0 || ensalada > 0 || salchichaPequegna > 0 || salchichaGrande > 0 ? Divider() : Container()
+      ],
+    ) : Container();
+  }
+
+
 }
