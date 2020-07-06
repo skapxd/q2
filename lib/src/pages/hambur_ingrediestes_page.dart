@@ -51,6 +51,46 @@ class _IngredientesPageState extends State<HamburgesasIngredientesPage> {
     
     final List producto = ModalRoute.of(context).settings.arguments;
 
+    if ( producto[1] == 'especial' || producto[1] == 'especiales') {
+
+      _ingredienteTomate   = listaHamburgesas.especialIngredienteTomate;         
+      _ingredienteEnsalada = listaHamburgesas.especialIngredienteEnsalada;
+      _ingredienteRipio    = listaHamburgesas.especialIngredienteRipio;
+      _ingredienteTocineta = listaHamburgesas.especialIngredienteTocineta;
+      _ingredienteQueso    = listaHamburgesas.especialIngredienteQueso;
+      
+      _adicionCarne        = listaHamburgesas.especialAdicionCarne;
+      _adicionTocineta     = listaHamburgesas.especialAdicionTocineta;
+      _adicionQueso        = listaHamburgesas.especialAdicionQueso;
+      _adicionEnsalada     = listaHamburgesas.especialAdicionEnsalada;
+
+    } else if ( producto[1] == 'super' ) {
+
+      _ingredienteTomate    = listaHamburgesas.superIngredienteTomate;
+      _ingredienteEnsalada  = listaHamburgesas.superIngredienteEnsalada;
+      _ingredienteRipio     = listaHamburgesas.superIngredienteRipio;
+      _ingredienteTocineta  = listaHamburgesas.superIngredienteTocineta;
+      _ingredienteQueso     = listaHamburgesas.superIngredienteQueso;
+
+      _adicionCarne         = listaHamburgesas.superAdicionCarne;
+      _adicionTocineta      = listaHamburgesas.superAdicionTocineta;
+      _adicionEnsalada      = listaHamburgesas.superAdicionEnsalada;
+      _adicionQueso         = listaHamburgesas.superAdicionQueso;
+
+    } else if ( producto[1] == 'trisuper' ) {
+
+      _ingredienteTomate    = listaHamburgesas.trisuperIngredienteTomate;
+      _ingredienteEnsalada  = listaHamburgesas.trisuperIngredienteEnsalada;
+      _ingredienteRipio     = listaHamburgesas.trisuperIngredienteRipio;
+      _ingredienteTocineta  = listaHamburgesas.trisuperIngredienteTocineta;
+      _ingredienteQueso     = listaHamburgesas.trisuperIngredienteQueso;
+
+      _adicionCarne         = listaHamburgesas.trisuperAdicionCarne;
+      _adicionTocineta      = listaHamburgesas.trisuperAdicionTocineta;
+      _adicionEnsalada      = listaHamburgesas.trisuperAdicionEnsalada;
+      _adicionQueso         = listaHamburgesas.trisuperAdicionQueso;
+    }
+
     // final bloc = Provider.ofProducto(context);
   
     final height = MediaQuery.of(context).size.height;
@@ -157,7 +197,7 @@ class _IngredientesPageState extends State<HamburgesasIngredientesPage> {
 
         listaHamburgesas.especialAdicionCarne         = _adicionCarne;
         listaHamburgesas.especialAdicionTocineta      = _adicionTocineta;
-        listaHamburgesas.especialAdicioEnsalada       = _adicionEnsalada;
+        listaHamburgesas.especialAdicionEnsalada      = _adicionEnsalada;
         listaHamburgesas.especialAdicionQueso         = _adicionQueso;
 
       } else if( productoPaginaAnterior == 'super'){
@@ -170,7 +210,7 @@ class _IngredientesPageState extends State<HamburgesasIngredientesPage> {
 
         listaHamburgesas.superAdicionCarne         = _adicionCarne;
         listaHamburgesas.superAdicionTocineta      = _adicionTocineta;
-        listaHamburgesas.superAdicioEnsalada       = _adicionEnsalada;
+        listaHamburgesas.superAdicionEnsalada       = _adicionEnsalada;
         listaHamburgesas.superAdicionQueso         = _adicionQueso;
 
       } else if( productoPaginaAnterior == 'trisuper') {
@@ -183,23 +223,11 @@ class _IngredientesPageState extends State<HamburgesasIngredientesPage> {
 
         listaHamburgesas.trisuperAdicionCarne         = _adicionCarne;
         listaHamburgesas.trisuperAdicionTocineta      = _adicionTocineta;
-        listaHamburgesas.trisuperAdicioEnsalada       = _adicionEnsalada;
+        listaHamburgesas.trisuperAdicionEnsalada       = _adicionEnsalada;
         listaHamburgesas.trisuperAdicionQueso         = _adicionQueso;
         print('hola');
 
-      } else if (productoPaginaAnterior == 'perro grande con tocineta'){
-        print(productoPaginaAnterior);
-
-      } else if( productoPaginaAnterior == 'perro grande') {
-        print(productoPaginaAnterior);
-
-      } else if ( productoPaginaAnterior == 'perro pequeño con tocineta'){
-        print(productoPaginaAnterior);
-
-      } else if ( productoPaginaAnterior == 'perro pequeño') {
-        print(productoPaginaAnterior);
-
-      } else if( productoPaginaAnterior == 'perra grande') {
+      }  else if( productoPaginaAnterior == 'perra grande') {
         print(productoPaginaAnterior);
 
       } else if ( productoPaginaAnterior == 'perra pequeña') {

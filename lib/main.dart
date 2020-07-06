@@ -8,7 +8,6 @@ import 'package:q2/src/pages/esperando_confirmacion_page.dart';
 import 'package:q2/src/pages/introducir_codigo.dart';
 import 'package:q2/src/pages/zona_de_producto.dart';
 import 'package:q2/src/providers/lista_perros_provider.dart';
-import 'package:q2/src/service/authservice.dart';
 import 'package:q2/src/providers/lista_hamburgesas_provider.dart';
 
 

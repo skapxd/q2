@@ -88,7 +88,7 @@ class ListaHamburguesas with ChangeNotifier {
       notifyListeners();
     }
 
-    set especialAdicioEnsalada( List<int> adicionEnsalada) {
+    set especialAdicionEnsalada( List<int> adicionEnsalada) {
 
       this._especialAdicionEnsalada = adicionEnsalada;
       notifyListeners();
@@ -180,7 +180,7 @@ class ListaHamburguesas with ChangeNotifier {
       notifyListeners();
     }
 
-    set superAdicioEnsalada( List<int> adicionEnsalada) {
+    set superAdicionEnsalada( List<int> adicionEnsalada) {
 
       this._superAdicionEnsalada = adicionEnsalada;
       notifyListeners();
@@ -273,7 +273,7 @@ class ListaHamburguesas with ChangeNotifier {
       notifyListeners();
     }
 
-    set trisuperAdicioEnsalada( List<int> adicionEnsalada) {
+    set trisuperAdicionEnsalada( List<int> adicionEnsalada) {
 
       this._trisuperAdicionEnsalada = adicionEnsalada;
       notifyListeners();

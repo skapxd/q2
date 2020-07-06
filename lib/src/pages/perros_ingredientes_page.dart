@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:q2/src/bloc/producto_bloc.dart';
 import 'package:q2/src/bloc/provider.dart';
-import 'package:q2/src/providers/lista_hamburgesas_provider.dart';
 import 'package:q2/src/providers/lista_perros_provider.dart';
 
 
@@ -25,10 +24,22 @@ class _IngredientesPageState extends State<PerrosIngredientesPage> {
   
   final List<String> nadaPocoNormalExtraLista = ['Nada', 'Poco', 'Normal', 'Extra'];
 
-  List<int> _ingredienteEnsalada ;
-  List<int> _ingredienteRipio    ;
-  List<int> _ingredienteTocineta ;
-  List<int> _ingredienteQueso    ;
+  // List<int> _ingredienteEnsalada      = List.filled(10, 2);
+  // List<int> _ingredienteRipio         = List.filled(10, 2);
+  // List<int> _ingredienteTocineta      = List.filled(10, 2);
+  // List<int> _ingredienteQueso         = List.filled(10, 2);
+
+  // List<int> _adicionSalchichaGrande   = List.filled(10, 0);
+  // List<int> _adicionSalchichaPequegna = List.filled(10, 0);
+  // List<int> _adicionTocineta          = List.filled(10, 0);
+  // List<int> _adicionQueso             = List.filled(10, 0);
+  // List<int> _adicionEnsalada          = List.filled(10, 0);
+
+  
+  List<int> _ingredienteEnsalada      ;
+  List<int> _ingredienteRipio         ;
+  List<int> _ingredienteTocineta      ;
+  List<int> _ingredienteQueso         ;
 
   List<int> _adicionSalchichaGrande   ;
   List<int> _adicionSalchichaPequegna ;
@@ -52,7 +63,11 @@ class _IngredientesPageState extends State<PerrosIngredientesPage> {
     
     final List producto = ModalRoute.of(context).settings.arguments;
 
-    if (producto[1] == 'perro grande con tocineta') {
+    print(producto[1]);
+
+    if (producto[1] == 'perro grande con tocineta' || producto[1] == 'perros grandes con tocineta') {
+
+      print(producto[1]);
 
       _ingredienteEnsalada      = listaPerro.perroGrandeTocinetaIngredienteEnsalada;
       _ingredienteRipio         = listaPerro.perroGrandeTocinetaIngredienteRipio;
@@ -65,7 +80,7 @@ class _IngredientesPageState extends State<PerrosIngredientesPage> {
       _adicionQueso             = listaPerro.perroGrandeTocinetaAdicionQueso;
       _adicionEnsalada          = listaPerro.perroGrandeTocinetaAdicionEnsalada;
       
-    } else if ( producto[1] == 'perro grande') {
+    } else if ( producto[1] == 'perro grande' || producto[1] == 'perros grandes') {
 
       _ingredienteEnsalada      = listaPerro.perroGrandeIngredienteEnsalada;  
       _ingredienteRipio         = listaPerro.perroGrandeIngredienteEnsalada;
@@ -78,7 +93,7 @@ class _IngredientesPageState extends State<PerrosIngredientesPage> {
       _adicionQueso             = listaPerro.perroGrandeAdicionQueso;
       _adicionEnsalada          = listaPerro.perroGrandeAdicionEnsalada;
 
-    } else if ( producto[1] == 'perro pequeño con tocineta') {
+    } else if ( producto[1] == 'perro pequeño con tocineta' ||  producto[1] =='perros pequeños con tocineta') {
 
       _ingredienteEnsalada      = listaPerro.perroPequegnoTocinetaIngredienteEnsalada;
       _ingredienteRipio         = listaPerro.perroPequegnoTocinetaIngredienteRipio;
@@ -91,7 +106,7 @@ class _IngredientesPageState extends State<PerrosIngredientesPage> {
       _adicionQueso             = listaPerro.perroPequegnoTocinetaAdicionQueso;
       _adicionEnsalada          = listaPerro.perroPequegnoTocinetaAdicionEnsalada;
 
-    } else if ( producto[1] == 'perro pequeño' ) {
+    } else if ( producto[1] == 'perro pequeño' || producto[1] == 'perros pequeños' ) {
       
       _ingredienteEnsalada      = listaPerro.perroPequegnoIngredienteEnsalada;
       _ingredienteRipio         = listaPerro.perroPequegnoIngredienteRipio;     
@@ -102,7 +117,33 @@ class _IngredientesPageState extends State<PerrosIngredientesPage> {
       _adicionSalchichaPequegna = listaPerro.perroPequegnoAdicionSalchichaPequegna;             
       _adicionTocineta          = listaPerro.perroPequegnoAdicionTocineta;     
       _adicionQueso             = listaPerro.perroPequegnoAdicionQueso; 
-      _adicionEnsalada          = listaPerro.perroPequegnoAdicionEnsalada;     
+      _adicionEnsalada          = listaPerro.perroPequegnoAdicionEnsalada;   
+
+    } else if ( producto[1] == 'perra grande' || producto[1] == 'perras grandes' ) {
+      
+      _ingredienteEnsalada      = listaPerro.perraGrandeIngredienteEnsalada;
+      _ingredienteRipio         = listaPerro.perraGrandeIngredienteRipio;         
+      _ingredienteQueso         = listaPerro.perraGrandeIngredienteQueso;
+
+      _adicionSalchichaGrande   = listaPerro.perraGrandeAdicionSalchichaGrande;           
+      _adicionSalchichaPequegna = listaPerro.perraGrandeAdicionSalchichaPequegna;     
+
+      _adicionTocineta          = listaPerro.perraGrandeAdicionTocineta;     
+      _adicionQueso             = listaPerro.perraGrandeAdicionQueso; 
+      _adicionEnsalada          = listaPerro.perraGrandeAdicionEnsalada;  
+
+    } else if ( producto[1] == 'perra pequeña' || producto[1] == 'perras pequeñas' ) {
+      
+      _ingredienteEnsalada      = listaPerro.perraPequegnaIngredienteEnsalada;
+      _ingredienteRipio         = listaPerro.perraPequegnaIngredienteRipio;         
+      _ingredienteQueso         = listaPerro.perraPequegnaIngredienteQueso;
+
+      _adicionSalchichaGrande   = listaPerro.perraPequegnaAdicionSalchichaGrande;           
+      _adicionSalchichaPequegna = listaPerro.perraPequegnaAdicionSalchichaPequegna;     
+              
+      _adicionTocineta          = listaPerro.perraPequegnaAdicionTocineta;     
+      _adicionQueso             = listaPerro.perraPequegnaAdicionQueso; 
+      _adicionEnsalada          = listaPerro.perraPequegnaAdicionEnsalada;     
     }
 
 
@@ -194,6 +235,8 @@ class _IngredientesPageState extends State<PerrosIngredientesPage> {
 
   cambiarValorDeLista({ int i, int index, String str, String productoPaginaAnterior}) {
 
+    print(productoPaginaAnterior);
+
     setState(() {
 
       str == 'Ensalada' ? _ingredienteEnsalada[index] += i : _ingredienteEnsalada = _ingredienteEnsalada;
@@ -204,6 +247,7 @@ class _IngredientesPageState extends State<PerrosIngredientesPage> {
 
 
       if (productoPaginaAnterior == 'perro grande con tocineta'){
+        
         listaPerro.perroGrandeTocinetaIngredienteEnsalada   = _ingredienteEnsalada;
         listaPerro.perroGrandeTocinetaIngredienteQueso      = _ingredienteQueso;
         listaPerro.perroGrandeTocinetaIngredienteRipio      = _ingredienteRipio;
@@ -216,27 +260,74 @@ class _IngredientesPageState extends State<PerrosIngredientesPage> {
         listaPerro.perroGrandeTocinetaAdicionSalchichaGrande    = _adicionSalchichaGrande;
         listaPerro.perroGrandeTocinetaAdicionSalchichaPequegna  = _adicionSalchichaPequegna;
 
-        // print(listaPerro.perroGrandeTocinetaIngredienteEnsalada);
-
-        // print(' Salchicha Grande ${listaPerro.perroGrandeTocinetaAdicionSalchichaGrande}');
-        // print(listaPerro.perroGrandeTocinetaAdicionSalchichaGrande);
-        print(_adicionSalchichaGrande);
-        // print(' Salchicha Pequeña ${listaPerro.perroGrandeTocinetaAdicionSalchichaPequegna}');
-
       } else if( productoPaginaAnterior == 'perro grande') {
-        print(productoPaginaAnterior);
+
+        listaPerro.perroGrandeIngredienteEnsalada   = _ingredienteEnsalada;
+        listaPerro.perroGrandeIngredienteQueso      = _ingredienteQueso;
+        listaPerro.perroGrandeIngredienteRipio      = _ingredienteRipio;
+        listaPerro.perroGrandeIngredienteTocineta   = _ingredienteTocineta;
+
+        listaPerro.perroGrandeAdicionQueso              = _adicionQueso;
+        listaPerro.perroGrandeAdicionEnsalada           = _adicionEnsalada;
+        listaPerro.perroGrandeAdicionTocineta           = _adicionTocineta;
+
+        listaPerro.perroGrandeAdicionSalchichaGrande    = _adicionSalchichaGrande;
+        listaPerro.perroGrandeAdicionSalchichaPequegna  = _adicionSalchichaPequegna;
 
       } else if ( productoPaginaAnterior == 'perro pequeño con tocineta'){
-        print(productoPaginaAnterior);
+
+        listaPerro.perroPequegnoTocinetaIngredienteEnsalada   = _ingredienteEnsalada;
+        listaPerro.perroPequegnoTocinetaIngredienteQueso      = _ingredienteQueso;
+        listaPerro.perroPequegnoTocinetaIngredienteRipio      = _ingredienteRipio;
+        listaPerro.perroPequegnoTocinetaIngredienteTocineta   = _ingredienteTocineta;
+
+        listaPerro.perroPequegnoTocinetaAdicionQueso              = _adicionQueso;
+        listaPerro.perroPequegnoTocinetaAdicionEnsalada           = _adicionEnsalada;
+        listaPerro.perroPequegnoTocinetaAdicionTocineta           = _adicionTocineta;
+
+        listaPerro.perroPequegnoTocinetaAdicionSalchichaGrande    = _adicionSalchichaGrande;
+        listaPerro.perroPequegnoTocinetaAdicionSalchichaPequegna  = _adicionSalchichaPequegna;
 
       } else if ( productoPaginaAnterior == 'perro pequeño') {
-        print(productoPaginaAnterior);
+
+        listaPerro.perroPequegnoIngredienteEnsalada   = _ingredienteEnsalada;
+        listaPerro.perroPequegnoIngredienteQueso      = _ingredienteQueso;
+        listaPerro.perroPequegnoIngredienteRipio      = _ingredienteRipio;
+        listaPerro.perroPequegnoIngredienteTocineta   = _ingredienteTocineta;
+
+        listaPerro.perroPequegnoAdicionQueso              = _adicionQueso;
+        listaPerro.perroPequegnoAdicionEnsalada           = _adicionEnsalada;
+        listaPerro.perroPequegnoAdicionTocineta           = _adicionTocineta;
+
+        listaPerro.perroPequegnoAdicionSalchichaGrande    = _adicionSalchichaGrande;
+        listaPerro.perroPequegnoAdicionSalchichaPequegna  = _adicionSalchichaPequegna;
 
       } else if( productoPaginaAnterior == 'perra grande') {
-        print(productoPaginaAnterior);
+        
+        listaPerro.perraGrandeIngredienteEnsalada   = _ingredienteEnsalada;
+        listaPerro.perraGrandeIngredienteQueso      = _ingredienteQueso;
+        listaPerro.perraGrandeIngredienteRipio      = _ingredienteRipio;
+
+        listaPerro.perraGrandeAdicionQueso              = _adicionQueso;
+        listaPerro.perraGrandeAdicionEnsalada           = _adicionEnsalada;
+        listaPerro.perraGrandeAdicionTocineta           = _adicionTocineta;
+
+        listaPerro.perraGrandeAdicionSalchichaGrande    = _adicionSalchichaGrande;
+        listaPerro.perraGrandeAdicionSalchichaPequegna  = _adicionSalchichaPequegna;
 
       } else if ( productoPaginaAnterior == 'perra pequeña') {
-        print(productoPaginaAnterior);
+
+        listaPerro.perraPequegnaIngredienteEnsalada   = _ingredienteEnsalada;
+        listaPerro.perraPequegnaIngredienteQueso      = _ingredienteQueso;
+        listaPerro.perraPequegnaIngredienteRipio      = _ingredienteRipio;
+
+        listaPerro.perraPequegnaAdicionQueso              = _adicionQueso;
+        listaPerro.perraPequegnaAdicionEnsalada           = _adicionEnsalada;
+        listaPerro.perraPequegnaAdicionTocineta           = _adicionTocineta;
+
+        listaPerro.perraPequegnaAdicionSalchichaGrande    = _adicionSalchichaGrande;
+        listaPerro.perraPequegnaAdicionSalchichaPequegna  = _adicionSalchichaPequegna;
+
 
       }
       
@@ -284,7 +375,7 @@ class _IngredientesPageState extends State<PerrosIngredientesPage> {
               _cardIngredientes( producto: 'Ensalada', width: width, i: _ingredienteEnsalada,  index: index, productoPaginaAnterior: productoPaginaAnterior),
               _cardIngredientes( producto: 'Ripio',    width: width, i: _ingredienteRipio,     index: index, productoPaginaAnterior: productoPaginaAnterior),
               _cardIngredientes( producto: 'Queso',    width: width, i: _ingredienteQueso,     index: index, productoPaginaAnterior: productoPaginaAnterior),
-              productoPaginaAnterior == 'perro grande' || productoPaginaAnterior == 'perro pequeño' ? Container() 
+              productoPaginaAnterior == 'perro grande' || productoPaginaAnterior == 'perro pequeño' || productoPaginaAnterior == 'perra grande' || productoPaginaAnterior == 'perras grandes' || productoPaginaAnterior == 'perra pequeña' || productoPaginaAnterior == 'perras pequeñas' ? Container() 
                 : _cardIngredientes( producto: 'Tocineta', width: width, i: _ingredienteTocineta,  index: index, productoPaginaAnterior: productoPaginaAnterior),
 
               _adicones(context, adicion: 'Tocineta',           precio: '2.500', producto: _adicionTocineta,          index: index, productoPaginaAnterior: productoPaginaAnterior),

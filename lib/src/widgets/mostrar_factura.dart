@@ -5,6 +5,7 @@ import 'package:q2/src/bloc/producto_bloc.dart';
 import 'package:q2/src/bloc/provider.dart';
 import 'package:q2/src/providers/lista_hamburgesas_provider.dart';
 import 'package:q2/src/providers/lista_perros_provider.dart';
+// import 'package:q2/src/widgets/hamburguesa.dart';
 
 class ImportarFactura extends StatefulWidget {
 
@@ -270,587 +271,1469 @@ class _ImportarFacturaState extends State<ImportarFactura> {
                   ),
 
                   SizedBox(height: 15,),
+                  // Hamburguesa(),
+                  
+                /////////////////////////////////////////////////////////////////////////////////////////////
+                /// Especiales 
+                  _hamburguesa(
+                    // Adiciones
+                    adicionCarne:     listaHamburgesas.especialAdicionCarne   [0],
+                    adicionTocineta:  listaHamburgesas.especialAdicionTocineta[0],
+                    adicionQueso:     listaHamburgesas.especialAdicionQueso   [0],
+                    adicionEnsalada:  listaHamburgesas.especialAdicionEnsalada[0],
+                    producto: 'Especial',
+                    identificadorDeProducto: 0,
+                    // Ingredietes
+                    ingredienteTomate:    listaHamburgesas.especialIngredienteTomate    [0],
+                    ingredienteEnsalada:  listaHamburgesas.especialIngredienteEnsalada  [0],
+                    ingredienteRipio:     listaHamburgesas.especialIngredienteRipio     [0],
+                    ingredienteTocineta:  listaHamburgesas.especialIngredienteTocineta  [0],
+                    ingredienteQueso:     listaHamburgesas.especialIngredienteQueso     [0],
+                  ),
 
-                // Especiales 
-                  data.especial >= 1 ?  _ingredientesHamburguesa(
-                    tomate  : listaHamburgesas.especialIngredienteTomate    [0],
-                    ensalada: listaHamburgesas.especialIngredienteEnsalada  [0],
-                    ripio   : listaHamburgesas.especialIngredienteRipio     [0],
-                    tocineta: listaHamburgesas.especialIngredienteTocineta  [0],
-                    queso   : listaHamburgesas.especialIngredienteQueso     [0],      
-                  ) : Container(),
+                  _hamburguesa(
+                    // Adiciones
+                    adicionCarne:     listaHamburgesas.especialAdicionCarne   [1],
+                    adicionTocineta:  listaHamburgesas.especialAdicionTocineta[1],
+                    adicionQueso:     listaHamburgesas.especialAdicionQueso   [1],
+                    adicionEnsalada:  listaHamburgesas.especialAdicionEnsalada[1],
+                    producto: 'Especial',
+                    identificadorDeProducto: 1,
+                    // Ingredietes
+                    ingredienteTomate:    listaHamburgesas.especialIngredienteTomate    [1],
+                    ingredienteEnsalada:  listaHamburgesas.especialIngredienteEnsalada  [1],
+                    ingredienteRipio:     listaHamburgesas.especialIngredienteRipio     [1],
+                    ingredienteTocineta:  listaHamburgesas.especialIngredienteTocineta  [1],
+                    ingredienteQueso:     listaHamburgesas.especialIngredienteQueso     [1],
+                  ),
+                  
+                  _hamburguesa(
+                    // Adiciones
+                    adicionCarne:     listaHamburgesas.especialAdicionCarne   [2],
+                    adicionTocineta:  listaHamburgesas.especialAdicionTocineta[2],
+                    adicionQueso:     listaHamburgesas.especialAdicionQueso   [2],
+                    adicionEnsalada:  listaHamburgesas.especialAdicionEnsalada[2],
+                    producto: 'Especial',
+                    identificadorDeProducto: 2,
+                    // Ingredietes
+                    ingredienteTomate:    listaHamburgesas.especialIngredienteTomate    [2],
+                    ingredienteEnsalada:  listaHamburgesas.especialIngredienteEnsalada  [2],
+                    ingredienteRipio:     listaHamburgesas.especialIngredienteRipio     [2],
+                    ingredienteTocineta:  listaHamburgesas.especialIngredienteTocineta  [2],
+                    ingredienteQueso:     listaHamburgesas.especialIngredienteQueso     [2],
+                  ),
+                  
+                  _hamburguesa(
+                    // Adiciones
+                    adicionCarne:     listaHamburgesas.especialAdicionCarne   [3],
+                    adicionTocineta:  listaHamburgesas.especialAdicionTocineta[3],
+                    adicionQueso:     listaHamburgesas.especialAdicionQueso   [3],
+                    adicionEnsalada:  listaHamburgesas.especialAdicionEnsalada[3],
+                    producto: 'Especial',
+                    identificadorDeProducto: 3,
+                    // Ingredietes
+                    ingredienteTomate:    listaHamburgesas.especialIngredienteTomate    [3],
+                    ingredienteEnsalada:  listaHamburgesas.especialIngredienteEnsalada  [3],
+                    ingredienteRipio:     listaHamburgesas.especialIngredienteRipio     [3],
+                    ingredienteTocineta:  listaHamburgesas.especialIngredienteTocineta  [3],
+                    ingredienteQueso:     listaHamburgesas.especialIngredienteQueso     [3],
+                  ),
+                  
+                  _hamburguesa(
+                    // Adiciones
+                    adicionCarne:     listaHamburgesas.especialAdicionCarne   [4],
+                    adicionTocineta:  listaHamburgesas.especialAdicionTocineta[4],
+                    adicionQueso:     listaHamburgesas.especialAdicionQueso   [4],
+                    adicionEnsalada:  listaHamburgesas.especialAdicionEnsalada[4],
+                    producto: 'Especial',
+                    identificadorDeProducto: 4,
+                    // Ingredietes
+                    ingredienteTomate:    listaHamburgesas.especialIngredienteTomate    [4],
+                    ingredienteEnsalada:  listaHamburgesas.especialIngredienteEnsalada  [4],
+                    ingredienteRipio:     listaHamburgesas.especialIngredienteRipio     [4],
+                    ingredienteTocineta:  listaHamburgesas.especialIngredienteTocineta  [4],
+                    ingredienteQueso:     listaHamburgesas.especialIngredienteQueso     [4],
+                  ),
+                  
+                  _hamburguesa(
+                    // Adiciones
+                    adicionCarne:     listaHamburgesas.especialAdicionCarne   [5],
+                    adicionTocineta:  listaHamburgesas.especialAdicionTocineta[5],
+                    adicionQueso:     listaHamburgesas.especialAdicionQueso   [5],
+                    adicionEnsalada:  listaHamburgesas.especialAdicionEnsalada[5],
+                    producto: 'Especial',
+                    identificadorDeProducto: 5,
+                    // Ingredietes
+                    ingredienteTomate:    listaHamburgesas.especialIngredienteTomate    [5],
+                    ingredienteEnsalada:  listaHamburgesas.especialIngredienteEnsalada  [5],
+                    ingredienteRipio:     listaHamburgesas.especialIngredienteRipio     [5],
+                    ingredienteTocineta:  listaHamburgesas.especialIngredienteTocineta  [5],
+                    ingredienteQueso:     listaHamburgesas.especialIngredienteQueso     [5],
+                  ),
+                  
+                  _hamburguesa(
+                    // Adiciones
+                    adicionCarne:     listaHamburgesas.especialAdicionCarne   [6],
+                    adicionTocineta:  listaHamburgesas.especialAdicionTocineta[6],
+                    adicionQueso:     listaHamburgesas.especialAdicionQueso   [6],
+                    adicionEnsalada:  listaHamburgesas.especialAdicionEnsalada[6],
+                    producto: 'Especial',
+                    identificadorDeProducto: 6,
+                    // Ingredietes
+                    ingredienteTomate:    listaHamburgesas.especialIngredienteTomate    [6],
+                    ingredienteEnsalada:  listaHamburgesas.especialIngredienteEnsalada  [6],
+                    ingredienteRipio:     listaHamburgesas.especialIngredienteRipio     [6],
+                    ingredienteTocineta:  listaHamburgesas.especialIngredienteTocineta  [6],
+                    ingredienteQueso:     listaHamburgesas.especialIngredienteQueso     [6],
+                  ),
+                  
+                  _hamburguesa(
+                    // Adiciones
+                    adicionCarne:     listaHamburgesas.especialAdicionCarne   [7],
+                    adicionTocineta:  listaHamburgesas.especialAdicionTocineta[7],
+                    adicionQueso:     listaHamburgesas.especialAdicionQueso   [7],
+                    adicionEnsalada:  listaHamburgesas.especialAdicionEnsalada[7],
+                    producto: 'Especial',
+                    identificadorDeProducto: 7,
+                    // Ingredietes
+                    ingredienteTomate:    listaHamburgesas.especialIngredienteTomate    [7],
+                    ingredienteEnsalada:  listaHamburgesas.especialIngredienteEnsalada  [7],
+                    ingredienteRipio:     listaHamburgesas.especialIngredienteRipio     [7],
+                    ingredienteTocineta:  listaHamburgesas.especialIngredienteTocineta  [7],
+                    ingredienteQueso:     listaHamburgesas.especialIngredienteQueso     [7],
+                  ),
+                  
+                  _hamburguesa(
+                    // Adiciones
+                    adicionCarne:     listaHamburgesas.especialAdicionCarne   [8],
+                    adicionTocineta:  listaHamburgesas.especialAdicionTocineta[8],
+                    adicionQueso:     listaHamburgesas.especialAdicionQueso   [8],
+                    adicionEnsalada:  listaHamburgesas.especialAdicionEnsalada[8],
+                    producto: 'Especial',
+                    identificadorDeProducto: 8,
+                    // Ingredietes
+                    ingredienteTomate:    listaHamburgesas.especialIngredienteTomate    [8],
+                    ingredienteEnsalada:  listaHamburgesas.especialIngredienteEnsalada  [8],
+                    ingredienteRipio:     listaHamburgesas.especialIngredienteRipio     [8],
+                    ingredienteTocineta:  listaHamburgesas.especialIngredienteTocineta  [8],
+                    ingredienteQueso:     listaHamburgesas.especialIngredienteQueso     [8],
+                  ),
+                  
+                  _hamburguesa(
+                    // Adiciones
+                    adicionCarne:     listaHamburgesas.especialAdicionCarne   [9],
+                    adicionTocineta:  listaHamburgesas.especialAdicionTocineta[9],
+                    adicionQueso:     listaHamburgesas.especialAdicionQueso   [9],
+                    adicionEnsalada:  listaHamburgesas.especialAdicionEnsalada[9],
+                    producto: 'Especial',
+                    identificadorDeProducto: 9,
+                    // Ingredietes
+                    ingredienteTomate:    listaHamburgesas.especialIngredienteTomate    [9],
+                    ingredienteEnsalada:  listaHamburgesas.especialIngredienteEnsalada  [9],
+                    ingredienteRipio:     listaHamburgesas.especialIngredienteRipio     [9],
+                    ingredienteTocineta:  listaHamburgesas.especialIngredienteTocineta  [9],
+                    ingredienteQueso:     listaHamburgesas.especialIngredienteQueso     [9],
+                  ),
+                  
+                  /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                  ///Super
+                  _hamburguesa(
+                    // Adiciones
+                    adicionCarne:     listaHamburgesas.superAdicionCarne   [0],
+                    adicionTocineta:  listaHamburgesas.superAdicionTocineta[0],
+                    adicionQueso:     listaHamburgesas.superAdicionQueso   [0],
+                    adicionEnsalada:  listaHamburgesas.superAdicionEnsalada[0],
+                    producto: 'Super',
+                    identificadorDeProducto: 0,
+                    // Ingredietes
+                    ingredienteTomate:    listaHamburgesas.superIngredienteTomate    [0],
+                    ingredienteEnsalada:  listaHamburgesas.superIngredienteEnsalada  [0],
+                    ingredienteRipio:     listaHamburgesas.superIngredienteRipio     [0],
+                    ingredienteTocineta:  listaHamburgesas.superIngredienteTocineta  [0],
+                    ingredienteQueso:     listaHamburgesas.superIngredienteQueso     [0],
+                  ),
 
-                  data.especial >= 1 ? _adicionHamburguesa(
-                    carne:    listaHamburgesas.especialAdicionCarne   [0],
-                    tocineta: listaHamburgesas.especialAdicionTocineta[0],
-                    queso:    listaHamburgesas.especialAdicionQueso   [0],
-                    ensalada: listaHamburgesas.especialAdicionEnsalada[0],
-                    numeroDeHamburguesa: 1,
-                    
-                  ) : Container(),
+                  _hamburguesa(
+                    // Adiciones
+                    adicionCarne:     listaHamburgesas.superAdicionCarne   [1],
+                    adicionTocineta:  listaHamburgesas.superAdicionTocineta[1],
+                    adicionQueso:     listaHamburgesas.superAdicionQueso   [1],
+                    adicionEnsalada:  listaHamburgesas.superAdicionEnsalada[1],
+                    producto: 'Super',
+                    identificadorDeProducto: 1,
+                    // Ingredietes
+                    ingredienteTomate:    listaHamburgesas.superIngredienteTomate    [1],
+                    ingredienteEnsalada:  listaHamburgesas.superIngredienteEnsalada  [1],
+                    ingredienteRipio:     listaHamburgesas.superIngredienteRipio     [1],
+                    ingredienteTocineta:  listaHamburgesas.superIngredienteTocineta  [1],
+                    ingredienteQueso:     listaHamburgesas.superIngredienteQueso     [1],
+                  ),
 
-                  data.especial >= 2 ? _ingredientesHamburguesa(
-                    tomate  : listaHamburgesas.especialIngredienteTomate    [1],
-                    ensalada: listaHamburgesas.especialIngredienteEnsalada  [1],
-                    ripio   : listaHamburgesas.especialIngredienteRipio     [1],
-                    tocineta: listaHamburgesas.especialIngredienteTocineta  [1],
-                    queso   : listaHamburgesas.especialIngredienteQueso     [1],      
-                  ) : Container(),
+                  _hamburguesa(
+                    // Adiciones
+                    adicionCarne:     listaHamburgesas.superAdicionCarne   [2],
+                    adicionTocineta:  listaHamburgesas.superAdicionTocineta[2],
+                    adicionQueso:     listaHamburgesas.superAdicionQueso   [2],
+                    adicionEnsalada:  listaHamburgesas.superAdicionEnsalada[2],
+                    producto: 'Super',
+                    identificadorDeProducto: 2,
+                    // Ingredietes
+                    ingredienteTomate:    listaHamburgesas.superIngredienteTomate    [2],
+                    ingredienteEnsalada:  listaHamburgesas.superIngredienteEnsalada  [2],
+                    ingredienteRipio:     listaHamburgesas.superIngredienteRipio     [2],
+                    ingredienteTocineta:  listaHamburgesas.superIngredienteTocineta  [2],
+                    ingredienteQueso:     listaHamburgesas.superIngredienteQueso     [2],
+                  ),
 
-                  data.especial >= 2 ? _adicionHamburguesa(
+                  _hamburguesa(
+                    // Adiciones
+                    adicionCarne:     listaHamburgesas.superAdicionCarne   [3],
+                    adicionTocineta:  listaHamburgesas.superAdicionTocineta[3],
+                    adicionQueso:     listaHamburgesas.superAdicionQueso   [3],
+                    adicionEnsalada:  listaHamburgesas.superAdicionEnsalada[3],
+                    producto: 'Super',
+                    identificadorDeProducto: 3,
+                    // Ingredietes
+                    ingredienteTomate:    listaHamburgesas.superIngredienteTomate    [3],
+                    ingredienteEnsalada:  listaHamburgesas.superIngredienteEnsalada  [3],
+                    ingredienteRipio:     listaHamburgesas.superIngredienteRipio     [3],
+                    ingredienteTocineta:  listaHamburgesas.superIngredienteTocineta  [3],
+                    ingredienteQueso:     listaHamburgesas.superIngredienteQueso     [3],
+                  ),
 
-                    carne:    listaHamburgesas.especialAdicionCarne   [1],
-                    tocineta: listaHamburgesas.especialAdicionTocineta[1],
-                    queso:    listaHamburgesas.especialAdicionQueso   [1],
-                    ensalada: listaHamburgesas.especialAdicionEnsalada[1],
-                    numeroDeHamburguesa: 2,
-                    
-                  ) : Container(),
+                  _hamburguesa(
+                    // Adiciones
+                    adicionCarne:     listaHamburgesas.superAdicionCarne   [4],
+                    adicionTocineta:  listaHamburgesas.superAdicionTocineta[4],
+                    adicionQueso:     listaHamburgesas.superAdicionQueso   [4],
+                    adicionEnsalada:  listaHamburgesas.superAdicionEnsalada[4],
+                    producto: 'Super',
+                    identificadorDeProducto: 4,
+                    // Ingredietes
+                    ingredienteTomate:    listaHamburgesas.superIngredienteTomate    [4],
+                    ingredienteEnsalada:  listaHamburgesas.superIngredienteEnsalada  [4],
+                    ingredienteRipio:     listaHamburgesas.superIngredienteRipio     [4],
+                    ingredienteTocineta:  listaHamburgesas.superIngredienteTocineta  [4],
+                    ingredienteQueso:     listaHamburgesas.superIngredienteQueso     [4],
+                  ),
 
-                  data.especial >= 3 ? _ingredientesHamburguesa(
-                    tomate  : listaHamburgesas.especialIngredienteTomate    [2],
-                    ensalada: listaHamburgesas.especialIngredienteEnsalada  [2],
-                    ripio   : listaHamburgesas.especialIngredienteRipio     [2],
-                    tocineta: listaHamburgesas.especialIngredienteTocineta  [2],
-                    queso   : listaHamburgesas.especialIngredienteQueso     [2],      
-                  ) : Container(),
+                  _hamburguesa(
+                    // Adiciones
+                    adicionCarne:     listaHamburgesas.superAdicionCarne   [5],
+                    adicionTocineta:  listaHamburgesas.superAdicionTocineta[5],
+                    adicionQueso:     listaHamburgesas.superAdicionQueso   [5],
+                    adicionEnsalada:  listaHamburgesas.superAdicionEnsalada[5],
+                    producto: 'Super',
+                    identificadorDeProducto: 5,
+                    // Ingredietes
+                    ingredienteTomate:    listaHamburgesas.superIngredienteTomate    [5],
+                    ingredienteEnsalada:  listaHamburgesas.superIngredienteEnsalada  [5],
+                    ingredienteRipio:     listaHamburgesas.superIngredienteRipio     [5],
+                    ingredienteTocineta:  listaHamburgesas.superIngredienteTocineta  [5],
+                    ingredienteQueso:     listaHamburgesas.superIngredienteQueso     [5],
+                  ),
 
-                  data.especial >= 3 ? _adicionHamburguesa(
+                  _hamburguesa(
+                    // Adiciones
+                    adicionCarne:     listaHamburgesas.superAdicionCarne   [6],
+                    adicionTocineta:  listaHamburgesas.superAdicionTocineta[6],
+                    adicionQueso:     listaHamburgesas.superAdicionQueso   [6],
+                    adicionEnsalada:  listaHamburgesas.superAdicionEnsalada[6],
+                    producto: 'Super',
+                    identificadorDeProducto: 6,
+                    // Ingredietes
+                    ingredienteTomate:    listaHamburgesas.superIngredienteTomate    [6],
+                    ingredienteEnsalada:  listaHamburgesas.superIngredienteEnsalada  [6],
+                    ingredienteRipio:     listaHamburgesas.superIngredienteRipio     [6],
+                    ingredienteTocineta:  listaHamburgesas.superIngredienteTocineta  [6],
+                    ingredienteQueso:     listaHamburgesas.superIngredienteQueso     [6],
+                  ),
 
-                    carne:    listaHamburgesas.especialAdicionCarne   [2],
-                    tocineta: listaHamburgesas.especialAdicionTocineta[2],
-                    queso:    listaHamburgesas.especialAdicionQueso   [2],
-                    ensalada: listaHamburgesas.especialAdicionEnsalada[2],
-                    numeroDeHamburguesa: 3,
-                    
-                  ) : Container(),
+                  _hamburguesa(
+                    // Adiciones
+                    adicionCarne:     listaHamburgesas.superAdicionCarne   [7],
+                    adicionTocineta:  listaHamburgesas.superAdicionTocineta[7],
+                    adicionQueso:     listaHamburgesas.superAdicionQueso   [7],
+                    adicionEnsalada:  listaHamburgesas.superAdicionEnsalada[7],
+                    producto: 'Super',
+                    identificadorDeProducto: 7,
+                    // Ingredietes
+                    ingredienteTomate:    listaHamburgesas.superIngredienteTomate    [7],
+                    ingredienteEnsalada:  listaHamburgesas.superIngredienteEnsalada  [7],
+                    ingredienteRipio:     listaHamburgesas.superIngredienteRipio     [7],
+                    ingredienteTocineta:  listaHamburgesas.superIngredienteTocineta  [7],
+                    ingredienteQueso:     listaHamburgesas.superIngredienteQueso     [7],
+                  ),
 
-                  data.especial >= 4 ? _ingredientesHamburguesa(
-                    tomate  : listaHamburgesas.especialIngredienteTomate    [3],
-                    ensalada: listaHamburgesas.especialIngredienteEnsalada  [3],
-                    ripio   : listaHamburgesas.especialIngredienteRipio     [3],
-                    tocineta: listaHamburgesas.especialIngredienteTocineta  [3],
-                    queso   : listaHamburgesas.especialIngredienteQueso     [3],      
-                  ): Container(),
+                  _hamburguesa(
+                    // Adiciones
+                    adicionCarne:     listaHamburgesas.superAdicionCarne   [8],
+                    adicionTocineta:  listaHamburgesas.superAdicionTocineta[8],
+                    adicionQueso:     listaHamburgesas.superAdicionQueso   [8],
+                    adicionEnsalada:  listaHamburgesas.superAdicionEnsalada[8],
+                    producto: 'Super',
+                    identificadorDeProducto: 8,
+                    // Ingredietes
+                    ingredienteTomate:    listaHamburgesas.superIngredienteTomate    [8],
+                    ingredienteEnsalada:  listaHamburgesas.superIngredienteEnsalada  [8],
+                    ingredienteRipio:     listaHamburgesas.superIngredienteRipio     [8],
+                    ingredienteTocineta:  listaHamburgesas.superIngredienteTocineta  [8],
+                    ingredienteQueso:     listaHamburgesas.superIngredienteQueso     [8],
+                  ),
 
-                  data.especial >= 4 ? _adicionHamburguesa(
+                  _hamburguesa(
+                    // Adiciones
+                    adicionCarne:     listaHamburgesas.superAdicionCarne   [9],
+                    adicionTocineta:  listaHamburgesas.superAdicionTocineta[9],
+                    adicionQueso:     listaHamburgesas.superAdicionQueso   [9],
+                    adicionEnsalada:  listaHamburgesas.superAdicionEnsalada[9],
+                    producto: 'Super',
+                    identificadorDeProducto: 9,
+                    // Ingredietes
+                    ingredienteTomate:    listaHamburgesas.superIngredienteTomate    [9],
+                    ingredienteEnsalada:  listaHamburgesas.superIngredienteEnsalada  [9],
+                    ingredienteRipio:     listaHamburgesas.superIngredienteRipio     [9],
+                    ingredienteTocineta:  listaHamburgesas.superIngredienteTocineta  [9],
+                    ingredienteQueso:     listaHamburgesas.superIngredienteQueso     [9],
+                  ),
 
-                    carne:    listaHamburgesas.especialAdicionCarne   [3],
-                    tocineta: listaHamburgesas.especialAdicionTocineta[3],
-                    queso:    listaHamburgesas.especialAdicionQueso   [3],
-                    ensalada: listaHamburgesas.especialAdicionEnsalada[3],
-                    numeroDeHamburguesa: 4,
-                    
-                  ) : Container(),
-
-                  data.especial >= 5 ? _ingredientesHamburguesa(
-                    tomate  : listaHamburgesas.especialIngredienteTomate    [4],
-                    ensalada: listaHamburgesas.especialIngredienteEnsalada  [4],
-                    ripio   : listaHamburgesas.especialIngredienteRipio     [4],
-                    tocineta: listaHamburgesas.especialIngredienteTocineta  [4],
-                    queso   : listaHamburgesas.especialIngredienteQueso     [4],      
-                  ) : Container(),
-
-                  data.especial >= 5 ? _adicionHamburguesa(
-
-                    carne:    listaHamburgesas.especialAdicionCarne   [4],
-                    tocineta: listaHamburgesas.especialAdicionTocineta[4],
-                    queso:    listaHamburgesas.especialAdicionQueso   [4],
-                    ensalada: listaHamburgesas.especialAdicionEnsalada[4],
-                    numeroDeHamburguesa: 5,
-                    
-                  ) : Container(),
-
-                  data.especial >= 6 ? _ingredientesHamburguesa(
-                    tomate  : listaHamburgesas.especialIngredienteTomate    [5],
-                    ensalada: listaHamburgesas.especialIngredienteEnsalada  [5],
-                    ripio   : listaHamburgesas.especialIngredienteRipio     [5],
-                    tocineta: listaHamburgesas.especialIngredienteTocineta  [5],
-                    queso   : listaHamburgesas.especialIngredienteQueso     [5],      
-                  ) : Container(),
-
-                  data.especial >= 6 ? _adicionHamburguesa(
-
-                    carne:    listaHamburgesas.especialAdicionCarne   [5],
-                    tocineta: listaHamburgesas.especialAdicionTocineta[5],
-                    queso:    listaHamburgesas.especialAdicionQueso   [5],
-                    ensalada: listaHamburgesas.especialAdicionEnsalada[5],
-                    numeroDeHamburguesa: 6,
-                    
-                  ) : Container(),
-
-                  data.especial >= 7 ? _ingredientesHamburguesa(
-                    tomate  : listaHamburgesas.especialIngredienteTomate    [6],
-                    ensalada: listaHamburgesas.especialIngredienteEnsalada  [6],
-                    ripio   : listaHamburgesas.especialIngredienteRipio     [6],
-                    tocineta: listaHamburgesas.especialIngredienteTocineta  [6],
-                    queso   : listaHamburgesas.especialIngredienteQueso     [6],      
-                  ) : Container(),
-
-                  data.especial >= 7 ? _adicionHamburguesa(
-
-                    carne:    listaHamburgesas.especialAdicionCarne   [6],
-                    tocineta: listaHamburgesas.especialAdicionTocineta[6],
-                    queso:    listaHamburgesas.especialAdicionQueso   [6],
-                    ensalada: listaHamburgesas.especialAdicionEnsalada[6],
-                    numeroDeHamburguesa: 7,
-                    
-                  ) : Container(),
-
-                  data.especial >= 8 ? _ingredientesHamburguesa(
-                    tomate  : listaHamburgesas.especialIngredienteTomate    [7],
-                    ensalada: listaHamburgesas.especialIngredienteEnsalada  [7],
-                    ripio   : listaHamburgesas.especialIngredienteRipio     [7],
-                    tocineta: listaHamburgesas.especialIngredienteTocineta  [7],
-                    queso   : listaHamburgesas.especialIngredienteQueso     [7],      
-                  ) : Container(),
-
-                  data.especial >= 8 ? _adicionHamburguesa(
-
-                    carne:    listaHamburgesas.especialAdicionCarne   [7],
-                    tocineta: listaHamburgesas.especialAdicionTocineta[7],
-                    queso:    listaHamburgesas.especialAdicionQueso   [7],
-                    ensalada: listaHamburgesas.especialAdicionEnsalada[7],
-                    numeroDeHamburguesa: 8,
-                    
-                  ) : Container(),
-
-                  data.especial >= 9 ? _ingredientesHamburguesa(
-                    tomate  : listaHamburgesas.especialIngredienteTomate    [8],
-                    ensalada: listaHamburgesas.especialIngredienteEnsalada  [8],
-                    ripio   : listaHamburgesas.especialIngredienteRipio     [8],
-                    tocineta: listaHamburgesas.especialIngredienteTocineta  [8],
-                    queso   : listaHamburgesas.especialIngredienteQueso     [8],      
-                  ) : Container(),
-
-                  data.especial >= 9 ? _adicionHamburguesa(
-
-                    carne:    listaHamburgesas.especialAdicionCarne   [8],
-                    tocineta: listaHamburgesas.especialAdicionTocineta[8],
-                    queso:    listaHamburgesas.especialAdicionQueso   [8],
-                    ensalada: listaHamburgesas.especialAdicionEnsalada[8],
-                    numeroDeHamburguesa: 9,
-                    
-                  ) : Container(),
-
-                  data.especial >= 10 ? _ingredientesHamburguesa(
-                    tomate  : listaHamburgesas.especialIngredienteTomate    [9],
-                    ensalada: listaHamburgesas.especialIngredienteEnsalada  [9],
-                    ripio   : listaHamburgesas.especialIngredienteRipio     [9],
-                    tocineta: listaHamburgesas.especialIngredienteTocineta  [9],
-                    queso   : listaHamburgesas.especialIngredienteQueso     [9],      
-                     ) : Container(),
-
-                  data.especial >= 10 ? _adicionHamburguesa(
-
-                    carne:    listaHamburgesas.especialAdicionCarne   [9],
-                    tocineta: listaHamburgesas.especialAdicionTocineta[9],
-                    queso:    listaHamburgesas.especialAdicionQueso   [9],
-                    ensalada: listaHamburgesas.especialAdicionEnsalada[9],
-                    numeroDeHamburguesa: 1,
-                    
-                  ) : Container(),
-
-                // Super
-                  data.superEspecial >= 1 ?  _ingredientesHamburguesa(
-                    tomate  : listaHamburgesas.superIngredienteTomate    [0],
-                    ensalada: listaHamburgesas.superIngredienteEnsalada  [0],
-                    ripio   : listaHamburgesas.superIngredienteRipio     [0],
-                    tocineta: listaHamburgesas.superIngredienteTocineta  [0],
-                    queso   : listaHamburgesas.superIngredienteQueso     [0],      
-                    producto: 'Super # 1'
-                  ) : Container(),
-
-                  data.superEspecial >= 1 ? _adicionHamburguesa(
-
-                    carne:    listaHamburgesas.superAdicionCarne   [0],
-                    tocineta: listaHamburgesas.superAdicionTocineta[0],
-                    queso:    listaHamburgesas.superAdicionQueso   [0],
-                    ensalada: listaHamburgesas.superAdicionEnsalada[0],
-                    numeroDeHamburguesa: 1,
-                    producto: 'Super'
-                  ) : Container(),
-
-                  data.superEspecial >= 2 ? _ingredientesHamburguesa(
-                    tomate  : listaHamburgesas.superIngredienteTomate    [1],
-                    ensalada: listaHamburgesas.superIngredienteEnsalada  [1],
-                    ripio   : listaHamburgesas.superIngredienteRipio     [1],
-                    tocineta: listaHamburgesas.superIngredienteTocineta  [1],
-                    queso   : listaHamburgesas.superIngredienteQueso     [1],      
-                    producto: 'Super # 2'
-                  ) : Container(),
-
-                  data.superEspecial >= 2 ? _adicionHamburguesa(
-
-                    carne:    listaHamburgesas.superAdicionCarne   [1],
-                    tocineta: listaHamburgesas.superAdicionTocineta[1],
-                    queso:    listaHamburgesas.superAdicionQueso   [1],
-                    ensalada: listaHamburgesas.superAdicionEnsalada[1],
-                    numeroDeHamburguesa: 2,
-                    producto: 'Super'
-                  ) : Container(),
-
-                  data.superEspecial >= 3 ? _ingredientesHamburguesa(
-                    tomate  : listaHamburgesas.superIngredienteTomate    [2],
-                    ensalada: listaHamburgesas.superIngredienteEnsalada  [2],
-                    ripio   : listaHamburgesas.superIngredienteRipio     [2],
-                    tocineta: listaHamburgesas.superIngredienteTocineta  [2],
-                    queso   : listaHamburgesas.superIngredienteQueso     [2],      
-                    producto: 'Super # 3'
-                  ) : Container(),
-
-                  data.superEspecial >= 3 ? _adicionHamburguesa(
-
-                    carne:    listaHamburgesas.superAdicionCarne   [2],
-                    tocineta: listaHamburgesas.superAdicionTocineta[2],
-                    queso:    listaHamburgesas.superAdicionQueso   [2],
-                    ensalada: listaHamburgesas.superAdicionEnsalada[2],
-                    numeroDeHamburguesa: 3,
-                    producto: 'Super'
-                  ) : Container(),
-
-                  data.superEspecial >= 4 ? _ingredientesHamburguesa(
-                    tomate  : listaHamburgesas.superIngredienteTomate    [3],
-                    ensalada: listaHamburgesas.superIngredienteEnsalada  [3],
-                    ripio   : listaHamburgesas.superIngredienteRipio     [3],
-                    tocineta: listaHamburgesas.superIngredienteTocineta  [3],
-                    queso   : listaHamburgesas.superIngredienteQueso     [3],      
-                    producto: 'Super # 4'
-                  ): Container(),
-
-                  data.superEspecial >= 4 ? _adicionHamburguesa(
-
-                    carne:    listaHamburgesas.superAdicionCarne   [3],
-                    tocineta: listaHamburgesas.superAdicionTocineta[3],
-                    queso:    listaHamburgesas.superAdicionQueso   [3],
-                    ensalada: listaHamburgesas.superAdicionEnsalada[3],
-                    numeroDeHamburguesa: 4,
-                    producto: 'Super'
-                  ) : Container(),
-
-                  data.superEspecial >= 5 ? _ingredientesHamburguesa(
-                    tomate  : listaHamburgesas.superIngredienteTomate    [4],
-                    ensalada: listaHamburgesas.superIngredienteEnsalada  [4],
-                    ripio   : listaHamburgesas.superIngredienteRipio     [4],
-                    tocineta: listaHamburgesas.superIngredienteTocineta  [4],
-                    queso   : listaHamburgesas.superIngredienteQueso     [4],      
-                    producto: 'Super # 5'
-                  ) : Container(),
-
-                  data.superEspecial >= 5 ? _adicionHamburguesa(
-
-                    carne:    listaHamburgesas.superAdicionCarne   [4],
-                    tocineta: listaHamburgesas.superAdicionTocineta[4],
-                    queso:    listaHamburgesas.superAdicionQueso   [4],
-                    ensalada: listaHamburgesas.superAdicionEnsalada[4],
-                    numeroDeHamburguesa: 5,
-                    producto: 'Super'
-                  ) : Container(),
-
-                  data.superEspecial >= 6 ? _ingredientesHamburguesa(
-                    tomate  : listaHamburgesas.superIngredienteTomate    [5],
-                    ensalada: listaHamburgesas.superIngredienteEnsalada  [5],
-                    ripio   : listaHamburgesas.superIngredienteRipio     [5],
-                    tocineta: listaHamburgesas.superIngredienteTocineta  [5],
-                    queso   : listaHamburgesas.superIngredienteQueso     [5],      
-                    producto: 'Super # 6'
-                  ) : Container(),
-
-                  data.superEspecial >= 6 ? _adicionHamburguesa(
-
-                    carne:    listaHamburgesas.superAdicionCarne   [5],
-                    tocineta: listaHamburgesas.superAdicionTocineta[5],
-                    queso:    listaHamburgesas.superAdicionQueso   [5],
-                    ensalada: listaHamburgesas.superAdicionEnsalada[5],
-                    numeroDeHamburguesa: 6,
-                    producto: 'Super'
-                  ) : Container(),
-
-                  data.superEspecial >= 7 ? _ingredientesHamburguesa(
-                    tomate  : listaHamburgesas.superIngredienteTomate    [6],
-                    ensalada: listaHamburgesas.superIngredienteEnsalada  [6],
-                    ripio   : listaHamburgesas.superIngredienteRipio     [6],
-                    tocineta: listaHamburgesas.superIngredienteTocineta  [6],
-                    queso   : listaHamburgesas.superIngredienteQueso     [6],      
-                    producto: 'Super # 7'
-                  ) : Container(),
-
-                  data.superEspecial >= 7 ? _adicionHamburguesa(
-
-                    carne:    listaHamburgesas.superAdicionCarne   [6],
-                    tocineta: listaHamburgesas.superAdicionTocineta[6],
-                    queso:    listaHamburgesas.superAdicionQueso   [6],
-                    ensalada: listaHamburgesas.superAdicionEnsalada[6],
-                    numeroDeHamburguesa: 7,
-                    producto: 'Super'
-                  ) : Container(),
-
-                  data.superEspecial >= 8 ? _ingredientesHamburguesa(
-                    tomate  : listaHamburgesas.superIngredienteTomate    [7],
-                    ensalada: listaHamburgesas.superIngredienteEnsalada  [7],
-                    ripio   : listaHamburgesas.superIngredienteRipio     [7],
-                    tocineta: listaHamburgesas.superIngredienteTocineta  [7],
-                    queso   : listaHamburgesas.superIngredienteQueso     [7],      
-                    producto: 'Super # 8'
-                  ) : Container(),
-
-                  data.superEspecial >= 8 ? _adicionHamburguesa(
-
-                    carne:    listaHamburgesas.superAdicionCarne   [7],
-                    tocineta: listaHamburgesas.superAdicionTocineta[7],
-                    queso:    listaHamburgesas.superAdicionQueso   [7],
-                    ensalada: listaHamburgesas.superAdicionEnsalada[7],
-                    numeroDeHamburguesa: 8,
-                    producto: 'Super'
-                  ) : Container(),
-
-                  data.superEspecial >= 9 ? _ingredientesHamburguesa(
-                    tomate  : listaHamburgesas.superIngredienteTomate    [8],
-                    ensalada: listaHamburgesas.superIngredienteEnsalada  [8],
-                    ripio   : listaHamburgesas.superIngredienteRipio     [8],
-                    tocineta: listaHamburgesas.superIngredienteTocineta  [8],
-                    queso   : listaHamburgesas.superIngredienteQueso     [8],      
-                    producto: 'Super # 9'
-                  ) : Container(),
-
-                  data.superEspecial >= 9 ? _adicionHamburguesa(
-
-                    carne:    listaHamburgesas.superAdicionCarne   [8],
-                    tocineta: listaHamburgesas.superAdicionTocineta[8],
-                    queso:    listaHamburgesas.superAdicionQueso   [8],
-                    ensalada: listaHamburgesas.superAdicionEnsalada[8],
-                    numeroDeHamburguesa: 9,
-                    producto: 'Super'
-                  ) : Container(),
-
-                  data.superEspecial >= 10 ? _ingredientesHamburguesa(
-                    tomate  : listaHamburgesas.superIngredienteTomate    [9],
-                    ensalada: listaHamburgesas.superIngredienteEnsalada  [9],
-                    ripio   : listaHamburgesas.superIngredienteRipio     [9],
-                    tocineta: listaHamburgesas.superIngredienteTocineta  [9],
-                    queso   : listaHamburgesas.superIngredienteQueso     [9],      
-                    producto: 'Super # 10'
-                  ) : Container(),
-
-                  data.superEspecial >= 10 ? _adicionHamburguesa(
-
-                    carne:    listaHamburgesas.superAdicionCarne   [9],
-                    tocineta: listaHamburgesas.superAdicionTocineta[9],
-                    queso:    listaHamburgesas.superAdicionQueso   [9],
-                    ensalada: listaHamburgesas.superAdicionEnsalada[9],
-                    numeroDeHamburguesa: 10,
-                    producto:'Super'
-                  ) : Container(),
-
-                // Trisuper
-                  data.trisuper >= 1 ?  _ingredientesHamburguesa(
-                    tomate  : listaHamburgesas.trisuperIngredienteTomate    [0],
-                    ensalada: listaHamburgesas.trisuperIngredienteEnsalada  [0],
-                    ripio   : listaHamburgesas.trisuperIngredienteRipio     [0],
-                    tocineta: listaHamburgesas.trisuperIngredienteTocineta  [0],
-                    queso   : listaHamburgesas.trisuperIngredienteQueso     [0],      
-                    producto: 'Trisuper # 1'
-                  ) : Container(),
-
-                  data.trisuper >= 1 ? _adicionHamburguesa(
-                    
-                    carne:    listaHamburgesas.trisuperAdicionCarne   [0],
-                    tocineta: listaHamburgesas.trisuperAdicionTocineta[0],
-                    queso:    listaHamburgesas.trisuperAdicionQueso   [0],
-                    ensalada: listaHamburgesas.trisuperAdicionEnsalada[0],
+                  ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                  /// trisuper
+                  _hamburguesa(
+                    // Adiciones
+                    adicionCarne:     listaHamburgesas.trisuperAdicionCarne   [0],
+                    adicionTocineta:  listaHamburgesas.trisuperAdicionTocineta[0],
+                    adicionQueso:     listaHamburgesas.trisuperAdicionQueso   [0],
+                    adicionEnsalada:  listaHamburgesas.trisuperAdicionEnsalada[0],
                     producto: 'Trisuper',
-                    numeroDeHamburguesa: 1
-                  ) : Container(),
+                    identificadorDeProducto: 0,
+                    // Ingredietes
+                    ingredienteTomate:    listaHamburgesas.trisuperIngredienteTomate    [0],
+                    ingredienteEnsalada:  listaHamburgesas.trisuperIngredienteEnsalada  [0],
+                    ingredienteRipio:     listaHamburgesas.trisuperIngredienteRipio     [0],
+                    ingredienteTocineta:  listaHamburgesas.trisuperIngredienteTocineta  [0],
+                    ingredienteQueso:     listaHamburgesas.trisuperIngredienteQueso     [0],
+                  ),
 
-                  data.trisuper >= 2 ? _ingredientesHamburguesa(
-                    tomate  : listaHamburgesas.trisuperIngredienteTomate    [1],
-                    ensalada: listaHamburgesas.trisuperIngredienteEnsalada  [1],
-                    ripio   : listaHamburgesas.trisuperIngredienteRipio     [1],
-                    tocineta: listaHamburgesas.trisuperIngredienteTocineta  [1],
-                    queso   : listaHamburgesas.trisuperIngredienteQueso     [1],      
-                    producto: 'Trisuper # 2'
-                  ) : Container(),
-
-                  data.trisuper >= 2 ? _adicionHamburguesa(
-                    
-                    carne:    listaHamburgesas.trisuperAdicionCarne   [1],
-                    tocineta: listaHamburgesas.trisuperAdicionTocineta[1],
-                    queso:    listaHamburgesas.trisuperAdicionQueso   [1],
-                    ensalada: listaHamburgesas.trisuperAdicionEnsalada[1],
+                  _hamburguesa(
+                    // Adiciones
+                    adicionCarne:     listaHamburgesas.trisuperAdicionCarne   [1],
+                    adicionTocineta:  listaHamburgesas.trisuperAdicionTocineta[1],
+                    adicionQueso:     listaHamburgesas.trisuperAdicionQueso   [1],
+                    adicionEnsalada:  listaHamburgesas.trisuperAdicionEnsalada[1],
                     producto: 'Trisuper',
-                    numeroDeHamburguesa: 2
-                  ) : Container(),
-
-                  data.trisuper >= 3 ? _ingredientesHamburguesa(
-                    tomate  : listaHamburgesas.trisuperIngredienteTomate    [2],
-                    ensalada: listaHamburgesas.trisuperIngredienteEnsalada  [2],
-                    ripio   : listaHamburgesas.trisuperIngredienteRipio     [2],
-                    tocineta: listaHamburgesas.trisuperIngredienteTocineta  [2],
-                    queso   : listaHamburgesas.trisuperIngredienteQueso     [2],      
-                    producto: 'Trisuper # 3'
-                  ) : Container(),
-
-                  data.trisuper >= 3 ? _adicionHamburguesa(
-                    
-                    carne:    listaHamburgesas.trisuperAdicionCarne   [2],
-                    tocineta: listaHamburgesas.trisuperAdicionTocineta[2],
-                    queso:    listaHamburgesas.trisuperAdicionQueso   [2],
-                    ensalada: listaHamburgesas.trisuperAdicionEnsalada[2],
+                    identificadorDeProducto: 1,
+                    // Ingredietes
+                    ingredienteTomate:    listaHamburgesas.trisuperIngredienteTomate    [1],
+                    ingredienteEnsalada:  listaHamburgesas.trisuperIngredienteEnsalada  [1],
+                    ingredienteRipio:     listaHamburgesas.trisuperIngredienteRipio     [1],
+                    ingredienteTocineta:  listaHamburgesas.trisuperIngredienteTocineta  [1],
+                    ingredienteQueso:     listaHamburgesas.trisuperIngredienteQueso     [1],
+                  ),
+                  
+                  _hamburguesa(
+                    // Adiciones
+                    adicionCarne:     listaHamburgesas.trisuperAdicionCarne   [2],
+                    adicionTocineta:  listaHamburgesas.trisuperAdicionTocineta[2],
+                    adicionQueso:     listaHamburgesas.trisuperAdicionQueso   [2],
+                    adicionEnsalada:  listaHamburgesas.trisuperAdicionEnsalada[2],
                     producto: 'Trisuper',
-                    numeroDeHamburguesa: 3
-                  ) : Container(),
+                    identificadorDeProducto: 2,
+                    // Ingredietes
+                    ingredienteTomate:    listaHamburgesas.trisuperIngredienteTomate    [2],
+                    ingredienteEnsalada:  listaHamburgesas.trisuperIngredienteEnsalada  [2],
+                    ingredienteRipio:     listaHamburgesas.trisuperIngredienteRipio     [2],
+                    ingredienteTocineta:  listaHamburgesas.trisuperIngredienteTocineta  [2],
+                    ingredienteQueso:     listaHamburgesas.trisuperIngredienteQueso     [2],
+                  ),
 
-                  data.trisuper >= 4 ? _ingredientesHamburguesa(
-                    tomate  : listaHamburgesas.trisuperIngredienteTomate    [3],
-                    ensalada: listaHamburgesas.trisuperIngredienteEnsalada  [3],
-                    ripio   : listaHamburgesas.trisuperIngredienteRipio     [3],
-                    tocineta: listaHamburgesas.trisuperIngredienteTocineta  [3],
-                    queso   : listaHamburgesas.trisuperIngredienteQueso     [3],      
-                    producto: 'Trisuper # 4'
-                  ): Container(),
-
-                  data.trisuper >= 4 ? _adicionHamburguesa(
-                    
-                    carne:    listaHamburgesas.trisuperAdicionCarne   [3],
-                    tocineta: listaHamburgesas.trisuperAdicionTocineta[3],
-                    queso:    listaHamburgesas.trisuperAdicionQueso   [3],
-                    ensalada: listaHamburgesas.trisuperAdicionEnsalada[3],
+                  _hamburguesa(
+                    // Adiciones
+                    adicionCarne:     listaHamburgesas.trisuperAdicionCarne   [3],
+                    adicionTocineta:  listaHamburgesas.trisuperAdicionTocineta[3],
+                    adicionQueso:     listaHamburgesas.trisuperAdicionQueso   [3],
+                    adicionEnsalada:  listaHamburgesas.trisuperAdicionEnsalada[3],
                     producto: 'Trisuper',
-                    numeroDeHamburguesa: 4
-                  ) : Container(),
+                    identificadorDeProducto: 3,
+                    // Ingredietes
+                    ingredienteTomate:    listaHamburgesas.trisuperIngredienteTomate    [3],
+                    ingredienteEnsalada:  listaHamburgesas.trisuperIngredienteEnsalada  [3],
+                    ingredienteRipio:     listaHamburgesas.trisuperIngredienteRipio     [3],
+                    ingredienteTocineta:  listaHamburgesas.trisuperIngredienteTocineta  [3],
+                    ingredienteQueso:     listaHamburgesas.trisuperIngredienteQueso     [3],
+                  ),
 
-                  data.trisuper >= 5 ? _ingredientesHamburguesa(
-                    tomate  : listaHamburgesas.trisuperIngredienteTomate    [4],
-                    ensalada: listaHamburgesas.trisuperIngredienteEnsalada  [4],
-                    ripio   : listaHamburgesas.trisuperIngredienteRipio     [4],
-                    tocineta: listaHamburgesas.trisuperIngredienteTocineta  [4],
-                    queso   : listaHamburgesas.trisuperIngredienteQueso     [4],      
-                    producto: 'Trisuper # 5'
-                  ) : Container(),
-
-                  data.trisuper >= 5 ? _adicionHamburguesa(
-                    
-                    carne:    listaHamburgesas.trisuperAdicionCarne   [4],
-                    tocineta: listaHamburgesas.trisuperAdicionTocineta[4],
-                    queso:    listaHamburgesas.trisuperAdicionQueso   [4],
-                    ensalada: listaHamburgesas.trisuperAdicionEnsalada[4],
+                  _hamburguesa(
+                    // Adiciones
+                    adicionCarne:     listaHamburgesas.trisuperAdicionCarne   [4],
+                    adicionTocineta:  listaHamburgesas.trisuperAdicionTocineta[4],
+                    adicionQueso:     listaHamburgesas.trisuperAdicionQueso   [4],
+                    adicionEnsalada:  listaHamburgesas.trisuperAdicionEnsalada[4],
                     producto: 'Trisuper',
-                    numeroDeHamburguesa: 5
-                  ) : Container(),
+                    identificadorDeProducto: 4,
+                    // Ingredietes
+                    ingredienteTomate:    listaHamburgesas.trisuperIngredienteTomate    [4],
+                    ingredienteEnsalada:  listaHamburgesas.trisuperIngredienteEnsalada  [4],
+                    ingredienteRipio:     listaHamburgesas.trisuperIngredienteRipio     [4],
+                    ingredienteTocineta:  listaHamburgesas.trisuperIngredienteTocineta  [4],
+                    ingredienteQueso:     listaHamburgesas.trisuperIngredienteQueso     [4],
+                  ),
 
-                  data.trisuper >= 6 ? _ingredientesHamburguesa(
-                    tomate  : listaHamburgesas.trisuperIngredienteTomate    [5],
-                    ensalada: listaHamburgesas.trisuperIngredienteEnsalada  [5],
-                    ripio   : listaHamburgesas.trisuperIngredienteRipio     [5],
-                    tocineta: listaHamburgesas.trisuperIngredienteTocineta  [5],
-                    queso   : listaHamburgesas.trisuperIngredienteQueso     [5],      
-                    producto: 'Trisuper # 6'
-                  ) : Container(),
-
-                  data.trisuper >= 6 ? _adicionHamburguesa(
-                    
-                    carne:    listaHamburgesas.trisuperAdicionCarne   [5],
-                    tocineta: listaHamburgesas.trisuperAdicionTocineta[5],
-                    queso:    listaHamburgesas.trisuperAdicionQueso   [5],
-                    ensalada: listaHamburgesas.trisuperAdicionEnsalada[5],
+                  _hamburguesa(
+                    // Adiciones
+                    adicionCarne:     listaHamburgesas.trisuperAdicionCarne   [5],
+                    adicionTocineta:  listaHamburgesas.trisuperAdicionTocineta[5],
+                    adicionQueso:     listaHamburgesas.trisuperAdicionQueso   [5],
+                    adicionEnsalada:  listaHamburgesas.trisuperAdicionEnsalada[5],
                     producto: 'Trisuper',
-                    numeroDeHamburguesa: 6
-                  ) : Container(),
+                    identificadorDeProducto: 5,
+                    // Ingredietes
+                    ingredienteTomate:    listaHamburgesas.trisuperIngredienteTomate    [5],
+                    ingredienteEnsalada:  listaHamburgesas.trisuperIngredienteEnsalada  [5],
+                    ingredienteRipio:     listaHamburgesas.trisuperIngredienteRipio     [5],
+                    ingredienteTocineta:  listaHamburgesas.trisuperIngredienteTocineta  [5],
+                    ingredienteQueso:     listaHamburgesas.trisuperIngredienteQueso     [5],
+                  ),
 
-                  data.trisuper >= 7 ? _ingredientesHamburguesa(
-                    tomate  : listaHamburgesas.trisuperIngredienteTomate    [6],
-                    ensalada: listaHamburgesas.trisuperIngredienteEnsalada  [6],
-                    ripio   : listaHamburgesas.trisuperIngredienteRipio     [6],
-                    tocineta: listaHamburgesas.trisuperIngredienteTocineta  [6],
-                    queso   : listaHamburgesas.trisuperIngredienteQueso     [6],      
-                    producto: 'Trisuper # 7'
-                  ) : Container(),
-
-                  data.trisuper >= 7 ? _adicionHamburguesa(
-                    
-                    carne:    listaHamburgesas.trisuperAdicionCarne   [6],
-                    tocineta: listaHamburgesas.trisuperAdicionTocineta[6],
-                    queso:    listaHamburgesas.trisuperAdicionQueso   [6],
-                    ensalada: listaHamburgesas.trisuperAdicionEnsalada[6],
+                  _hamburguesa(
+                    // Adiciones
+                    adicionCarne:     listaHamburgesas.trisuperAdicionCarne   [6],
+                    adicionTocineta:  listaHamburgesas.trisuperAdicionTocineta[6],
+                    adicionQueso:     listaHamburgesas.trisuperAdicionQueso   [6],
+                    adicionEnsalada:  listaHamburgesas.trisuperAdicionEnsalada[6],
                     producto: 'Trisuper',
-                    numeroDeHamburguesa: 7
-                  ) : Container(),
+                    identificadorDeProducto: 6,
+                    // Ingredietes
+                    ingredienteTomate:    listaHamburgesas.trisuperIngredienteTomate    [6],
+                    ingredienteEnsalada:  listaHamburgesas.trisuperIngredienteEnsalada  [6],
+                    ingredienteRipio:     listaHamburgesas.trisuperIngredienteRipio     [6],
+                    ingredienteTocineta:  listaHamburgesas.trisuperIngredienteTocineta  [6],
+                    ingredienteQueso:     listaHamburgesas.trisuperIngredienteQueso     [6],
+                  ),
 
-                  data.trisuper >= 8 ? _ingredientesHamburguesa(
-                    tomate  : listaHamburgesas.trisuperIngredienteTomate    [7],
-                    ensalada: listaHamburgesas.trisuperIngredienteEnsalada  [7],
-                    ripio   : listaHamburgesas.trisuperIngredienteRipio     [7],
-                    tocineta: listaHamburgesas.trisuperIngredienteTocineta  [7],
-                    queso   : listaHamburgesas.trisuperIngredienteQueso     [7],      
-                    producto: 'Trisuper # 8'
-                  ) : Container(),
-
-                  data.trisuper >= 8 ? _adicionHamburguesa(
-                    
-                    carne:    listaHamburgesas.trisuperAdicionCarne   [7],
-                    tocineta: listaHamburgesas.trisuperAdicionTocineta[7],
-                    queso:    listaHamburgesas.trisuperAdicionQueso   [7],
-                    ensalada: listaHamburgesas.trisuperAdicionEnsalada[7],
+                  _hamburguesa(
+                    // Adiciones
+                    adicionCarne:     listaHamburgesas.trisuperAdicionCarne   [7],
+                    adicionTocineta:  listaHamburgesas.trisuperAdicionTocineta[7],
+                    adicionQueso:     listaHamburgesas.trisuperAdicionQueso   [7],
+                    adicionEnsalada:  listaHamburgesas.trisuperAdicionEnsalada[7],
                     producto: 'Trisuper',
-                    numeroDeHamburguesa: 8
-                  ) : Container(),
+                    identificadorDeProducto: 7,
+                    // Ingredietes
+                    ingredienteTomate:    listaHamburgesas.trisuperIngredienteTomate    [7],
+                    ingredienteEnsalada:  listaHamburgesas.trisuperIngredienteEnsalada  [7],
+                    ingredienteRipio:     listaHamburgesas.trisuperIngredienteRipio     [7],
+                    ingredienteTocineta:  listaHamburgesas.trisuperIngredienteTocineta  [7],
+                    ingredienteQueso:     listaHamburgesas.trisuperIngredienteQueso     [7],
+                  ),
 
-                  data.trisuper >= 9 ? _ingredientesHamburguesa(
-                    tomate  : listaHamburgesas.trisuperIngredienteTomate    [8],
-                    ensalada: listaHamburgesas.trisuperIngredienteEnsalada  [8],
-                    ripio   : listaHamburgesas.trisuperIngredienteRipio     [8],
-                    tocineta: listaHamburgesas.trisuperIngredienteTocineta  [8],
-                    queso   : listaHamburgesas.trisuperIngredienteQueso     [8],      
-                    producto: 'Trisuper # 9'
-                  ) : Container(),
-
-                  data.trisuper >= 9 ? _adicionHamburguesa(
-                    
-                    carne:    listaHamburgesas.trisuperAdicionCarne   [8],
-                    tocineta: listaHamburgesas.trisuperAdicionTocineta[8],
-                    queso:    listaHamburgesas.trisuperAdicionQueso   [8],
-                    ensalada: listaHamburgesas.trisuperAdicionEnsalada[8],
+                  _hamburguesa(
+                    // Adiciones
+                    adicionCarne:     listaHamburgesas.trisuperAdicionCarne   [8],
+                    adicionTocineta:  listaHamburgesas.trisuperAdicionTocineta[8],
+                    adicionQueso:     listaHamburgesas.trisuperAdicionQueso   [8],
+                    adicionEnsalada:  listaHamburgesas.trisuperAdicionEnsalada[8],
                     producto: 'Trisuper',
-                    numeroDeHamburguesa: 9
-                  ) : Container(),
+                    identificadorDeProducto: 8,
+                    // Ingredietes
+                    ingredienteTomate:    listaHamburgesas.trisuperIngredienteTomate    [8],
+                    ingredienteEnsalada:  listaHamburgesas.trisuperIngredienteEnsalada  [8],
+                    ingredienteRipio:     listaHamburgesas.trisuperIngredienteRipio     [8],
+                    ingredienteTocineta:  listaHamburgesas.trisuperIngredienteTocineta  [8],
+                    ingredienteQueso:     listaHamburgesas.trisuperIngredienteQueso     [8],
+                  ),
 
-                  data.trisuper >= 10 ? _ingredientesHamburguesa(
-                    tomate  : listaHamburgesas.trisuperIngredienteTomate    [9],
-                    ensalada: listaHamburgesas.trisuperIngredienteEnsalada  [9],
-                    ripio   : listaHamburgesas.trisuperIngredienteRipio     [9],
-                    tocineta: listaHamburgesas.trisuperIngredienteTocineta  [9],
-                    queso   : listaHamburgesas.trisuperIngredienteQueso     [9],      
-                    producto: 'Trisuper # 10'
-                  ) : Container(),
-
-                  data.trisuper >= 10 ? _adicionHamburguesa(
-                    
-                    carne:    listaHamburgesas.trisuperAdicionCarne   [9],
-                    tocineta: listaHamburgesas.trisuperAdicionTocineta[9],
-                    queso:    listaHamburgesas.trisuperAdicionQueso   [9],
-                    ensalada: listaHamburgesas.trisuperAdicionEnsalada[9],
+                  _hamburguesa(
+                    // Adiciones
+                    adicionCarne:     listaHamburgesas.trisuperAdicionCarne   [9],
+                    adicionTocineta:  listaHamburgesas.trisuperAdicionTocineta[9],
+                    adicionQueso:     listaHamburgesas.trisuperAdicionQueso   [9],
+                    adicionEnsalada:  listaHamburgesas.trisuperAdicionEnsalada[9],
                     producto: 'Trisuper',
-                    numeroDeHamburguesa: 10
-                  ) : Container(),
+                    identificadorDeProducto: 9,
+                    // Ingredietes
+                    ingredienteTomate:    listaHamburgesas.trisuperIngredienteTomate    [9],
+                    ingredienteEnsalada:  listaHamburgesas.trisuperIngredienteEnsalada  [9],
+                    ingredienteRipio:     listaHamburgesas.trisuperIngredienteRipio     [9],
+                    ingredienteTocineta:  listaHamburgesas.trisuperIngredienteTocineta  [9],
+                    ingredienteQueso:     listaHamburgesas.trisuperIngredienteQueso     [9],
+                  ),
 
-                  data.perroGrandeTocineta >= 1 ? _ingredientesPerro(
-                    ensalada: listaPerro.perroGrandeTocinetaIngredienteEnsalada  [0],
-                    ripio   : listaPerro.perroGrandeTocinetaIngredienteRipio     [0],
-                    tocineta: listaPerro.perroGrandeTocinetaIngredienteTocineta  [0],
-                    queso   : listaPerro.perroGrandeTocinetaIngredienteQueso     [0],      
-                    producto: 'Perro Grande Con Tocineta # 1'
-                  ) : Container(),
+                  /////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                  /// Perro Grande Tocineta
+                  _perro(
+                    // Adiciones
+                    adicionTocineta:  listaPerro.perroGrandeTocinetaAdicionTocineta           [0],
+                    adicionQueso:     listaPerro.perroGrandeTocinetaAdicionQueso              [0],
+                    adicionEnsalada:  listaPerro.perroGrandeTocinetaAdicionEnsalada           [0],
+                    adicionSalchichaG: listaPerro.perroGrandeTocinetaAdicionSalchichaGrande   [0],
+                    adicionSalchichaP: listaPerro.perroGrandeTocinetaAdicionSalchichaPequegna [0],
+                    producto: 'Perro Grande Tocineta',
+                    identificadorDeProducto: 0,
+                    // Ingredietes
+                    ingredienteEnsalada:  listaPerro.perroGrandeTocinetaIngredienteEnsalada  [0],
+                    ingredienteRipio:     listaPerro.perroGrandeTocinetaIngredienteRipio     [0],
+                    ingredienteTocineta:  listaPerro.perroGrandeTocinetaIngredienteTocineta  [0],
+                    ingredienteQueso:     listaPerro.perroGrandeTocinetaIngredienteQueso     [0],
+                  ),
 
-                  data.perroGrandeTocineta >= 1 ? _adicionPerro(
-                    
-                    tocineta:           listaPerro.perroGrandeTocinetaAdicionTocineta         [0],
-                    queso:              listaPerro.perroGrandeTocinetaAdicionQueso            [0],
-                    ensalada:           listaPerro.perroGrandeTocinetaAdicionEnsalada         [0],
-                    salchichaGrande:    listaPerro.perroGrandeTocinetaAdicionSalchichaGrande  [0],
-                    salchichaPequegna:  listaPerro.perroGrandeTocinetaAdicionSalchichaPequegna[0],
-                    producto: 'Perro Grande Con Tocineta #1',
-                    numeroDePerros: 1
-                  ) : Container(),
+                  _perro(
+                    // Adiciones
+                    adicionTocineta:  listaPerro.perroGrandeTocinetaAdicionTocineta           [1],
+                    adicionQueso:     listaPerro.perroGrandeTocinetaAdicionQueso              [1],
+                    adicionEnsalada:  listaPerro.perroGrandeTocinetaAdicionEnsalada           [1],
+                    adicionSalchichaG: listaPerro.perroGrandeTocinetaAdicionSalchichaGrande   [1],
+                    adicionSalchichaP: listaPerro.perroGrandeTocinetaAdicionSalchichaPequegna [1],
+                    producto: 'Perro Grande Tocineta',
+                    identificadorDeProducto: 1,
+                    // Ingredietes
+                    ingredienteEnsalada:  listaPerro.perroGrandeTocinetaIngredienteEnsalada  [1],
+                    ingredienteRipio:     listaPerro.perroGrandeTocinetaIngredienteRipio     [1],
+                    ingredienteTocineta:  listaPerro.perroGrandeTocinetaIngredienteTocineta  [1],
+                    ingredienteQueso:     listaPerro.perroGrandeTocinetaIngredienteQueso     [1],
+                  ),
+
+                  _perro(
+                    // Adiciones
+                    adicionTocineta:  listaPerro.perroGrandeTocinetaAdicionTocineta           [2],
+                    adicionQueso:     listaPerro.perroGrandeTocinetaAdicionQueso              [2],
+                    adicionEnsalada:  listaPerro.perroGrandeTocinetaAdicionEnsalada           [2],
+                    adicionSalchichaG: listaPerro.perroGrandeTocinetaAdicionSalchichaGrande   [2],
+                    adicionSalchichaP: listaPerro.perroGrandeTocinetaAdicionSalchichaPequegna [2],
+                    producto: 'Perro Grande Tocineta',
+                    identificadorDeProducto: 2,
+                    // Ingredietes
+                    ingredienteEnsalada:  listaPerro.perroGrandeTocinetaIngredienteEnsalada  [2],
+                    ingredienteRipio:     listaPerro.perroGrandeTocinetaIngredienteRipio     [2],
+                    ingredienteTocineta:  listaPerro.perroGrandeTocinetaIngredienteTocineta  [2],
+                    ingredienteQueso:     listaPerro.perroGrandeTocinetaIngredienteQueso     [2],
+                  ),
+
+                  _perro(
+                    // Adiciones
+                    adicionTocineta:  listaPerro.perroGrandeTocinetaAdicionTocineta           [3],
+                    adicionQueso:     listaPerro.perroGrandeTocinetaAdicionQueso              [3],
+                    adicionEnsalada:  listaPerro.perroGrandeTocinetaAdicionEnsalada           [3],
+                    adicionSalchichaG: listaPerro.perroGrandeTocinetaAdicionSalchichaGrande   [3],
+                    adicionSalchichaP: listaPerro.perroGrandeTocinetaAdicionSalchichaPequegna [3],
+                    producto: 'Perro Grande Tocineta',
+                    identificadorDeProducto: 3,
+                    // Ingredietes
+                    ingredienteEnsalada:  listaPerro.perroGrandeTocinetaIngredienteEnsalada  [3],
+                    ingredienteRipio:     listaPerro.perroGrandeTocinetaIngredienteRipio     [3],
+                    ingredienteTocineta:  listaPerro.perroGrandeTocinetaIngredienteTocineta  [3],
+                    ingredienteQueso:     listaPerro.perroGrandeTocinetaIngredienteQueso     [3],
+                  ),
+
+                  _perro(
+                    // Adiciones
+                    adicionTocineta:  listaPerro.perroGrandeTocinetaAdicionTocineta           [4],
+                    adicionQueso:     listaPerro.perroGrandeTocinetaAdicionQueso              [4],
+                    adicionEnsalada:  listaPerro.perroGrandeTocinetaAdicionEnsalada           [4],
+                    adicionSalchichaG: listaPerro.perroGrandeTocinetaAdicionSalchichaGrande   [4],
+                    adicionSalchichaP: listaPerro.perroGrandeTocinetaAdicionSalchichaPequegna [4],
+                    producto: 'Perro Grande Tocineta',
+                    identificadorDeProducto: 4,
+                    // Ingredietes
+                    ingredienteEnsalada:  listaPerro.perroGrandeTocinetaIngredienteEnsalada  [4],
+                    ingredienteRipio:     listaPerro.perroGrandeTocinetaIngredienteRipio     [4],
+                    ingredienteTocineta:  listaPerro.perroGrandeTocinetaIngredienteTocineta  [4],
+                    ingredienteQueso:     listaPerro.perroGrandeTocinetaIngredienteQueso     [4],
+                  ),
+
+                  _perro(
+                    // Adiciones
+                    adicionTocineta:  listaPerro.perroGrandeTocinetaAdicionTocineta           [5],
+                    adicionQueso:     listaPerro.perroGrandeTocinetaAdicionQueso              [5],
+                    adicionEnsalada:  listaPerro.perroGrandeTocinetaAdicionEnsalada           [5],
+                    adicionSalchichaG: listaPerro.perroGrandeTocinetaAdicionSalchichaGrande   [5],
+                    adicionSalchichaP: listaPerro.perroGrandeTocinetaAdicionSalchichaPequegna [5],
+                    producto: 'Perro Grande Tocineta',
+                    identificadorDeProducto: 5,
+                    // Ingredietes
+                    ingredienteEnsalada:  listaPerro.perroGrandeTocinetaIngredienteEnsalada  [5],
+                    ingredienteRipio:     listaPerro.perroGrandeTocinetaIngredienteRipio     [5],
+                    ingredienteTocineta:  listaPerro.perroGrandeTocinetaIngredienteTocineta  [5],
+                    ingredienteQueso:     listaPerro.perroGrandeTocinetaIngredienteQueso     [5],
+                  ),
+
+                  _perro(
+                    // Adiciones
+                    adicionTocineta:  listaPerro.perroGrandeTocinetaAdicionTocineta           [6],
+                    adicionQueso:     listaPerro.perroGrandeTocinetaAdicionQueso              [6],
+                    adicionEnsalada:  listaPerro.perroGrandeTocinetaAdicionEnsalada           [6],
+                    adicionSalchichaG: listaPerro.perroGrandeTocinetaAdicionSalchichaGrande   [6],
+                    adicionSalchichaP: listaPerro.perroGrandeTocinetaAdicionSalchichaPequegna [6],
+                    producto: 'Perro Grande Tocineta',
+                    identificadorDeProducto: 6,
+                    // Ingredietes
+                    ingredienteEnsalada:  listaPerro.perroGrandeTocinetaIngredienteEnsalada  [6],
+                    ingredienteRipio:     listaPerro.perroGrandeTocinetaIngredienteRipio     [6],
+                    ingredienteTocineta:  listaPerro.perroGrandeTocinetaIngredienteTocineta  [6],
+                    ingredienteQueso:     listaPerro.perroGrandeTocinetaIngredienteQueso     [6],
+                  ),
+
+                  _perro(
+                    // Adiciones
+                    adicionTocineta:  listaPerro.perroGrandeTocinetaAdicionTocineta           [7],
+                    adicionQueso:     listaPerro.perroGrandeTocinetaAdicionQueso              [7],
+                    adicionEnsalada:  listaPerro.perroGrandeTocinetaAdicionEnsalada           [7],
+                    adicionSalchichaG: listaPerro.perroGrandeTocinetaAdicionSalchichaGrande   [7],
+                    adicionSalchichaP: listaPerro.perroGrandeTocinetaAdicionSalchichaPequegna [7],
+                    producto: 'Perro Grande Tocineta',
+                    identificadorDeProducto: 7,
+                    // Ingredietes
+                    ingredienteEnsalada:  listaPerro.perroGrandeTocinetaIngredienteEnsalada  [7],
+                    ingredienteRipio:     listaPerro.perroGrandeTocinetaIngredienteRipio     [7],
+                    ingredienteTocineta:  listaPerro.perroGrandeTocinetaIngredienteTocineta  [7],
+                    ingredienteQueso:     listaPerro.perroGrandeTocinetaIngredienteQueso     [7],
+                  ),
+
+                  _perro(
+                    // Adiciones
+                    adicionTocineta:  listaPerro.perroGrandeTocinetaAdicionTocineta           [8],
+                    adicionQueso:     listaPerro.perroGrandeTocinetaAdicionQueso              [8],
+                    adicionEnsalada:  listaPerro.perroGrandeTocinetaAdicionEnsalada           [8],
+                    adicionSalchichaG: listaPerro.perroGrandeTocinetaAdicionSalchichaGrande   [8],
+                    adicionSalchichaP: listaPerro.perroGrandeTocinetaAdicionSalchichaPequegna [8],
+                    producto: 'Perro Grande Tocineta',
+                    identificadorDeProducto: 8,
+                    // Ingredietes
+                    ingredienteEnsalada:  listaPerro.perroGrandeTocinetaIngredienteEnsalada  [8],
+                    ingredienteRipio:     listaPerro.perroGrandeTocinetaIngredienteRipio     [8],
+                    ingredienteTocineta:  listaPerro.perroGrandeTocinetaIngredienteTocineta  [8],
+                    ingredienteQueso:     listaPerro.perroGrandeTocinetaIngredienteQueso     [8],
+                  ),
+
+                  _perro(
+                    // Adiciones
+                    adicionTocineta:  listaPerro.perroGrandeTocinetaAdicionTocineta           [9],
+                    adicionQueso:     listaPerro.perroGrandeTocinetaAdicionQueso              [9],
+                    adicionEnsalada:  listaPerro.perroGrandeTocinetaAdicionEnsalada           [9],
+                    adicionSalchichaG: listaPerro.perroGrandeTocinetaAdicionSalchichaGrande   [9],
+                    adicionSalchichaP: listaPerro.perroGrandeTocinetaAdicionSalchichaPequegna [9],
+                    producto: 'Perro Grande Tocineta',
+                    identificadorDeProducto: 9,
+                    // Ingredietes
+                    ingredienteEnsalada:  listaPerro.perroGrandeTocinetaIngredienteEnsalada  [9],
+                    ingredienteRipio:     listaPerro.perroGrandeTocinetaIngredienteRipio     [9],
+                    ingredienteTocineta:  listaPerro.perroGrandeTocinetaIngredienteTocineta  [9],
+                    ingredienteQueso:     listaPerro.perroGrandeTocinetaIngredienteQueso     [9],
+                  ),
+
+                  //////////////////////////////////////////////////////////////////////////////////////////////////////
+                  /// Perro Grande
+                  _perro(
+                    // Adiciones
+                    adicionTocineta:  listaPerro.perroGrandeAdicionTocineta           [0],
+                    adicionQueso:     listaPerro.perroGrandeAdicionQueso              [0],
+                    adicionEnsalada:  listaPerro.perroGrandeAdicionEnsalada           [0],
+                    adicionSalchichaG: listaPerro.perroGrandeAdicionSalchichaGrande   [0],
+                    adicionSalchichaP: listaPerro.perroGrandeAdicionSalchichaPequegna [0],
+                    producto: 'Perro Grande',
+                    identificadorDeProducto: 0,
+                    // Ingredietes
+                    ingredienteEnsalada:  listaPerro.perroGrandeIngredienteEnsalada  [0],
+                    ingredienteRipio:     listaPerro.perroGrandeIngredienteRipio     [0],
+                    ingredienteTocineta:  listaPerro.perroGrandeIngredienteTocineta  [0],
+                    ingredienteQueso:     listaPerro.perroGrandeIngredienteQueso     [0],
+                  ),
+
+                  _perro(
+                    // Adiciones
+                    adicionTocineta:  listaPerro.perroGrandeAdicionTocineta           [1],
+                    adicionQueso:     listaPerro.perroGrandeAdicionQueso              [1],
+                    adicionEnsalada:  listaPerro.perroGrandeAdicionEnsalada           [1],
+                    adicionSalchichaG: listaPerro.perroGrandeAdicionSalchichaGrande   [1],
+                    adicionSalchichaP: listaPerro.perroGrandeAdicionSalchichaPequegna [1],
+                    producto: 'Perro Grande',
+                    identificadorDeProducto: 1,
+                    // Ingredietes
+                    ingredienteEnsalada:  listaPerro.perroGrandeIngredienteEnsalada  [1],
+                    ingredienteRipio:     listaPerro.perroGrandeIngredienteRipio     [1],
+                    ingredienteTocineta:  listaPerro.perroGrandeIngredienteTocineta  [1],
+                    ingredienteQueso:     listaPerro.perroGrandeIngredienteQueso     [1],
+                  ),
+
+                  _perro(
+                    // Adiciones
+                    adicionTocineta:  listaPerro.perroGrandeAdicionTocineta           [2],
+                    adicionQueso:     listaPerro.perroGrandeAdicionQueso              [2],
+                    adicionEnsalada:  listaPerro.perroGrandeAdicionEnsalada           [2],
+                    adicionSalchichaG: listaPerro.perroGrandeAdicionSalchichaGrande   [2],
+                    adicionSalchichaP: listaPerro.perroGrandeAdicionSalchichaPequegna [2],
+                    producto: 'Perro Grande',
+                    identificadorDeProducto: 2,
+                    // Ingredietes
+                    ingredienteEnsalada:  listaPerro.perroGrandeIngredienteEnsalada  [2],
+                    ingredienteRipio:     listaPerro.perroGrandeIngredienteRipio     [2],
+                    ingredienteTocineta:  listaPerro.perroGrandeIngredienteTocineta  [2],
+                    ingredienteQueso:     listaPerro.perroGrandeIngredienteQueso     [2],
+                  ),
+
+                  _perro(
+                    // Adiciones
+                    adicionTocineta:  listaPerro.perroGrandeAdicionTocineta           [3],
+                    adicionQueso:     listaPerro.perroGrandeAdicionQueso              [3],
+                    adicionEnsalada:  listaPerro.perroGrandeAdicionEnsalada           [3],
+                    adicionSalchichaG: listaPerro.perroGrandeAdicionSalchichaGrande   [3],
+                    adicionSalchichaP: listaPerro.perroGrandeAdicionSalchichaPequegna [3],
+                    producto: 'Perro Grande',
+                    identificadorDeProducto: 3,
+                    // Ingredietes
+                    ingredienteEnsalada:  listaPerro.perroGrandeIngredienteEnsalada  [3],
+                    ingredienteRipio:     listaPerro.perroGrandeIngredienteRipio     [3],
+                    ingredienteTocineta:  listaPerro.perroGrandeIngredienteTocineta  [3],
+                    ingredienteQueso:     listaPerro.perroGrandeIngredienteQueso     [3],
+                  ),
+
+                  _perro(
+                    // Adiciones
+                    adicionTocineta:  listaPerro.perroGrandeAdicionTocineta           [4],
+                    adicionQueso:     listaPerro.perroGrandeAdicionQueso              [4],
+                    adicionEnsalada:  listaPerro.perroGrandeAdicionEnsalada           [4],
+                    adicionSalchichaG: listaPerro.perroGrandeAdicionSalchichaGrande   [4],
+                    adicionSalchichaP: listaPerro.perroGrandeAdicionSalchichaPequegna [4],
+                    producto: 'Perro Grande',
+                    identificadorDeProducto: 4,
+                    // Ingredietes
+                    ingredienteEnsalada:  listaPerro.perroGrandeIngredienteEnsalada  [4],
+                    ingredienteRipio:     listaPerro.perroGrandeIngredienteRipio     [4],
+                    ingredienteTocineta:  listaPerro.perroGrandeIngredienteTocineta  [4],
+                    ingredienteQueso:     listaPerro.perroGrandeIngredienteQueso     [4],
+                  ),
+
+                  _perro(
+                    // Adiciones
+                    adicionTocineta:  listaPerro.perroGrandeAdicionTocineta           [5],
+                    adicionQueso:     listaPerro.perroGrandeAdicionQueso              [5],
+                    adicionEnsalada:  listaPerro.perroGrandeAdicionEnsalada           [5],
+                    adicionSalchichaG: listaPerro.perroGrandeAdicionSalchichaGrande   [5],
+                    adicionSalchichaP: listaPerro.perroGrandeAdicionSalchichaPequegna [5],
+                    producto: 'Perro Grande',
+                    identificadorDeProducto: 5,
+                    // Ingredietes
+                    ingredienteEnsalada:  listaPerro.perroGrandeIngredienteEnsalada  [5],
+                    ingredienteRipio:     listaPerro.perroGrandeIngredienteRipio     [5],
+                    ingredienteTocineta:  listaPerro.perroGrandeIngredienteTocineta  [5],
+                    ingredienteQueso:     listaPerro.perroGrandeIngredienteQueso     [5],
+                  ),
+
+                  _perro(
+                    // Adiciones
+                    adicionTocineta:  listaPerro.perroGrandeAdicionTocineta           [6],
+                    adicionQueso:     listaPerro.perroGrandeAdicionQueso              [6],
+                    adicionEnsalada:  listaPerro.perroGrandeAdicionEnsalada           [6],
+                    adicionSalchichaG: listaPerro.perroGrandeAdicionSalchichaGrande   [6],
+                    adicionSalchichaP: listaPerro.perroGrandeAdicionSalchichaPequegna [6],
+                    producto: 'Perro Grande',
+                    identificadorDeProducto: 6,
+                    // Ingredietes
+                    ingredienteEnsalada:  listaPerro.perroGrandeIngredienteEnsalada  [6],
+                    ingredienteRipio:     listaPerro.perroGrandeIngredienteRipio     [6],
+                    ingredienteTocineta:  listaPerro.perroGrandeIngredienteTocineta  [6],
+                    ingredienteQueso:     listaPerro.perroGrandeIngredienteQueso     [6],
+                  ),
+
+                  _perro(
+                    // Adiciones
+                    adicionTocineta:  listaPerro.perroGrandeAdicionTocineta           [7],
+                    adicionQueso:     listaPerro.perroGrandeAdicionQueso              [7],
+                    adicionEnsalada:  listaPerro.perroGrandeAdicionEnsalada           [7],
+                    adicionSalchichaG: listaPerro.perroGrandeAdicionSalchichaGrande   [7],
+                    adicionSalchichaP: listaPerro.perroGrandeAdicionSalchichaPequegna [7],
+                    producto: 'Perro Grande',
+                    identificadorDeProducto: 7,
+                    // Ingredietes
+                    ingredienteEnsalada:  listaPerro.perroGrandeIngredienteEnsalada  [7],
+                    ingredienteRipio:     listaPerro.perroGrandeIngredienteRipio     [7],
+                    ingredienteTocineta:  listaPerro.perroGrandeIngredienteTocineta  [7],
+                    ingredienteQueso:     listaPerro.perroGrandeIngredienteQueso     [7],
+                  ),
+
+                  _perro(
+                    // Adiciones
+                    adicionTocineta:  listaPerro.perroGrandeAdicionTocineta           [8],
+                    adicionQueso:     listaPerro.perroGrandeAdicionQueso              [8],
+                    adicionEnsalada:  listaPerro.perroGrandeAdicionEnsalada           [8],
+                    adicionSalchichaG: listaPerro.perroGrandeAdicionSalchichaGrande   [8],
+                    adicionSalchichaP: listaPerro.perroGrandeAdicionSalchichaPequegna [8],
+                    producto: 'Perro Grande',
+                    identificadorDeProducto: 8,
+                    // Ingredietes
+                    ingredienteEnsalada:  listaPerro.perroGrandeIngredienteEnsalada  [8],
+                    ingredienteRipio:     listaPerro.perroGrandeIngredienteRipio     [8],
+                    ingredienteTocineta:  listaPerro.perroGrandeIngredienteTocineta  [8],
+                    ingredienteQueso:     listaPerro.perroGrandeIngredienteQueso     [8],
+                  ),
+
+                  _perro(
+                    // Adiciones
+                    adicionTocineta:  listaPerro.perroGrandeAdicionTocineta           [9],
+                    adicionQueso:     listaPerro.perroGrandeAdicionQueso              [9],
+                    adicionEnsalada:  listaPerro.perroGrandeAdicionEnsalada           [9],
+                    adicionSalchichaG: listaPerro.perroGrandeAdicionSalchichaGrande   [9],
+                    adicionSalchichaP: listaPerro.perroGrandeAdicionSalchichaPequegna [9],
+                    producto: 'Perro Grande',
+                    identificadorDeProducto: 9,
+                    // Ingredietes
+                    ingredienteEnsalada:  listaPerro.perroGrandeIngredienteEnsalada  [9],
+                    ingredienteRipio:     listaPerro.perroGrandeIngredienteRipio     [9],
+                    ingredienteTocineta:  listaPerro.perroGrandeIngredienteTocineta  [9],
+                    ingredienteQueso:     listaPerro.perroGrandeIngredienteQueso     [9],
+                  ),
+
+                  ////////////////////////////////////////////////////////////////////////////////////////////////////////7
+                  /// Perro Pequeño Tocineta
+                  _perro(
+                    // Adiciones
+                    adicionTocineta:  listaPerro.perroPequegnoTocinetaAdicionTocineta           [0],
+                    adicionQueso:     listaPerro.perroPequegnoTocinetaAdicionQueso              [0],
+                    adicionEnsalada:  listaPerro.perroPequegnoTocinetaAdicionEnsalada           [0],
+                    adicionSalchichaG: listaPerro.perroPequegnoTocinetaAdicionSalchichaGrande   [0],
+                    adicionSalchichaP: listaPerro.perroPequegnoTocinetaAdicionSalchichaPequegna [0],
+                    producto: 'Perro Pequeño Tocineta',
+                    identificadorDeProducto: 0,
+                    // Ingredietes
+                    ingredienteEnsalada:  listaPerro.perroPequegnoTocinetaIngredienteEnsalada  [0],
+                    ingredienteRipio:     listaPerro.perroPequegnoTocinetaIngredienteRipio     [0],
+                    ingredienteTocineta:  listaPerro.perroPequegnoTocinetaIngredienteTocineta  [0],
+                    ingredienteQueso:     listaPerro.perroPequegnoTocinetaIngredienteQueso     [0],
+                  ),
+
+                  _perro(
+                    // Adiciones
+                    adicionTocineta:  listaPerro.perroPequegnoTocinetaAdicionTocineta           [1],
+                    adicionQueso:     listaPerro.perroPequegnoTocinetaAdicionQueso              [1],
+                    adicionEnsalada:  listaPerro.perroPequegnoTocinetaAdicionEnsalada           [1],
+                    adicionSalchichaG: listaPerro.perroPequegnoTocinetaAdicionSalchichaGrande   [1],
+                    adicionSalchichaP: listaPerro.perroPequegnoTocinetaAdicionSalchichaPequegna [1],
+                    producto: 'Perro Pequeño Tocineta',
+                    identificadorDeProducto: 1,
+                    // Ingredietes
+                    ingredienteEnsalada:  listaPerro.perroPequegnoTocinetaIngredienteEnsalada  [1],
+                    ingredienteRipio:     listaPerro.perroPequegnoTocinetaIngredienteRipio     [1],
+                    ingredienteTocineta:  listaPerro.perroPequegnoTocinetaIngredienteTocineta  [1],
+                    ingredienteQueso:     listaPerro.perroPequegnoTocinetaIngredienteQueso     [1],
+                  ),
+
+                  _perro(
+                    // Adiciones
+                    adicionTocineta:  listaPerro.perroPequegnoTocinetaAdicionTocineta           [2],
+                    adicionQueso:     listaPerro.perroPequegnoTocinetaAdicionQueso              [2],
+                    adicionEnsalada:  listaPerro.perroPequegnoTocinetaAdicionEnsalada           [2],
+                    adicionSalchichaG: listaPerro.perroPequegnoTocinetaAdicionSalchichaGrande   [2],
+                    adicionSalchichaP: listaPerro.perroPequegnoTocinetaAdicionSalchichaPequegna [2],
+                    producto: 'Perro Pequeño Tocineta',
+                    identificadorDeProducto: 2,
+                    // Ingredietes
+                    ingredienteEnsalada:  listaPerro.perroPequegnoTocinetaIngredienteEnsalada  [2],
+                    ingredienteRipio:     listaPerro.perroPequegnoTocinetaIngredienteRipio     [2],
+                    ingredienteTocineta:  listaPerro.perroPequegnoTocinetaIngredienteTocineta  [2],
+                    ingredienteQueso:     listaPerro.perroPequegnoTocinetaIngredienteQueso     [2],
+                  ),
+
+                  _perro(
+                    // Adiciones
+                    adicionTocineta:  listaPerro.perroPequegnoTocinetaAdicionTocineta           [3],
+                    adicionQueso:     listaPerro.perroPequegnoTocinetaAdicionQueso              [3],
+                    adicionEnsalada:  listaPerro.perroPequegnoTocinetaAdicionEnsalada           [3],
+                    adicionSalchichaG: listaPerro.perroPequegnoTocinetaAdicionSalchichaGrande   [3],
+                    adicionSalchichaP: listaPerro.perroPequegnoTocinetaAdicionSalchichaPequegna [3],
+                    producto: 'Perro Pequeño Tocineta',
+                    identificadorDeProducto: 3,
+                    // Ingredietes
+                    ingredienteEnsalada:  listaPerro.perroPequegnoTocinetaIngredienteEnsalada  [3],
+                    ingredienteRipio:     listaPerro.perroPequegnoTocinetaIngredienteRipio     [3],
+                    ingredienteTocineta:  listaPerro.perroPequegnoTocinetaIngredienteTocineta  [3],
+                    ingredienteQueso:     listaPerro.perroPequegnoTocinetaIngredienteQueso     [3],
+                  ),
+
+                  _perro(
+                    // Adiciones
+                    adicionTocineta:  listaPerro.perroPequegnoTocinetaAdicionTocineta           [4],
+                    adicionQueso:     listaPerro.perroPequegnoTocinetaAdicionQueso              [4],
+                    adicionEnsalada:  listaPerro.perroPequegnoTocinetaAdicionEnsalada           [4],
+                    adicionSalchichaG: listaPerro.perroPequegnoTocinetaAdicionSalchichaGrande   [4],
+                    adicionSalchichaP: listaPerro.perroPequegnoTocinetaAdicionSalchichaPequegna [4],
+                    producto: 'Perro Pequeño Tocineta',
+                    identificadorDeProducto: 4,
+                    // Ingredietes
+                    ingredienteEnsalada:  listaPerro.perroPequegnoTocinetaIngredienteEnsalada  [4],
+                    ingredienteRipio:     listaPerro.perroPequegnoTocinetaIngredienteRipio     [4],
+                    ingredienteTocineta:  listaPerro.perroPequegnoTocinetaIngredienteTocineta  [4],
+                    ingredienteQueso:     listaPerro.perroPequegnoTocinetaIngredienteQueso     [4],
+                  ),
+
+                  _perro(
+                    // Adiciones
+                    adicionTocineta:  listaPerro.perroPequegnoTocinetaAdicionTocineta           [5],
+                    adicionQueso:     listaPerro.perroPequegnoTocinetaAdicionQueso              [5],
+                    adicionEnsalada:  listaPerro.perroPequegnoTocinetaAdicionEnsalada           [5],
+                    adicionSalchichaG: listaPerro.perroPequegnoTocinetaAdicionSalchichaGrande   [5],
+                    adicionSalchichaP: listaPerro.perroPequegnoTocinetaAdicionSalchichaPequegna [5],
+                    producto: 'Perro Pequeño Tocineta',
+                    identificadorDeProducto: 5,
+                    // Ingredietes
+                    ingredienteEnsalada:  listaPerro.perroPequegnoTocinetaIngredienteEnsalada  [5],
+                    ingredienteRipio:     listaPerro.perroPequegnoTocinetaIngredienteRipio     [5],
+                    ingredienteTocineta:  listaPerro.perroPequegnoTocinetaIngredienteTocineta  [5],
+                    ingredienteQueso:     listaPerro.perroPequegnoTocinetaIngredienteQueso     [5],
+                  ),
+
+                  _perro(
+                    // Adiciones
+                    adicionTocineta:  listaPerro.perroPequegnoTocinetaAdicionTocineta           [6],
+                    adicionQueso:     listaPerro.perroPequegnoTocinetaAdicionQueso              [6],
+                    adicionEnsalada:  listaPerro.perroPequegnoTocinetaAdicionEnsalada           [6],
+                    adicionSalchichaG: listaPerro.perroPequegnoTocinetaAdicionSalchichaGrande   [6],
+                    adicionSalchichaP: listaPerro.perroPequegnoTocinetaAdicionSalchichaPequegna [6],
+                    producto: 'Perro Pequeño Tocineta',
+                    identificadorDeProducto: 6,
+                    // Ingredietes
+                    ingredienteEnsalada:  listaPerro.perroPequegnoTocinetaIngredienteEnsalada  [6],
+                    ingredienteRipio:     listaPerro.perroPequegnoTocinetaIngredienteRipio     [6],
+                    ingredienteTocineta:  listaPerro.perroPequegnoTocinetaIngredienteTocineta  [6],
+                    ingredienteQueso:     listaPerro.perroPequegnoTocinetaIngredienteQueso     [6],
+                  ),
+
+                  _perro(
+                    // Adiciones
+                    adicionTocineta:  listaPerro.perroPequegnoTocinetaAdicionTocineta           [7],
+                    adicionQueso:     listaPerro.perroPequegnoTocinetaAdicionQueso              [7],
+                    adicionEnsalada:  listaPerro.perroPequegnoTocinetaAdicionEnsalada           [7],
+                    adicionSalchichaG: listaPerro.perroPequegnoTocinetaAdicionSalchichaGrande   [7],
+                    adicionSalchichaP: listaPerro.perroPequegnoTocinetaAdicionSalchichaPequegna [7],
+                    producto: 'Perro Pequeño Tocineta',
+                    identificadorDeProducto: 7,
+                    // Ingredietes
+                    ingredienteEnsalada:  listaPerro.perroPequegnoTocinetaIngredienteEnsalada  [7],
+                    ingredienteRipio:     listaPerro.perroPequegnoTocinetaIngredienteRipio     [7],
+                    ingredienteTocineta:  listaPerro.perroPequegnoTocinetaIngredienteTocineta  [7],
+                    ingredienteQueso:     listaPerro.perroPequegnoTocinetaIngredienteQueso     [7],
+                  ),
+
+                  _perro(
+                    // Adiciones
+                    adicionTocineta:  listaPerro.perroPequegnoTocinetaAdicionTocineta           [8],
+                    adicionQueso:     listaPerro.perroPequegnoTocinetaAdicionQueso              [8],
+                    adicionEnsalada:  listaPerro.perroPequegnoTocinetaAdicionEnsalada           [8],
+                    adicionSalchichaG: listaPerro.perroPequegnoTocinetaAdicionSalchichaGrande   [8],
+                    adicionSalchichaP: listaPerro.perroPequegnoTocinetaAdicionSalchichaPequegna [8],
+                    producto: 'Perro Pequeño Tocineta',
+                    identificadorDeProducto: 8,
+                    // Ingredietes
+                    ingredienteEnsalada:  listaPerro.perroPequegnoTocinetaIngredienteEnsalada  [8],
+                    ingredienteRipio:     listaPerro.perroPequegnoTocinetaIngredienteRipio     [8],
+                    ingredienteTocineta:  listaPerro.perroPequegnoTocinetaIngredienteTocineta  [8],
+                    ingredienteQueso:     listaPerro.perroPequegnoTocinetaIngredienteQueso     [8],
+                  ),
+
+                  _perro(
+                    // Adiciones
+                    adicionTocineta:  listaPerro.perroPequegnoTocinetaAdicionTocineta           [9],
+                    adicionQueso:     listaPerro.perroPequegnoTocinetaAdicionQueso              [9],
+                    adicionEnsalada:  listaPerro.perroPequegnoTocinetaAdicionEnsalada           [9],
+                    adicionSalchichaG: listaPerro.perroPequegnoTocinetaAdicionSalchichaGrande   [9],
+                    adicionSalchichaP: listaPerro.perroPequegnoTocinetaAdicionSalchichaPequegna [9],
+                    producto: 'Perro Pequeño Tocineta',
+                    identificadorDeProducto: 9,
+                    // Ingredietes
+                    ingredienteEnsalada:  listaPerro.perroPequegnoTocinetaIngredienteEnsalada  [9],
+                    ingredienteRipio:     listaPerro.perroPequegnoTocinetaIngredienteRipio     [9],
+                    ingredienteTocineta:  listaPerro.perroPequegnoTocinetaIngredienteTocineta  [9],
+                    ingredienteQueso:     listaPerro.perroPequegnoTocinetaIngredienteQueso     [9],
+                  ),
+
+                  ///////////////////////////////////////////////////////////////////////////////////////////////////
+                  /// Perro Pequeño
+                  _perro(
+                    // Adiciones
+                    adicionTocineta:  listaPerro.perroPequegnoAdicionTocineta           [0],
+                    adicionQueso:     listaPerro.perroPequegnoAdicionQueso              [0],
+                    adicionEnsalada:  listaPerro.perroPequegnoAdicionEnsalada           [0],
+                    adicionSalchichaG: listaPerro.perroPequegnoAdicionSalchichaGrande   [0],
+                    adicionSalchichaP: listaPerro.perroPequegnoAdicionSalchichaPequegna [0],
+                    producto: 'Perro Pequeño',
+                    identificadorDeProducto: 0,
+                    // Ingredietes
+                    ingredienteEnsalada:  listaPerro.perroPequegnoIngredienteEnsalada  [0],
+                    ingredienteRipio:     listaPerro.perroPequegnoIngredienteRipio     [0],
+                    ingredienteTocineta:  listaPerro.perroPequegnoIngredienteTocineta  [0],
+                    ingredienteQueso:     listaPerro.perroPequegnoIngredienteQueso     [0],
+                  ),
+
+                  _perro(
+                    // Adiciones
+                    adicionTocineta:  listaPerro.perroPequegnoAdicionTocineta           [1],
+                    adicionQueso:     listaPerro.perroPequegnoAdicionQueso              [1],
+                    adicionEnsalada:  listaPerro.perroPequegnoAdicionEnsalada           [1],
+                    adicionSalchichaG: listaPerro.perroPequegnoAdicionSalchichaGrande   [1],
+                    adicionSalchichaP: listaPerro.perroPequegnoAdicionSalchichaPequegna [1],
+                    producto: 'Perro Pequeño',
+                    identificadorDeProducto: 1,
+                    // Ingredietes
+                    ingredienteEnsalada:  listaPerro.perroPequegnoIngredienteEnsalada  [1],
+                    ingredienteRipio:     listaPerro.perroPequegnoIngredienteRipio     [1],
+                    ingredienteTocineta:  listaPerro.perroPequegnoIngredienteTocineta  [1],
+                    ingredienteQueso:     listaPerro.perroPequegnoIngredienteQueso     [1],
+                  ),
+
+                  _perro(
+                    // Adiciones
+                    adicionTocineta:  listaPerro.perroPequegnoAdicionTocineta           [2],
+                    adicionQueso:     listaPerro.perroPequegnoAdicionQueso              [2],
+                    adicionEnsalada:  listaPerro.perroPequegnoAdicionEnsalada           [2],
+                    adicionSalchichaG: listaPerro.perroPequegnoAdicionSalchichaGrande   [2],
+                    adicionSalchichaP: listaPerro.perroPequegnoAdicionSalchichaPequegna [2],
+                    producto: 'Perro Pequeño',
+                    identificadorDeProducto: 2,
+                    // Ingredietes
+                    ingredienteEnsalada:  listaPerro.perroPequegnoIngredienteEnsalada  [2],
+                    ingredienteRipio:     listaPerro.perroPequegnoIngredienteRipio     [2],
+                    ingredienteTocineta:  listaPerro.perroPequegnoIngredienteTocineta  [2],
+                    ingredienteQueso:     listaPerro.perroPequegnoIngredienteQueso     [2],
+                  ),
+
+                  _perro(
+                    // Adiciones
+                    adicionTocineta:  listaPerro.perroPequegnoAdicionTocineta           [3],
+                    adicionQueso:     listaPerro.perroPequegnoAdicionQueso              [3],
+                    adicionEnsalada:  listaPerro.perroPequegnoAdicionEnsalada           [3],
+                    adicionSalchichaG: listaPerro.perroPequegnoAdicionSalchichaGrande   [3],
+                    adicionSalchichaP: listaPerro.perroPequegnoAdicionSalchichaPequegna [3],
+                    producto: 'Perro Pequeño',
+                    identificadorDeProducto: 3,
+                    // Ingredietes
+                    ingredienteEnsalada:  listaPerro.perroPequegnoIngredienteEnsalada  [3],
+                    ingredienteRipio:     listaPerro.perroPequegnoIngredienteRipio     [3],
+                    ingredienteTocineta:  listaPerro.perroPequegnoIngredienteTocineta  [3],
+                    ingredienteQueso:     listaPerro.perroPequegnoIngredienteQueso     [3],
+                  ),
+
+                  _perro(
+                    // Adiciones
+                    adicionTocineta:  listaPerro.perroPequegnoAdicionTocineta           [4],
+                    adicionQueso:     listaPerro.perroPequegnoAdicionQueso              [4],
+                    adicionEnsalada:  listaPerro.perroPequegnoAdicionEnsalada           [4],
+                    adicionSalchichaG: listaPerro.perroPequegnoAdicionSalchichaGrande   [4],
+                    adicionSalchichaP: listaPerro.perroPequegnoAdicionSalchichaPequegna [4],
+                    producto: 'Perro Pequeño',
+                    identificadorDeProducto: 4,
+                    // Ingredietes
+                    ingredienteEnsalada:  listaPerro.perroPequegnoIngredienteEnsalada  [4],
+                    ingredienteRipio:     listaPerro.perroPequegnoIngredienteRipio     [4],
+                    ingredienteTocineta:  listaPerro.perroPequegnoIngredienteTocineta  [4],
+                    ingredienteQueso:     listaPerro.perroPequegnoIngredienteQueso     [4],
+                  ),
+
+                  _perro(
+                    // Adiciones
+                    adicionTocineta:  listaPerro.perroPequegnoAdicionTocineta           [5],
+                    adicionQueso:     listaPerro.perroPequegnoAdicionQueso              [5],
+                    adicionEnsalada:  listaPerro.perroPequegnoAdicionEnsalada           [5],
+                    adicionSalchichaG: listaPerro.perroPequegnoAdicionSalchichaGrande   [5],
+                    adicionSalchichaP: listaPerro.perroPequegnoAdicionSalchichaPequegna [5],
+                    producto: 'Perro Pequeño',
+                    identificadorDeProducto: 5,
+                    // Ingredietes
+                    ingredienteEnsalada:  listaPerro.perroPequegnoIngredienteEnsalada  [5],
+                    ingredienteRipio:     listaPerro.perroPequegnoIngredienteRipio     [5],
+                    ingredienteTocineta:  listaPerro.perroPequegnoIngredienteTocineta  [5],
+                    ingredienteQueso:     listaPerro.perroPequegnoIngredienteQueso     [5],
+                  ),
+
+                  _perro(
+                    // Adiciones
+                    adicionTocineta:  listaPerro.perroPequegnoAdicionTocineta           [6],
+                    adicionQueso:     listaPerro.perroPequegnoAdicionQueso              [6],
+                    adicionEnsalada:  listaPerro.perroPequegnoAdicionEnsalada           [6],
+                    adicionSalchichaG: listaPerro.perroPequegnoAdicionSalchichaGrande   [6],
+                    adicionSalchichaP: listaPerro.perroPequegnoAdicionSalchichaPequegna [6],
+                    producto: 'Perro Pequeño',
+                    identificadorDeProducto: 6,
+                    // Ingredietes
+                    ingredienteEnsalada:  listaPerro.perroPequegnoIngredienteEnsalada  [6],
+                    ingredienteRipio:     listaPerro.perroPequegnoIngredienteRipio     [6],
+                    ingredienteTocineta:  listaPerro.perroPequegnoIngredienteTocineta  [6],
+                    ingredienteQueso:     listaPerro.perroPequegnoIngredienteQueso     [6],
+                  ),
+
+                  _perro(
+                    // Adiciones
+                    adicionTocineta:  listaPerro.perroPequegnoAdicionTocineta           [7],
+                    adicionQueso:     listaPerro.perroPequegnoAdicionQueso              [7],
+                    adicionEnsalada:  listaPerro.perroPequegnoAdicionEnsalada           [7],
+                    adicionSalchichaG: listaPerro.perroPequegnoAdicionSalchichaGrande   [7],
+                    adicionSalchichaP: listaPerro.perroPequegnoAdicionSalchichaPequegna [7],
+                    producto: 'Perro Pequeño',
+                    identificadorDeProducto: 7,
+                    // Ingredietes
+                    ingredienteEnsalada:  listaPerro.perroPequegnoIngredienteEnsalada  [7],
+                    ingredienteRipio:     listaPerro.perroPequegnoIngredienteRipio     [7],
+                    ingredienteTocineta:  listaPerro.perroPequegnoIngredienteTocineta  [7],
+                    ingredienteQueso:     listaPerro.perroPequegnoIngredienteQueso     [7],
+                  ),
+
+                  _perro(
+                    // Adiciones
+                    adicionTocineta:  listaPerro.perroPequegnoAdicionTocineta           [8],
+                    adicionQueso:     listaPerro.perroPequegnoAdicionQueso              [8],
+                    adicionEnsalada:  listaPerro.perroPequegnoAdicionEnsalada           [8],
+                    adicionSalchichaG: listaPerro.perroPequegnoAdicionSalchichaGrande   [8],
+                    adicionSalchichaP: listaPerro.perroPequegnoAdicionSalchichaPequegna [8],
+                    producto: 'Perro Pequeño',
+                    identificadorDeProducto: 8,
+                    // Ingredietes
+                    ingredienteEnsalada:  listaPerro.perroPequegnoIngredienteEnsalada  [8],
+                    ingredienteRipio:     listaPerro.perroPequegnoIngredienteRipio     [8],
+                    ingredienteTocineta:  listaPerro.perroPequegnoIngredienteTocineta  [8],
+                    ingredienteQueso:     listaPerro.perroPequegnoIngredienteQueso     [8],
+                  ),
+
+                  _perro(
+                    // Adiciones
+                    adicionTocineta:  listaPerro.perroPequegnoAdicionTocineta           [9],
+                    adicionQueso:     listaPerro.perroPequegnoAdicionQueso              [9],
+                    adicionEnsalada:  listaPerro.perroPequegnoAdicionEnsalada           [9],
+                    adicionSalchichaG: listaPerro.perroPequegnoAdicionSalchichaGrande   [9],
+                    adicionSalchichaP: listaPerro.perroPequegnoAdicionSalchichaPequegna [9],
+                    producto: 'Perro Pequeño',
+                    identificadorDeProducto: 9,
+                    // Ingredietes
+                    ingredienteEnsalada:  listaPerro.perroPequegnoIngredienteEnsalada  [9],
+                    ingredienteRipio:     listaPerro.perroPequegnoIngredienteRipio     [9],
+                    ingredienteTocineta:  listaPerro.perroPequegnoIngredienteTocineta  [9],
+                    ingredienteQueso:     listaPerro.perroPequegnoIngredienteQueso     [9],
+                  ),
+
+                  //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                  /// Perra Grande
+                  _perro(
+                    // Adiciones
+                    adicionTocineta:  listaPerro.perraGrandeAdicionTocineta           [0],
+                    adicionQueso:     listaPerro.perraGrandeAdicionQueso              [0],
+                    adicionEnsalada:  listaPerro.perraGrandeAdicionEnsalada           [0],
+                    adicionSalchichaG: listaPerro.perraGrandeAdicionSalchichaGrande   [0],
+                    adicionSalchichaP: listaPerro.perraGrandeAdicionSalchichaPequegna [0],
+                    producto: 'Perra Grande',
+                    identificadorDeProducto: 0,
+                    // Ingredietes
+                    ingredienteEnsalada:  listaPerro.perraGrandeIngredienteEnsalada  [0],
+                    ingredienteRipio:     listaPerro.perraGrandeIngredienteRipio     [0],
+                    ingredienteTocineta:  2,
+                    ingredienteQueso:     listaPerro.perraGrandeIngredienteQueso     [0],
+                  ),
+
+                  _perro(
+                    // Adiciones
+                    adicionTocineta:  listaPerro.perraGrandeAdicionTocineta           [1],
+                    adicionQueso:     listaPerro.perraGrandeAdicionQueso              [1],
+                    adicionEnsalada:  listaPerro.perraGrandeAdicionEnsalada           [1],
+                    adicionSalchichaG: listaPerro.perraGrandeAdicionSalchichaGrande   [1],
+                    adicionSalchichaP: listaPerro.perraGrandeAdicionSalchichaPequegna [1],
+                    producto: 'Perra Grande',
+                    identificadorDeProducto: 1,
+                    // Ingredietes
+                    ingredienteEnsalada:  listaPerro.perraGrandeIngredienteEnsalada  [1],
+                    ingredienteRipio:     listaPerro.perraGrandeIngredienteRipio     [1],
+                    ingredienteTocineta:  2,
+                    ingredienteQueso:     listaPerro.perraGrandeIngredienteQueso     [1],
+                  ),
+
+                  _perro(
+                    // Adiciones
+                    adicionTocineta:  listaPerro.perraGrandeAdicionTocineta           [2],
+                    adicionQueso:     listaPerro.perraGrandeAdicionQueso              [2],
+                    adicionEnsalada:  listaPerro.perraGrandeAdicionEnsalada           [2],
+                    adicionSalchichaG: listaPerro.perraGrandeAdicionSalchichaGrande   [2],
+                    adicionSalchichaP: listaPerro.perraGrandeAdicionSalchichaPequegna [2],
+                    producto: 'Perra Grande',
+                    identificadorDeProducto: 2,
+                    // Ingredietes
+                    ingredienteEnsalada:  listaPerro.perraGrandeIngredienteEnsalada  [2],
+                    ingredienteRipio:     listaPerro.perraGrandeIngredienteRipio     [2],
+                    ingredienteTocineta:  2,
+                    ingredienteQueso:     listaPerro.perraGrandeIngredienteQueso     [2],
+                  ),
+
+                  _perro(
+                    // Adiciones
+                    adicionTocineta:  listaPerro.perraGrandeAdicionTocineta           [3],
+                    adicionQueso:     listaPerro.perraGrandeAdicionQueso              [3],
+                    adicionEnsalada:  listaPerro.perraGrandeAdicionEnsalada           [3],
+                    adicionSalchichaG: listaPerro.perraGrandeAdicionSalchichaGrande   [3],
+                    adicionSalchichaP: listaPerro.perraGrandeAdicionSalchichaPequegna [3],
+                    producto: 'Perra Grande',
+                    identificadorDeProducto: 3,
+                    // Ingredietes
+                    ingredienteEnsalada:  listaPerro.perraGrandeIngredienteEnsalada  [3],
+                    ingredienteRipio:     listaPerro.perraGrandeIngredienteRipio     [3],
+                    ingredienteTocineta:  2,
+                    ingredienteQueso:     listaPerro.perraGrandeIngredienteQueso     [3],
+                  ),
+
+                  _perro(
+                    // Adiciones
+                    adicionTocineta:  listaPerro.perraGrandeAdicionTocineta           [4],
+                    adicionQueso:     listaPerro.perraGrandeAdicionQueso              [4],
+                    adicionEnsalada:  listaPerro.perraGrandeAdicionEnsalada           [4],
+                    adicionSalchichaG: listaPerro.perraGrandeAdicionSalchichaGrande   [4],
+                    adicionSalchichaP: listaPerro.perraGrandeAdicionSalchichaPequegna [4],
+                    producto: 'Perra Grande',
+                    identificadorDeProducto: 4,
+                    // Ingredietes
+                    ingredienteEnsalada:  listaPerro.perraGrandeIngredienteEnsalada  [4],
+                    ingredienteRipio:     listaPerro.perraGrandeIngredienteRipio     [4],
+                    ingredienteTocineta:  2,
+                    ingredienteQueso:     listaPerro.perraGrandeIngredienteQueso     [4],
+                  ),
+
+                  _perro(
+                    // Adiciones
+                    adicionTocineta:  listaPerro.perraGrandeAdicionTocineta           [5],
+                    adicionQueso:     listaPerro.perraGrandeAdicionQueso              [5],
+                    adicionEnsalada:  listaPerro.perraGrandeAdicionEnsalada           [5],
+                    adicionSalchichaG: listaPerro.perraGrandeAdicionSalchichaGrande   [5],
+                    adicionSalchichaP: listaPerro.perraGrandeAdicionSalchichaPequegna [5],
+                    producto: 'Perra Grande',
+                    identificadorDeProducto: 5,
+                    // Ingredietes
+                    ingredienteEnsalada:  listaPerro.perraGrandeIngredienteEnsalada  [5],
+                    ingredienteRipio:     listaPerro.perraGrandeIngredienteRipio     [5],
+                    ingredienteTocineta:  2,
+                    ingredienteQueso:     listaPerro.perraGrandeIngredienteQueso     [5],
+                  ),
+
+                  _perro(
+                    // Adiciones
+                    adicionTocineta:  listaPerro.perraGrandeAdicionTocineta           [6],
+                    adicionQueso:     listaPerro.perraGrandeAdicionQueso              [6],
+                    adicionEnsalada:  listaPerro.perraGrandeAdicionEnsalada           [6],
+                    adicionSalchichaG: listaPerro.perraGrandeAdicionSalchichaGrande   [6],
+                    adicionSalchichaP: listaPerro.perraGrandeAdicionSalchichaPequegna [6],
+                    producto: 'Perra Grande',
+                    identificadorDeProducto: 6,
+                    // Ingredietes
+                    ingredienteEnsalada:  listaPerro.perraGrandeIngredienteEnsalada  [6],
+                    ingredienteRipio:     listaPerro.perraGrandeIngredienteRipio     [6],
+                    ingredienteTocineta:  2,
+                    ingredienteQueso:     listaPerro.perraGrandeIngredienteQueso     [6],
+                  ),
+
+                  _perro(
+                    // Adiciones
+                    adicionTocineta:  listaPerro.perraGrandeAdicionTocineta           [7],
+                    adicionQueso:     listaPerro.perraGrandeAdicionQueso              [7],
+                    adicionEnsalada:  listaPerro.perraGrandeAdicionEnsalada           [7],
+                    adicionSalchichaG: listaPerro.perraGrandeAdicionSalchichaGrande   [7],
+                    adicionSalchichaP: listaPerro.perraGrandeAdicionSalchichaPequegna [7],
+                    producto: 'Perra Grande',
+                    identificadorDeProducto: 7,
+                    // Ingredietes
+                    ingredienteEnsalada:  listaPerro.perraGrandeIngredienteEnsalada  [7],
+                    ingredienteRipio:     listaPerro.perraGrandeIngredienteRipio     [7],
+                    ingredienteTocineta:  2,
+                    ingredienteQueso:     listaPerro.perraGrandeIngredienteQueso     [7],
+                  ),
+
+                  _perro(
+                    // Adiciones
+                    adicionTocineta:  listaPerro.perraGrandeAdicionTocineta           [8],
+                    adicionQueso:     listaPerro.perraGrandeAdicionQueso              [8],
+                    adicionEnsalada:  listaPerro.perraGrandeAdicionEnsalada           [8],
+                    adicionSalchichaG: listaPerro.perraGrandeAdicionSalchichaGrande   [8],
+                    adicionSalchichaP: listaPerro.perraGrandeAdicionSalchichaPequegna [8],
+                    producto: 'Perra Grande',
+                    identificadorDeProducto: 8,
+                    // Ingredietes
+                    ingredienteEnsalada:  listaPerro.perraGrandeIngredienteEnsalada  [8],
+                    ingredienteRipio:     listaPerro.perraGrandeIngredienteRipio     [8],
+                    ingredienteTocineta:  2,
+                    ingredienteQueso:     listaPerro.perraGrandeIngredienteQueso     [8],
+                  ),
+
+                  _perro(
+                    // Adiciones
+                    adicionTocineta:  listaPerro.perraGrandeAdicionTocineta           [9],
+                    adicionQueso:     listaPerro.perraGrandeAdicionQueso              [9],
+                    adicionEnsalada:  listaPerro.perraGrandeAdicionEnsalada           [9],
+                    adicionSalchichaG: listaPerro.perraGrandeAdicionSalchichaGrande   [9],
+                    adicionSalchichaP: listaPerro.perraGrandeAdicionSalchichaPequegna [9],
+                    producto: 'Perra Grande',
+                    identificadorDeProducto: 9,
+                    // Ingredietes
+                    ingredienteEnsalada:  listaPerro.perraGrandeIngredienteEnsalada  [9],
+                    ingredienteRipio:     listaPerro.perraGrandeIngredienteRipio     [9],
+                    ingredienteTocineta:  2,
+                    ingredienteQueso:     listaPerro.perraGrandeIngredienteQueso     [9],
+                  ),
+
+                  ///////////////////////////////////////////////////////////////////////////////////////////////
+                  /// Perra Pequeña
+                  _perro(
+                    // Adiciones
+                    adicionTocineta:  listaPerro.perraPequegnaAdicionTocineta           [0],
+                    adicionQueso:     listaPerro.perraPequegnaAdicionQueso              [0],
+                    adicionEnsalada:  listaPerro.perraPequegnaAdicionEnsalada           [0],
+                    adicionSalchichaG: listaPerro.perraPequegnaAdicionSalchichaGrande   [0],
+                    adicionSalchichaP: listaPerro.perraPequegnaAdicionSalchichaPequegna [0],
+                    producto: 'Perra Pequeña',
+                    identificadorDeProducto: 0,
+                    // Ingredietes
+                    ingredienteEnsalada:  listaPerro.perraPequegnaIngredienteEnsalada  [0],
+                    ingredienteRipio:     listaPerro.perraPequegnaIngredienteRipio     [0],
+                    ingredienteTocineta:  2,
+                    ingredienteQueso:     listaPerro.perraPequegnaIngredienteQueso     [0],
+                  ),
+
+                  _perro(
+                    // Adiciones
+                    adicionTocineta:  listaPerro.perraPequegnaAdicionTocineta           [1],
+                    adicionQueso:     listaPerro.perraPequegnaAdicionQueso              [1],
+                    adicionEnsalada:  listaPerro.perraPequegnaAdicionEnsalada           [1],
+                    adicionSalchichaG: listaPerro.perraPequegnaAdicionSalchichaGrande   [1],
+                    adicionSalchichaP: listaPerro.perraPequegnaAdicionSalchichaPequegna [1],
+                    producto: 'Perra Pequeña',
+                    identificadorDeProducto: 1,
+                    // Ingredietes
+                    ingredienteEnsalada:  listaPerro.perraPequegnaIngredienteEnsalada  [1],
+                    ingredienteRipio:     listaPerro.perraPequegnaIngredienteRipio     [1],
+                    ingredienteTocineta:  2,
+                    ingredienteQueso:     listaPerro.perraPequegnaIngredienteQueso     [1],
+                  ),
+
+                  _perro(
+                    // Adiciones
+                    adicionTocineta:  listaPerro.perraPequegnaAdicionTocineta           [2],
+                    adicionQueso:     listaPerro.perraPequegnaAdicionQueso              [2],
+                    adicionEnsalada:  listaPerro.perraPequegnaAdicionEnsalada           [2],
+                    adicionSalchichaG: listaPerro.perraPequegnaAdicionSalchichaGrande   [2],
+                    adicionSalchichaP: listaPerro.perraPequegnaAdicionSalchichaPequegna [2],
+                    producto: 'Perra Pequeña',
+                    identificadorDeProducto: 2,
+                    // Ingredietes
+                    ingredienteEnsalada:  listaPerro.perraPequegnaIngredienteEnsalada  [2],
+                    ingredienteRipio:     listaPerro.perraPequegnaIngredienteRipio     [2],
+                    ingredienteTocineta:  2,
+                    ingredienteQueso:     listaPerro.perraPequegnaIngredienteQueso     [2],
+                  ),
+
+                  _perro(
+                    // Adiciones
+                    adicionTocineta:  listaPerro.perraPequegnaAdicionTocineta           [3],
+                    adicionQueso:     listaPerro.perraPequegnaAdicionQueso              [3],
+                    adicionEnsalada:  listaPerro.perraPequegnaAdicionEnsalada           [3],
+                    adicionSalchichaG: listaPerro.perraPequegnaAdicionSalchichaGrande   [3],
+                    adicionSalchichaP: listaPerro.perraPequegnaAdicionSalchichaPequegna [3],
+                    producto: 'Perra Pequeña',
+                    identificadorDeProducto: 3,
+                    // Ingredietes
+                    ingredienteEnsalada:  listaPerro.perraPequegnaIngredienteEnsalada  [3],
+                    ingredienteRipio:     listaPerro.perraPequegnaIngredienteRipio     [3],
+                    ingredienteTocineta:  2,
+                    ingredienteQueso:     listaPerro.perraPequegnaIngredienteQueso     [3],
+                  ),
+
+                  _perro(
+                    // Adiciones
+                    adicionTocineta:  listaPerro.perraPequegnaAdicionTocineta           [4],
+                    adicionQueso:     listaPerro.perraPequegnaAdicionQueso              [4],
+                    adicionEnsalada:  listaPerro.perraPequegnaAdicionEnsalada           [4],
+                    adicionSalchichaG: listaPerro.perraPequegnaAdicionSalchichaGrande   [4],
+                    adicionSalchichaP: listaPerro.perraPequegnaAdicionSalchichaPequegna [4],
+                    producto: 'Perra Pequeña',
+                    identificadorDeProducto: 4,
+                    // Ingredietes
+                    ingredienteEnsalada:  listaPerro.perraPequegnaIngredienteEnsalada  [4],
+                    ingredienteRipio:     listaPerro.perraPequegnaIngredienteRipio     [4],
+                    ingredienteTocineta:  2,
+                    ingredienteQueso:     listaPerro.perraPequegnaIngredienteQueso     [4],
+                  ),
+
+                  _perro(
+                    // Adiciones
+                    adicionTocineta:  listaPerro.perraPequegnaAdicionTocineta           [5],
+                    adicionQueso:     listaPerro.perraPequegnaAdicionQueso              [5],
+                    adicionEnsalada:  listaPerro.perraPequegnaAdicionEnsalada           [5],
+                    adicionSalchichaG: listaPerro.perraPequegnaAdicionSalchichaGrande   [5],
+                    adicionSalchichaP: listaPerro.perraPequegnaAdicionSalchichaPequegna [5],
+                    producto: 'Perra Pequeña',
+                    identificadorDeProducto: 5,
+                    // Ingredietes
+                    ingredienteEnsalada:  listaPerro.perraPequegnaIngredienteEnsalada  [5],
+                    ingredienteRipio:     listaPerro.perraPequegnaIngredienteRipio     [5],
+                    ingredienteTocineta:  2,
+                    ingredienteQueso:     listaPerro.perraPequegnaIngredienteQueso     [5],
+                  ),
+
+                  _perro(
+                    // Adiciones
+                    adicionTocineta:  listaPerro.perraPequegnaAdicionTocineta           [6],
+                    adicionQueso:     listaPerro.perraPequegnaAdicionQueso              [6],
+                    adicionEnsalada:  listaPerro.perraPequegnaAdicionEnsalada           [6],
+                    adicionSalchichaG: listaPerro.perraPequegnaAdicionSalchichaGrande   [6],
+                    adicionSalchichaP: listaPerro.perraPequegnaAdicionSalchichaPequegna [6],
+                    producto: 'Perra Pequeña',
+                    identificadorDeProducto: 6,
+                    // Ingredietes
+                    ingredienteEnsalada:  listaPerro.perraPequegnaIngredienteEnsalada  [6],
+                    ingredienteRipio:     listaPerro.perraPequegnaIngredienteRipio     [6],
+                    ingredienteTocineta:  2,
+                    ingredienteQueso:     listaPerro.perraPequegnaIngredienteQueso     [6],
+                  ),
+
+                  _perro(
+                    // Adiciones
+                    adicionTocineta:  listaPerro.perraPequegnaAdicionTocineta           [7],
+                    adicionQueso:     listaPerro.perraPequegnaAdicionQueso              [7],
+                    adicionEnsalada:  listaPerro.perraPequegnaAdicionEnsalada           [7],
+                    adicionSalchichaG: listaPerro.perraPequegnaAdicionSalchichaGrande   [7],
+                    adicionSalchichaP: listaPerro.perraPequegnaAdicionSalchichaPequegna [7],
+                    producto: 'Perra Pequeña',
+                    identificadorDeProducto: 7,
+                    // Ingredietes
+                    ingredienteEnsalada:  listaPerro.perraPequegnaIngredienteEnsalada  [7],
+                    ingredienteRipio:     listaPerro.perraPequegnaIngredienteRipio     [7],
+                    ingredienteTocineta:  2,
+                    ingredienteQueso:     listaPerro.perraPequegnaIngredienteQueso     [7],
+                  ),
+
+                  _perro(
+                    // Adiciones
+                    adicionTocineta:  listaPerro.perraPequegnaAdicionTocineta           [8],
+                    adicionQueso:     listaPerro.perraPequegnaAdicionQueso              [8],
+                    adicionEnsalada:  listaPerro.perraPequegnaAdicionEnsalada           [8],
+                    adicionSalchichaG: listaPerro.perraPequegnaAdicionSalchichaGrande   [8],
+                    adicionSalchichaP: listaPerro.perraPequegnaAdicionSalchichaPequegna [8],
+                    producto: 'Perra Pequeña',
+                    identificadorDeProducto: 8,
+                    // Ingredietes
+                    ingredienteEnsalada:  listaPerro.perraPequegnaIngredienteEnsalada  [8],
+                    ingredienteRipio:     listaPerro.perraPequegnaIngredienteRipio     [8],
+                    ingredienteTocineta:  2,
+                    ingredienteQueso:     listaPerro.perraPequegnaIngredienteQueso     [8],
+                  ),
+
+                  _perro(
+                    // Adiciones
+                    adicionTocineta:  listaPerro.perraPequegnaAdicionTocineta           [9],
+                    adicionQueso:     listaPerro.perraPequegnaAdicionQueso              [9],
+                    adicionEnsalada:  listaPerro.perraPequegnaAdicionEnsalada           [9],
+                    adicionSalchichaG: listaPerro.perraPequegnaAdicionSalchichaGrande   [9],
+                    adicionSalchichaP: listaPerro.perraPequegnaAdicionSalchichaPequegna [9],
+                    producto: 'Perra Pequeña',
+                    identificadorDeProducto: 9,
+                    // Ingredietes
+                    ingredienteEnsalada:  listaPerro.perraPequegnaIngredienteEnsalada  [9],
+                    ingredienteRipio:     listaPerro.perraPequegnaIngredienteRipio     [9],
+                    ingredienteTocineta:  2,
+                    ingredienteQueso:     listaPerro.perraPequegnaIngredienteQueso     [9],
+                  ),
+
+                  
+                  
+
 
                   SizedBox(height: 30,),
 
@@ -1162,46 +2045,33 @@ class _ImportarFacturaState extends State<ImportarFactura> {
   }
 
 
-  _ingredientesHamburguesa({ int tomate, int ensalada, int ripio, int tocineta, int queso, String producto}){
+  _infoAdicion( {int adicion, String producto,}  ) {
     
-    return tomate != 2 || ensalada != 2 || ripio != 2 || tocineta != 2 || queso != 2 ? Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: <Widget>[
-        Padding(
-          padding: const EdgeInsets.only(left: 10),
-          child: Text(  '$producto ', style: styleProducto),
-        ) ,
-        tomate    == 2 ? Container() : _infoIngredienteTomate(   tomate   ),
-        ensalada  == 2 ? Container() : _infoIngredienteEnsalada( ensalada ),
-        ripio     == 2 ? Container() : _infoIngredienteRipio(    ripio    ),
-        tocineta  == 2 ? Container() : _infoIngredienteTocineta( tocineta ),
-        queso     == 2 ? Container() : _infoIngredienteQueso(    queso    ),
+    return adicion == 0 ? Container() : 
+    Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 15),
+      child: Column(
+        children: <Widget>[
 
-        tomate != 2 || ensalada != 2 || ripio != 2 || tocineta != 2 || queso != 2 ? Divider() : Container(),
-      ]
-    ) : Container();
+          
+          adicion > 0 ? Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: <Widget>[
+
+              // Text(  producto, style: styleAppBar) ,
+              Text('-- Adición $producto', style: styleAppBar),
+              Text('$adicion', style: styleAppBar),
+            ],
+          ) 
+          : Container(), 
+
+          
+          
+        ],
+      ),
+    );
   }
 
-
-  _adicionHamburguesa({ int carne, int tocineta, int queso, int ensalada, int numeroDeHamburguesa, String producto, int numeroDeProducto }) {
-    
-    return carne > 0 || tocineta > 0 || queso > 0 || ensalada > 0 ? Column(
-      
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: <Widget>[
-        Padding(
-          padding: const EdgeInsets.only(left: 10),
-          child: Text(  '$producto # $numeroDeHamburguesa', style: styleProducto),
-        ) ,
-        _infoAdicion( adicion: carne,     producto: 'Carne '),
-        _infoAdicion( adicion: tocineta,  producto: 'Tocineta '),
-        _infoAdicion( adicion: queso,     producto: 'Queso '),
-        _infoAdicion( adicion: ensalada,  producto: 'Ensalada '),
-
-        carne > 0 || tocineta > 0 || queso > 0 || ensalada > 0 ? Divider() : Container()
-      ],
-    ) : Container();
-  }
 
   _hamburguesa({ int ingredienteTomate, int ingredienteEnsalada, int ingredienteRipio, int ingredienteTocineta, int ingredienteQueso,
     int adicionCarne, int adicionTocineta, int adicionQueso, int adicionEnsalada, int identificadorDeProducto, String producto  }) {
@@ -1214,6 +2084,8 @@ class _ImportarFacturaState extends State<ImportarFactura> {
           padding: const EdgeInsets.only(left: 10),
           child: Text(  '$producto # ${identificadorDeProducto+1}', style: styleProducto),
         ) : Container(),
+
+        ingredienteTomate != 2 || ingredienteEnsalada != 2 || ingredienteRipio != 2 || ingredienteTocineta != 2 || ingredienteQueso != 2 || adicionCarne > 0 || adicionTocineta > 0 || adicionQueso > 0 || adicionEnsalada > 0 ? SizedBox(height: 10,) : Container(),
 
         // Ingredientes
         ingredienteTomate != 2 || ingredienteEnsalada != 2 || ingredienteRipio != 2 || ingredienteTocineta != 2 || ingredienteQueso != 2 ? Column(
@@ -1243,85 +2115,65 @@ class _ImportarFacturaState extends State<ImportarFactura> {
 
             adicionCarne > 0 || adicionTocineta > 0 || adicionQueso > 0 || adicionEnsalada > 0 ? Divider() : Container()
           ],
-        ) : Container()
+        ) : Container(),
+
+        ingredienteTomate != 2 || ingredienteEnsalada != 2 || ingredienteRipio != 2 || ingredienteTocineta != 2 || ingredienteQueso != 2 || adicionCarne > 0 || adicionTocineta > 0 || adicionQueso > 0 || adicionEnsalada > 0 ? SizedBox(height: 10,) : Container(),
+
       ],
     );
   }
 
-  _infoAdicion( {int adicion, String producto,}  ) {
-    
-    return adicion == 0 ? Container() : 
-    Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 15),
-      child: Column(
-        children: <Widget>[
 
-          
-          adicion > 0 ? Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: <Widget>[
+  _perro({ int adicionSalchichaG, int ingredienteEnsalada, int ingredienteRipio, int ingredienteTocineta, int ingredienteQueso,
+    int adicionSalchichaP, int adicionTocineta, int adicionQueso, int adicionEnsalada, int identificadorDeProducto, String producto  }) {
 
-              // Text(  producto, style: styleAppBar) ,
-              Text('-- Adición $producto', style: styleAppBar),
-              Text('$adicion', style: styleAppBar),
-            ],
-          ) 
-          : Container(), 
+    return Column(
+      children: <Widget>[
 
+        ingredienteEnsalada != 2 || ingredienteRipio != 2 || ingredienteTocineta != 2 || ingredienteQueso != 2 || adicionSalchichaP > 0 || adicionTocineta > 0 || adicionQueso > 0 || adicionEnsalada > 0 ?
+        Padding(
+          padding: const EdgeInsets.only(left: 10),
+          child: Text(  '$producto # ${identificadorDeProducto+1}', style: styleProducto),
+        ) : Container(),
+
+        ingredienteEnsalada != 2 || ingredienteRipio != 2 || ingredienteTocineta != 2 || ingredienteQueso != 2 || adicionSalchichaP > 0 || adicionTocineta > 0 || adicionQueso > 0 || adicionEnsalada > 0 ? SizedBox(height: 10,) : Container(),
+
+        // Ingredientes
+        ingredienteEnsalada != 2 || ingredienteRipio != 2 || ingredienteTocineta != 2 || ingredienteQueso != 2 ? Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+
+            ingredienteEnsalada  == 2 ? Container() : _infoIngredienteEnsalada( ingredienteEnsalada ),
+            ingredienteRipio     == 2 ? Container() : _infoIngredienteRipio(    ingredienteRipio    ),
+            ingredienteTocineta  == 2 ? Container() : _infoIngredienteTocineta( ingredienteTocineta ),
+            ingredienteQueso     == 2 ? Container() : _infoIngredienteQueso(    ingredienteQueso    ),
+
+            ingredienteEnsalada != 2 || ingredienteRipio != 2 || ingredienteTocineta != 2 || ingredienteQueso != 2 ? Divider() : Container(),
+          ]
+        ) : Container(),
+
+        // Adiciones
+        adicionSalchichaP > 0 || adicionSalchichaG > 0 || adicionTocineta > 0 || adicionQueso > 0 || adicionEnsalada > 0 ? Column(
           
-          
-        ],
-      ),
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            
+            _infoAdicion( adicion: adicionSalchichaP,     producto: 'Salchicha Pequeña'),
+            _infoAdicion( adicion: adicionSalchichaG,     producto: 'Salchicha Grande'),
+            _infoAdicion( adicion: adicionTocineta,  producto: 'Tocineta '),
+            _infoAdicion( adicion: adicionQueso,     producto: 'Queso '),
+            _infoAdicion( adicion: adicionEnsalada,  producto: 'Ensalada '),
+
+            adicionSalchichaP > 0 || adicionTocineta > 0 || adicionQueso > 0 || adicionEnsalada > 0 ? Divider() : Container()
+          ],
+        ) : Container(),
+
+        ingredienteEnsalada != 2 || ingredienteRipio != 2 || ingredienteTocineta != 2 || ingredienteQueso != 2 || adicionSalchichaP > 0 || adicionTocineta > 0 || adicionQueso > 0 || adicionEnsalada > 0 ? SizedBox(height: 10,) : Container(),
+
+      ],
     );
   }
 
-
-  _ingredientesPerro({ int ensalada, int ripio, int tocineta, int queso, String producto}){
-
-    return ensalada != 2 || ripio != 2 || tocineta != 2 || queso != 2 ? Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: <Widget>[
-        Padding(
-          padding: const EdgeInsets.only(left: 10),
-          child: Text( producto, style: styleProducto, ),
-        ) ,
-        SizedBox(height: 5,),
-        ensalada  == 2 ? Container() : _infoIngredienteEnsalada( ensalada, ),
-        ripio     == 2 ? Container() : _infoIngredienteRipio(    ripio,    ),
-        tocineta  == 2 ? Container() : _infoIngredienteTocineta( tocineta, ),
-        queso     == 2 ? Container() : _infoIngredienteQueso(    queso,    ),
-
-        ensalada != 2 || ripio != 2 || tocineta != 2 || queso != 2 ? Divider() : Container(),
-
-        
-
-      ]
-    ): Container();
-  }
-
-  
-
-  _adicionPerro({ int tocineta, int queso, int ensalada, int salchichaGrande, int salchichaPequegna, int numeroDePerros, String producto, int numeroDeProducto }) {
-
-    int u = 1;
-    return tocineta > 0 || queso > 0 || ensalada > 0 || salchichaPequegna > 0 || salchichaGrande > 0 ? Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: <Widget>[
-        Padding(
-          padding: const EdgeInsets.only(left: 10),
-          child: Text(  producto, style: styleProducto),
-        ) ,
-        SizedBox(height: 5,),
-        _infoAdicion( adicion: tocineta,          producto: 'Tocineta'),
-        _infoAdicion( adicion: queso,             producto: 'Queso'),
-        _infoAdicion( adicion: ensalada,          producto: 'Ensalada'),
-        _infoAdicion( adicion: salchichaGrande,   producto: 'Salchicha Grande'),
-        _infoAdicion( adicion: salchichaPequegna, producto: 'Salchicha Pequeña'),
-
-        tocineta > 0 || queso > 0 || ensalada > 0 || salchichaPequegna > 0 || salchichaGrande > 0 ? Divider() : Container()
-      ],
-    ) : Container();
-  }
 
 
 }

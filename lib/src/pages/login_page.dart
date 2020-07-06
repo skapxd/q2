@@ -321,6 +321,10 @@ class _LoginPageState extends State<LoginPage> {
     final PhoneVerificationFailed verificationfailed =
         (AuthException authException) {
       print('${authException.message}');
+      setState(() {
+        this.codeSend = true;
+        this.loading  = false;
+      });
     };
 
     final PhoneCodeSent smsSent = (String verId, [int forceResend]) {
