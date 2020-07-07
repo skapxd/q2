@@ -2,7 +2,6 @@
 import 'package:flutter/material.dart';
 import 'package:q2/src/bloc/login_bloc.dart';
 import 'package:q2/src/bloc/provider.dart';
-import 'package:q2/src/models/cliente_model.dart';
 
 class DatosDomicilio extends StatefulWidget {
   @override
@@ -12,7 +11,6 @@ class DatosDomicilio extends StatefulWidget {
 class _DatosDomicilioState extends State<DatosDomicilio> {
 
   final formKey = GlobalKey<FormState>();
-  ClienteModel cliente = new ClienteModel();
 
   bool info = false;
 
@@ -111,8 +109,7 @@ class _DatosDomicilioState extends State<DatosDomicilio> {
                   errorText: snapshot.error
                 ),
 
-                onSaved: ( value ) => cliente.nombre = value,
-                // onChanged: bloc.changeNombre ,
+              // onChanged: bloc.changeNombre ,
                 onChanged: (val) {
 
                   bloc.changeNombre(val);
@@ -200,7 +197,6 @@ class _DatosDomicilioState extends State<DatosDomicilio> {
                 errorText: snapshot.error
               ),
 
-              onSaved: ( value ) => cliente.direccion = value,
               onChanged: bloc.changeDireccion ,
             ),
 
@@ -237,8 +233,7 @@ class _DatosDomicilioState extends State<DatosDomicilio> {
                 errorText: snapshot.error
               ),
 
-              onSaved: ( value ) => cliente.barrio = value,
-              onChanged: bloc.changeBarrio,
+          onChanged: bloc.changeBarrio,
              ),
             ),
 
@@ -269,7 +264,7 @@ class _DatosDomicilioState extends State<DatosDomicilio> {
             // errorText: snapshot.error
           ),
 
-          onSaved: ( value ) => cliente.mensajeOpcional = value,
+
           onChanged: bloc.changeMensajeOpcional ,
          ),
         );

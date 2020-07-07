@@ -12,7 +12,6 @@ import 'package:q2/src/providers/lista_hamburgesas_provider.dart';
 
 
 import 'src/bloc/provider.dart';
-import 'src/pages/domis_eliminados_page.dart';
 import 'src/pages/domis_recibidos_page.dart';
 import 'src/pages/hambur_ingrediestes_page.dart';
 import 'src/pages/home_page.dart';
@@ -21,6 +20,7 @@ import 'src/pages/login_page.dart';
 import 'src/pages/pedido_page.dart';
 import 'src/pages/perros_ingredientes_page.dart';
 import 'src/pages/sing_in_pages.dart';
+import 'src/service/authservice.dart';
 import 'src/widgets/productos_page.dart';
 // import 'src/pages/productos_page.dart';
 
@@ -42,7 +42,7 @@ class MyApp extends StatelessWidget {
             debugShowCheckedModeBanner: false,
             title: 'Material App',
             // home: AuthService().handleAuth(),
-            home: HeaderProductos(),
+            home: AuthService().handleAuth(),
             routes: {
               'login'                : (BuildContext context ) => LoginPage(),
               'header'               : (BuildContext context ) => HeaderProductos(),
@@ -51,7 +51,6 @@ class MyApp extends StatelessWidget {
               'domis'                : (BuildContext context ) => DomisRecibidosPage(),
               'productos'            : (BuildContext context ) => ProductosPage(),
               'info domi'            : (BuildContext context ) => InfoDomiPage(),
-              'domi delet'           : (BuildContext context ) => DomisEliminadosPage(),
               'pedido'               : (BuildContext context ) => PedidoPage(),
               'ingredientes hambur'  : (BuildContext context ) => HamburgesasIngredientesPage(),
               'ingredientes perro'   : (BuildContext context ) => PerrosIngredientesPage(),

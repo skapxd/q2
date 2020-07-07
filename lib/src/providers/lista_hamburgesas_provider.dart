@@ -5,17 +5,17 @@ class ListaHamburguesas with ChangeNotifier {
   //Especiales 
 
     // Ingredientes
-    List<int> _especialIngredienteTomate   = List.filled(10, 2);
-    List<int> _especialIngredienteEnsalada = List.filled(10, 2);
-    List<int> _especialIngredienteRipio    = List.filled(10, 2);
-    List<int> _especialIngredienteTocineta = List.filled(10, 2);
-    List<int> _especialIngredienteQueso    = List.filled(10, 2);
+    List<int> _especialIngredienteTomate    = List.filled(10, 2);
+    List<int> _especialIngredienteEnsalada  = List.filled(10, 2);
+    List<int> _especialIngredienteRipio     = List.filled(10, 2);
+    List<int> _especialIngredienteTocineta  = List.filled(10, 2);
+    List<int> _especialIngredienteQueso     = List.filled(10, 2);
 
     // Adiciones
-    List<int> _especialAdicionCarne    = new List.filled(11, 0);
-    List<int> _especialAdicionTocineta = new List.filled(11, 0);
-    List<int> _especialAdicionQueso    = new List.filled(11, 0);
-    List<int> _especialAdicionEnsalada = new List.filled(11, 0);
+    List<int> _especialAdicionCarne         = List.filled(11, 0);
+    List<int> _especialAdicionTocineta      = List.filled(11, 0);
+    List<int> _especialAdicionQueso         = List.filled(11, 0);
+    List<int> _especialAdicionEnsalada      = List.filled(11, 0);
 
     // Obtener Ingredientes 
     get especialIngredienteTomate   => _especialIngredienteTomate;
@@ -104,10 +104,10 @@ class ListaHamburguesas with ChangeNotifier {
     List<int> _superIngredienteQueso    = List.filled(10, 2);
 
     // Adiciones
-    List<int> _superAdicionCarne    = new List.filled(11, 0);
-    List<int> _superAdicionTocineta = new List.filled(11, 0);
-    List<int> _superAdicionQueso    = new List.filled(11, 0);
-    List<int> _superAdicionEnsalada = new List.filled(11, 0);
+    List<int> _superAdicionCarne        = List.filled(11, 0);
+    List<int> _superAdicionTocineta     = List.filled(11, 0);
+    List<int> _superAdicionQueso        = List.filled(11, 0);
+    List<int> _superAdicionEnsalada     = List.filled(11, 0);
 
     // Obtener Ingredientes 
     get superIngredienteTomate   => _superIngredienteTomate;
@@ -197,10 +197,10 @@ class ListaHamburguesas with ChangeNotifier {
     List<int> _trisuperIngredienteQueso    = List.filled(10, 2);
 
     // Adiciones
-    List<int> _trisuperAdicionCarne    = new List.filled(11, 0);
-    List<int> _trisuperAdicionTocineta = new List.filled(11, 0);
-    List<int> _trisuperAdicionQueso    = new List.filled(11, 0);
-    List<int> _trisuperAdicionEnsalada = new List.filled(11, 0);
+    List<int> _trisuperAdicionCarne        = List.filled(11, 0);
+    List<int> _trisuperAdicionTocineta     = List.filled(11, 0);
+    List<int> _trisuperAdicionQueso        = List.filled(11, 0);
+    List<int> _trisuperAdicionEnsalada     = List.filled(11, 0);
 
     // Obtener Ingredientes 
     get trisuperIngredienteTomate   => _trisuperIngredienteTomate;

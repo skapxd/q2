@@ -2,8 +2,6 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:q2/src/bloc/login_bloc.dart';
 import 'package:q2/src/bloc/provider.dart';
-import 'package:q2/src/models/cliente_model.dart';
-import 'package:q2/src/providers/clientes_provider.dart';
 import 'package:q2/src/service/authservice.dart';
 import 'package:q2/src/widgets/fondo_login.dart';
 import 'package:q2/src/widgets/loading.dart';
@@ -23,11 +21,9 @@ class _LoginPageState extends State<LoginPage> {
   final state;
   _LoginPageState( this.state );
   
-  ClienteModel cliente = new ClienteModel();
 
 
   final formKey = GlobalKey<FormState>();
-  final clienteProvider = new ClienteProvider();
 
 
   String phoneNo, verificationId, smsCode;
@@ -179,7 +175,6 @@ class _LoginPageState extends State<LoginPage> {
                 phoneNo = val;
               });
             },
-            onSaved: ( value ) => cliente.telefono = value,
           ),
           
         );

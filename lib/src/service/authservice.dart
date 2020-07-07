@@ -15,9 +15,13 @@ class AuthService {
          
         if (snapshot.hasData) {
 
+          print('Header ${snapshot.hasData}');
+
           // Navigator.pushReplacementNamed(context, 'header');
           return HeaderProductos();
         } else {
+
+          print('Login ${snapshot.hasData}');
 
           return LoginPage();
         }

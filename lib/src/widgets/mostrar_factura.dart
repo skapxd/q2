@@ -1731,17 +1731,10 @@ class _ImportarFacturaState extends State<ImportarFactura> {
                     ingredienteQueso:     listaPerro.perraPequegnaIngredienteQueso     [9],
                   ),
 
-                  
-                  
-
+                  _mensaje(dataForm.mensaje),
 
                   SizedBox(height: 30,),
-
-                  // exesoInfo || exsesoInfo2 ? Container() : Expanded(
-                  //   // flex: ,
-                  //   child: Container()
-                  // ),
-
+  
                   Container(
                     height: 35,
                     decoration: BoxDecoration(
@@ -1770,7 +1763,20 @@ class _ImportarFacturaState extends State<ImportarFactura> {
       );
   }
 
+  _mensaje(String cliente) {
 
+    return cliente == null ? Container() : SafeArea(
+          child: Container(
+        padding: EdgeInsets.symmetric( horizontal: 40.0, vertical: 20.0),
+        child: Text(
+          cliente,
+          // style: styleAppBar,
+          textAlign: TextAlign.justify,
+        ),
+      ),
+    );
+
+  }
 
   _padding(){
 

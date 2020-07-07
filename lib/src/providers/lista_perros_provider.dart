@@ -5,10 +5,10 @@ class ListaPerro with ChangeNotifier {
   // Perro Grande Con Tocineta
   
     // Ingredientes
-    List<int> _perroGrandeTocinetaIngredienteEnsalada = List.filled(10, 2);
-    List<int> _perroGrandeTocinetaIngredienteRipio    = List.filled(10, 2);
-    List<int> _perroGrandeTocinetaIngredienteTocineta = List.filled(10, 2);
-    List<int> _perroGrandeTocinetaIngredienteQueso    = List.filled(10, 2);
+    List<int> _perroGrandeTocinetaIngredienteEnsalada       = List.filled(10, 2);
+    List<int> _perroGrandeTocinetaIngredienteRipio          = List.filled(10, 2);
+    List<int> _perroGrandeTocinetaIngredienteTocineta       = List.filled(10, 2);
+    List<int> _perroGrandeTocinetaIngredienteQueso          = List.filled(10, 2);
 
     // Adiciones
     List<int> _perroGrandeTocinetaAdicionTocineta           = List.filled(11, 0);
@@ -99,15 +99,15 @@ class ListaPerro with ChangeNotifier {
 
   // Perro Grande
     // Ingredientes
-    List<int> _perroGrandeIngredienteEnsalada = List.filled(10, 2);
-    List<int> _perroGrandeIngredienteRipio    = List.filled(10, 2);
-    List<int> _perroGrandeIngredienteTocineta = List.filled(10, 2);
-    List<int> _perroGrandeIngredienteQueso    = List.filled(10, 2);
+    List<int> _perroGrandeIngredienteEnsalada       = List.filled(10, 2);
+    List<int> _perroGrandeIngredienteRipio          = List.filled(10, 2);
+    List<int> _perroGrandeIngredienteTocineta       = List.filled(10, 2);
+    List<int> _perroGrandeIngredienteQueso          = List.filled(10, 2);
 
     // Adiciones
-    List<int> _perroGrandeAdicionTocineta = new List.filled(11, 0);
-    List<int> _perroGrandeAdicionQueso    = new List.filled(11, 0);
-    List<int> _perroGrandeAdicionEnsalada = new List.filled(11, 0);
+    List<int> _perroGrandeAdicionTocineta           = List.filled(11, 0);
+    List<int> _perroGrandeAdicionQueso              = List.filled(11, 0);
+    List<int> _perroGrandeAdicionEnsalada           = List.filled(11, 0);
 
     List<int> _perroGrandeAdicionSalchichaGrande    = List.filled(11, 0);
     List<int> _perroGrandeAdicionSalchichaPequegna  = List.filled(11, 0);
@@ -192,15 +192,15 @@ class ListaPerro with ChangeNotifier {
     }
 // Perro Pequeño Con Tocineta
     // Ingredientes
-    List<int> _perroPequegnoTocinetaIngredienteEnsalada = List.filled(10, 2);
-    List<int> _perroPequegnoTocinetaIngredienteRipio    = List.filled(10, 2);
-    List<int> _perroPequegnoTocinetaIngredienteTocineta = List.filled(10, 2);
-    List<int> _perroPequegnoTocinetaIngredienteQueso    = List.filled(10, 2);
+    List<int> _perroPequegnoTocinetaIngredienteEnsalada       = List.filled(10, 2);
+    List<int> _perroPequegnoTocinetaIngredienteRipio          = List.filled(10, 2);
+    List<int> _perroPequegnoTocinetaIngredienteTocineta       = List.filled(10, 2);
+    List<int> _perroPequegnoTocinetaIngredienteQueso          = List.filled(10, 2);
 
     // Adiciones
-    List<int> _perroPequegnoTocinetaAdicionTocineta = new List.filled(11, 0);
-    List<int> _perroPequegnoTocinetaAdicionQueso    = new List.filled(11, 0);
-    List<int> _perroPequegnoTocinetaAdicionEnsalada = new List.filled(11, 0);
+    List<int> _perroPequegnoTocinetaAdicionTocineta           =  List.filled(11, 0);
+    List<int> _perroPequegnoTocinetaAdicionQueso              =  List.filled(11, 0);
+    List<int> _perroPequegnoTocinetaAdicionEnsalada           =  List.filled(11, 0);
 
     List<int> _perroPequegnoTocinetaAdicionSalchichaGrande    = List.filled(11, 0);
     List<int> _perroPequegnoTocinetaAdicionSalchichaPequegna  = List.filled(11, 0);
@@ -284,15 +284,15 @@ class ListaPerro with ChangeNotifier {
 
 // Perro Pequegno
     // Ingredientes
-    List<int> _perroPequegnoIngredienteEnsalada = List.filled(10, 2);
-    List<int> _perroPequegnoIngredienteRipio    = List.filled(10, 2);
-    List<int> _perroPequegnoIngredienteTocineta = List.filled(10, 2);
-    List<int> _perroPequegnoIngredienteQueso    = List.filled(10, 2);
+    List<int> _perroPequegnoIngredienteEnsalada       = List.filled(10, 2);
+    List<int> _perroPequegnoIngredienteRipio          = List.filled(10, 2);
+    List<int> _perroPequegnoIngredienteTocineta       = List.filled(10, 2);
+    List<int> _perroPequegnoIngredienteQueso          = List.filled(10, 2);
 
     // Adiciones
-    List<int> _perroPequegnoAdicionTocineta = new List.filled(11, 0);
-    List<int> _perroPequegnoAdicionQueso    = new List.filled(11, 0);
-    List<int> _perroPequegnoAdicionEnsalada = new List.filled(11, 0);
+    List<int> _perroPequegnoAdicionTocineta           = List.filled(11, 0);
+    List<int> _perroPequegnoAdicionQueso              = List.filled(11, 0);
+    List<int> _perroPequegnoAdicionEnsalada           = List.filled(11, 0);
 
     List<int> _perroPequegnoAdicionSalchichaGrande    = List.filled(11, 0);
     List<int> _perroPequegnoAdicionSalchichaPequegna  = List.filled(11, 0);
@@ -375,16 +375,100 @@ class ListaPerro with ChangeNotifier {
       notifyListeners();
     }
 
-// Perra Pequegna
+// Perra Grande
     // Ingredientes
-    List<int> _perraPequegnaIngredienteEnsalada   = List.filled(10, 2);
-    List<int> _perraPequegnaIngredienteRipio      = List.filled(10, 2);
-    List<int> _perraPequegnaIngredienteQueso      = List.filled(10, 2);
+    List<int> _perraGrandeIngredienteEnsalada       = List.filled(10, 2);
+    List<int> _perraGrandeIngredienteRipio          = List.filled(10, 2);
+    List<int> _perraGrandeIngredienteQueso          = List.filled(10, 2);
 
     // Adiciones
-    List<int> _perraPequegnaAdicionTocineta = new List.filled(11, 0);
-    List<int> _perraPequegnaAdicionQueso    = new List.filled(11, 0);
-    List<int> _perraPequegnaAdicionEnsalada = new List.filled(11, 0);
+    List<int> _perraGrandeAdicionTocineta           = List.filled(11, 0);
+    List<int> _perraGrandeAdicionQueso              = List.filled(11, 0);
+    List<int> _perraGrandeAdicionEnsalada           = List.filled(11, 0);
+
+    List<int> _perraGrandeAdicionSalchichaGrande    = List.filled(11, 0);
+    List<int> _perraGrandeAdicionSalchichaPequegna  = List.filled(11, 0);
+
+    // Obtener Ingredientes 
+    get perraGrandeIngredienteEnsalada => _perraGrandeIngredienteEnsalada;
+
+    get perraGrandeIngredienteRipio => _perraGrandeIngredienteRipio;
+
+    get perraGrandeIngredienteQueso => _perraGrandeIngredienteQueso;
+
+    // Obtener Adiciones
+    get perraGrandeAdicionTocineta => _perraGrandeAdicionTocineta;
+
+    get perraGrandeAdicionQueso => _perraGrandeAdicionQueso;
+
+    get perraGrandeAdicionEnsalada => _perraGrandeAdicionEnsalada;
+
+    get perraGrandeAdicionSalchichaGrande => _perraGrandeAdicionSalchichaGrande;
+
+    get perraGrandeAdicionSalchichaPequegna => _perraGrandeAdicionSalchichaPequegna;
+
+    // Insertar Ingredientes
+    set perraGrandeIngredienteEnsalada(  List<int> ingredientes  ) {
+      
+      this._perraGrandeIngredienteEnsalada = ingredientes;
+      notifyListeners();
+    }        
+    
+    set perraGrandeIngredienteRipio( List<int> ingredientes  ) {
+      
+      this._perraGrandeIngredienteRipio = ingredientes;
+      notifyListeners();
+    }        
+
+    set perraGrandeIngredienteQueso( List<int> ingredientes  ) {
+      
+      this._perraGrandeIngredienteQueso = ingredientes;
+      notifyListeners();
+    }        
+
+    // Insertar Adiciones
+    
+    set perraGrandeAdicionTocineta(  List<int> adiciones  ) {
+      
+      this._perraGrandeAdicionTocineta = adiciones;
+      notifyListeners();
+    }        
+    
+    set perraGrandeAdicionEnsalada( List<int> adiciones  ) {
+      
+      this._perraGrandeAdicionEnsalada = adiciones;
+      notifyListeners();
+    }        
+    
+    set perraGrandeAdicionQueso(  List<int> adiciones  ) {
+      
+      this._perraGrandeAdicionQueso = adiciones;
+      notifyListeners();
+    }         
+
+    set perraGrandeAdicionSalchichaGrande( List<int> adiciones ) {
+
+      this._perraGrandeAdicionSalchichaGrande = adiciones;
+      notifyListeners();
+    }
+
+    set perraGrandeAdicionSalchichaPequegna( List<int> adiciones) {
+
+      this._perraGrandeAdicionSalchichaPequegna = adiciones;
+      notifyListeners();
+    }
+
+  
+// Perra Pequeña
+    // Ingredientes
+    List<int> _perraPequegnaIngredienteEnsalada       = List.filled(10, 2);
+    List<int> _perraPequegnaIngredienteRipio          = List.filled(10, 2);
+    List<int> _perraPequegnaIngredienteQueso          = List.filled(10, 2);
+
+    // Adiciones
+    List<int> _perraPequegnaAdicionTocineta           = List.filled(11, 0);
+    List<int> _perraPequegnaAdicionQueso              = List.filled(11, 0);
+    List<int> _perraPequegnaAdicionEnsalada           = List.filled(11, 0);
 
     List<int> _perraPequegnaAdicionSalchichaGrande    = List.filled(11, 0);
     List<int> _perraPequegnaAdicionSalchichaPequegna  = List.filled(11, 0);
@@ -458,86 +542,4 @@ class ListaPerro with ChangeNotifier {
     }
 
 
-// Perra Pequegna
-    // Ingredientes
-    List<int> _perraGrandeIngredienteEnsalada = List.filled(10, 2);
-    List<int> _perraGrandeIngredienteRipio    = List.filled(10, 2);
-    List<int> _perraGrandeIngredienteQueso    = List.filled(10, 2);
-
-    // Adiciones
-    List<int> _perraGrandeAdicionTocineta = new List.filled(11, 0);
-    List<int> _perraGrandeAdicionQueso    = new List.filled(11, 0);
-    List<int> _perraGrandeAdicionEnsalada = new List.filled(11, 0);
-
-    List<int> _perraGrandeAdicionSalchichaGrande    = List.filled(11, 0);
-    List<int> _perraGrandeAdicionSalchichaPequegna  = List.filled(11, 0);
-
-    // Obtener Ingredientes 
-    get perraGrandeIngredienteEnsalada => _perraGrandeIngredienteEnsalada;
-
-    get perraGrandeIngredienteRipio => _perraGrandeIngredienteRipio;
-
-    get perraGrandeIngredienteQueso => _perraGrandeIngredienteQueso;
-
-    // Obtener Adiciones
-    get perraGrandeAdicionTocineta => _perraGrandeAdicionTocineta;
-
-    get perraGrandeAdicionQueso => _perraGrandeAdicionQueso;
-
-    get perraGrandeAdicionEnsalada => _perraGrandeAdicionEnsalada;
-
-    get perraGrandeAdicionSalchichaGrande => _perraGrandeAdicionSalchichaGrande;
-
-    get perraGrandeAdicionSalchichaPequegna => _perraGrandeAdicionSalchichaPequegna;
-
-    // Insertar Ingredientes
-    set perraGrandeIngredienteEnsalada(  List<int> ingredientes  ) {
-      
-      this._perraGrandeIngredienteEnsalada = ingredientes;
-      notifyListeners();
-    }        
-    
-    set perraGrandeIngredienteRipio( List<int> ingredientes  ) {
-      
-      this._perraGrandeIngredienteRipio = ingredientes;
-      notifyListeners();
-    }        
-
-    set perraGrandeIngredienteQueso( List<int> ingredientes  ) {
-      
-      this._perraGrandeIngredienteQueso = ingredientes;
-      notifyListeners();
-    }        
-
-    // Insertar Adiciones
-    
-    set perraGrandeAdicionTocineta(  List<int> adiciones  ) {
-      
-      this._perraGrandeAdicionTocineta = adiciones;
-      notifyListeners();
-    }        
-    
-    set perraGrandeAdicionEnsalada( List<int> adiciones  ) {
-      
-      this._perraGrandeAdicionEnsalada = adiciones;
-      notifyListeners();
-    }        
-    
-    set perraGrandeAdicionQueso(  List<int> adiciones  ) {
-      
-      this._perraGrandeAdicionQueso = adiciones;
-      notifyListeners();
-    }         
-
-    set perraGrandeAdicionSalchichaGrande( List<int> adiciones ) {
-
-      this._perraGrandeAdicionSalchichaGrande = adiciones;
-      notifyListeners();
-    }
-
-    set perraGrandeAdicionSalchichaPequegna( List<int> adiciones) {
-
-      this._perraGrandeAdicionSalchichaPequegna = adiciones;
-      notifyListeners();
-    }
 }
