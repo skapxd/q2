@@ -38,4 +38,4 @@ lib/generated_plugin_registrant.dart
 
 key.properties
 
-google-services.json
+app/google-services.json
