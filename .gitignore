@@ -1,5 +1,6 @@
 #ignorar google-services
-android/app/google-services.json
+# android/app/google-services.json
+android\app\google-services.json
 
 # Miscellaneous
 *.class
