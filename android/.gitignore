@@ -1,5 +1,5 @@
 #ignorar google-services
-google-services.json
+app/.google-services.json
 
 gradle-wrapper.jar
 /.gradle
