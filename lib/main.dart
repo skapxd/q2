@@ -44,6 +44,7 @@ class MyApp extends StatelessWidget {
             // home: AuthService().handleAuth(),
             home: AuthService().handleAuth(),
             routes: {
+              'authService'          :(BuildContext context )  => AuthService().handleAuth(),
               'login'                : (BuildContext context ) => LoginPage(),
               'header'               : (BuildContext context ) => HeaderProductos(),
               'home'                 : (BuildContext context ) => HomePage(),

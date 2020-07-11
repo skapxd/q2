@@ -3,11 +3,36 @@ import 'package:flutter/material.dart';
 import 'package:q2/src/pages/login_page.dart';
 import 'package:q2/src/pages/zona_de_producto.dart';
 
-class AuthService {
+class AuthService extends StatelessWidget {
 
-  FirebaseUser userCredential;
-  
+  @override
+  Widget build(BuildContext context) {
+
+    return StreamBuilder(
+      stream: FirebaseAuth.instance.onAuthStateChanged ,
+      builder: (BuildContext context, AsyncSnapshot snapshot){
+         
+        if (snapshot.hasData) {
+
+          print('Header ${snapshot.hasData}');
+
+          // Navigator.pushReplacementNamed(context, 'header');
+          return HeaderProductos();
+        } else {
+
+          print('Login ${snapshot.hasData}');
+
+          return LoginPage();
+        }
+
+        // return LoginPage(state: snapshot.hasData,);      
+      },
+    );
+  }
+
   handleAuth() {
+
+    
 
     return StreamBuilder(
       stream: FirebaseAuth.instance.onAuthStateChanged ,
@@ -32,7 +57,7 @@ class AuthService {
   }
 
   //SignIn
-  signIn(AuthCredential authCreds)  {
+    signIn(AuthCredential authCreds)  {
     FirebaseAuth.instance.signInWithCredential(authCreds);
 
     // AuthResult result = await FirebaseAuth.instance.signInWithCredential(authCreds);
@@ -43,15 +68,18 @@ class AuthService {
 
 
   //Sign out
-  signOut() {
+    signOut() {
     FirebaseAuth.instance.signOut();
   }
 
-  signInWithOTP(smsCode, verId) {
+    signInWithOTP(smsCode, verId) {
 
     AuthCredential authCreds = PhoneAuthProvider.getCredential(
         verificationId: verId, smsCode: smsCode);
 
     signIn(authCreds);
   }
+
+
+  
 }

@@ -7,10 +7,14 @@ class EsperandoConfimacionPage extends StatelessWidget {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          AuthService().signOut();
+          
           // LoginPage();
-          Navigator.pushNamedAndRemoveUntil(context, 'login', (Route<dynamic> route) => false);
-          // Navigator.popUntil(context, ModalRoute.withName(name));
+          // Navigator.pushNamedAndRemoveUntil(context, 'login', (Route<dynamic> route) => false);
+          // Navigator.popUntil(context, ModalRoute.withName('login'));
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => AuthService().handleAuth()),
+          );
         },
         backgroundColor: Color.fromRGBO(239 , 184, 16, 1),
         child: Icon(

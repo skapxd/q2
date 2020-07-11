@@ -197,7 +197,7 @@ class _LoginPageState extends State<LoginPage> {
 
             setState(() {
 
-              codeSend ? AuthService().signInWithOTP(smsCode, verificationId):verifyPhone(phoneNo);
+              codeSend ? AuthService().signInWithOTP(smsCode, verificationId) : verifyPhone(phoneNo);
             });
           
 
@@ -322,6 +322,7 @@ class _LoginPageState extends State<LoginPage> {
       });
     };
 
+
     final PhoneCodeSent smsSent = (String verId, [int forceResend]) {
       this.verificationId = verId;
       setState(() {
@@ -330,9 +331,11 @@ class _LoginPageState extends State<LoginPage> {
       });
     };
 
+
     final PhoneCodeAutoRetrievalTimeout autoTimeout = (String verId) {
       this.verificationId = verId;
     };
+
 
     await FirebaseAuth.instance.verifyPhoneNumber(
       phoneNumber: '+57'+ phoneNo,

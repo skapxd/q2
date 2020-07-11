@@ -90,6 +90,7 @@ class ProductoBloc {
     // Perras
     _grandePerraController?.         close();
     _pequegnaPerraController?.       close();
+    
   }
 
 }

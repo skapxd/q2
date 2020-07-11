@@ -4,6 +4,7 @@ import 'package:q2/src/bloc/producto_bloc.dart';
 // import 'package:q2/src/bloc/producto_bloc.dart';
 import 'package:q2/src/bloc/provider.dart';
 import 'package:q2/src/providers/lista_perros_provider.dart';
+import 'package:q2/src/service/authservice.dart';
 import 'package:q2/src/service/database.dart';
 import 'package:q2/src/providers/lista_hamburgesas_provider.dart';
 import 'package:q2/src/widgets/mostrar_factura.dart';
@@ -49,6 +50,7 @@ class _ConfirmacionDomicilioState extends State<ConfirmacionDomicilio> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () async{
+          AuthService().signOut();
           Navigator.pushNamedAndRemoveUntil(context, 'esperandoConfirmacion', (Route<dynamic> route) => false);
           // Navigator.pushNamed(context, 'esperandoConfirmacion');
 
