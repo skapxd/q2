@@ -1,3 +1,7 @@
+#ignorar google-services
+google-services.json
+
+
 # Miscellaneous
 *.class
 *.log
@@ -30,7 +34,6 @@
 .pub/
 /build/
 
-/app/google-services.json
 
 # Web related
 lib/generated_plugin_registrant.dart
