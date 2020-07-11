@@ -30,6 +30,8 @@
 .pub/
 /build/
 
+/app/google-services.json
+
 # Web related
 lib/generated_plugin_registrant.dart
 
@@ -38,4 +40,3 @@ lib/generated_plugin_registrant.dart
 
 key.properties
 
-.google-services.json
